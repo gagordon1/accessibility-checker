@@ -1,0 +1,3 @@
+[submodule "dotgov-data"]
+	path = dotgov-data
+	url = https://github.com/cisagov/dotgov-data
