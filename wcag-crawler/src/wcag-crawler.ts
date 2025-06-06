@@ -49,6 +49,10 @@ function normalizeUrl(raw: string): string | null {
   try {
     const u = new URL(raw);
     u.hash = "";
+    // Remove www. prefix if it exists
+    if (u.hostname.startsWith('www.')) {
+      u.hostname = u.hostname.slice(4);
+    }
     return u.href;
   } catch {
     return null;
@@ -96,6 +100,7 @@ async function extractLinks(page: Page, base: string) {
     const url = queue.shift() as string;
     if (visited.has(url)) continue;
     visited.add(url);
+    console.log(`Scanning (${visited.size}/${max}): ${url}`);
 
     try {
       await page.goto(url, { waitUntil: "networkidle2" });
@@ -109,7 +114,12 @@ async function extractLinks(page: Page, base: string) {
       newLinks.forEach((l) => {
         if (visited.size + queue.length >= max) return;
         const clean = normalizeUrl(l);
-        if (clean && !visited.has(clean) && !queue.includes(clean)) queue.push(clean);
+        if (clean && !visited.has(clean) && !queue.includes(clean)) {
+          // Double check we haven't already queued this URL
+          if (!queue.some(q => normalizeUrl(q) === clean)) {
+            queue.push(clean);
+          }
+        }
       });
     } catch (err: any) {
       console.error(`Error scanning ${url}: ${err.message}`);

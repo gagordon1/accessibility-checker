@@ -1,7 +1,674 @@
 [
   {
-    "url": "https://arc.gov/",
-    "timestamp": "2025-06-06T19:13:28.610Z",
+    "url": "https://abilenetx.gov/",
+    "timestamp": "2025-06-06T20:57:25.712Z",
+    "violations": [
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"#ccc647f25f-5bbd-4f47-b67c-73ab0047a495\" target=\"_self\" class=\"skipToContentLink\">Skip to Main Content</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 18x18px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/CivicAlerts.aspx?AID=2921\" target=\"_self\"><img class=\"media\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\" data-delay-load=\"/ImageRepository/Document?documentID=35960\" alt=\"Emily Crawford, City Manager\" data-delayed-image=\"\"></a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 335x24px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/CivicAlerts.aspx?AID=2923\" target=\"_self\"><img class=\"media\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\" data-delay-load=\"/ImageRepository/Document?documentID=35967\" alt=\"Graphic image directing residents to contact list on top info banner\" data-del",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 335x24px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/CivicAlerts.aspx?AID=2903\" target=\"_self\"><img class=\"media\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\" data-delay-load=\"/ImageRepository/Document?documentID=35809\" alt=\"Website Redesign 2025\" data-delayed-image=\"\"></a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 335x24px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/CivicAlerts.aspx?AID=2906\" target=\"_self\"><img class=\"media\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\" data-delay-load=\"/ImageRepository/Document?documentID=35817\" alt=\"News Release Social Template - 1\" data-delayed-image=\"\"></a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 335x24px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/CivicAlerts.aspx?AID=2896\" target=\"_self\"><img class=\"media\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\" data-delay-load=\"/ImageRepository/Document?documentID=27856\" alt=\"\" data-delayed-image=\"\"></a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 335x24px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/CivicAlerts.aspx?AID=2851\" target=\"_self\"><img class=\"media\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\" data-delay-load=\"/ImageRepository/Document?documentID=35528\" alt=\"\" data-delayed-image=\"\"></a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 335x24px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/CivicAlerts.aspx?AID=2848\" target=\"_self\"><img class=\"media\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\" data-delay-load=\"/ImageRepository/Document?documentID=35264\" alt=\"Two women stand opposite eachother in front of city council, Mindy's right han",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 335x24px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/CivicAlerts.aspx?AID=2834\" target=\"_self\"><img class=\"media\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\" data-delay-load=\"/ImageRepository/Document?documentID=35000\" alt=\"\" data-delayed-image=\"\"></a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 335x24px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/CivicAlerts.aspx?AID=2722\" target=\"_self\"><img class=\"media\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\" data-delay-load=\"/ImageRepository/Document?documentID=32326\" alt=\"News - Overdoses In 2024\" data-delayed-image=\"\"></a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 335x24px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/Calendar.aspx?EID=9869\">Board of Adjustment</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 715x21px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/Calendar.aspx?EID=10759\">DCOA Board Meeting</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 715x21px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/Calendar.aspx?EID=10760\">Special Called City Council Meeting</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 715x21px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/Calendar.aspx?EID=9857\">Airport Development Board</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 715x21px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/Calendar.aspx?EID=9905\">City Council Meeting</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 715x21px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/Calendar.aspx?EID=9881\">Parks &amp; Recreation Board</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 715x21px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/facebook\" target=\"_self\" class=\"fancyButton fancyButton928 \">\n\t\t<span>\n\t\t\t<span><span class=\"text\">Facebook</span></span>\n\t\t</span>\n\t</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 105x23px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/instagram\" target=\"_self\" class=\"fancyButton fancyButton929 \">\n\t\t<span>\n\t\t\t<span><span class=\"text\">Instagram</span></span>\n\t\t</span>\n\t</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 105x23px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/linkedin\" target=\"_self\" class=\"fancyButton fancyButton930 \">\n\t\t<span>\n\t\t\t<span><span class=\"text\">LinkedIn</span></span>\n\t\t</span>\n\t</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 105x23px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/youtube\" target=\"_self\" class=\"fancyButton fancyButton931 \">\n\t\t<span>\n\t\t\t<span><span class=\"text\">Youtube</span></span>\n\t\t</span>\n\t</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 105x23px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/x\" target=\"_self\" class=\"fancyButton fancyButton932 \">\n\t\t<span>\n\t\t\t<span><span class=\"text\">X</span></span>\n\t\t</span>\n\t</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 105x23px. Must be at least 24x24px."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "url": "https://abilenetx.gov/AlertCenter.aspx",
+    "timestamp": "2025-06-06T20:57:29.074Z",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "nodes": [
+          {
+            "html": "<a href=\"/AlertCenter.aspx\">All Categories</a>",
+            "target": [
+              ".all > a[href$=\"AlertCenter.aspx\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.74 (foreground color: #0071ce, background color: #e0e0e0, font size: 9.5pt (12.672px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/AlertCenter.aspx?CID=Citywide-Alerts-5\">City-wide Alerts</a>",
+            "target": [
+              ".categories > ol > li:nth-child(2) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.74 (foreground color: #0071ce, background color: #e0e0e0, font size: 9.5pt (12.672px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"#contentarea\" target=\"_self\" class=\"skipToContentLink\">Skip to Main Content</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 18x18px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<input type=\"image\" id=\"alertsSearch\" class=\"searchButton\" title=\"Alert Center Search\" alt=\"Search\" src=\"/Common/images/ModuleSearchIcon.png\" onkeypress=\"this.onclick();\" onclick=\"alertCenterSearchFE(txtSearch,ctl00_ctl00_MainContent_ModuleContent_ctl00_ddlCategories); return false;\">",
+            "target": [
+              "input#alertsSearch"
+            ],
+            "failureSummary": "Pointer target is only 21x21px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a class=\"RSS\" href=\"/Rss.aspx\">RSS</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 435x20px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a class=\"notifyMe\" href=\"/list.aspx?Mode=Subscribe#alertCenter\">Notify Me</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 435x20px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a class=\"archLinkColor\" href=\"#\" onkeypress=\"this.onclick();\" onclick=\"gotoArchives(-1, -1); return false;\">Show Archived</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 435x20px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/facebook\" target=\"_self\" class=\"fancyButton fancyButton928 \">\n\t\t<span>\n\t\t\t<span><span class=\"text\">Facebook</span></span>\n\t\t</span>\n\t</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 105x23px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/instagram\" target=\"_self\" class=\"fancyButton fancyButton929 \">\n\t\t<span>\n\t\t\t<span><span class=\"text\">Instagram</span></span>\n\t\t</span>\n\t</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 105x23px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/linkedin\" target=\"_self\" class=\"fancyButton fancyButton930 \">\n\t\t<span>\n\t\t\t<span><span class=\"text\">LinkedIn</span></span>\n\t\t</span>\n\t</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 105x23px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/youtube\" target=\"_self\" class=\"fancyButton fancyButton931 \">\n\t\t<span>\n\t\t\t<span><span class=\"text\">Youtube</span></span>\n\t\t</span>\n\t</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 105x23px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/x\" target=\"_self\" class=\"fancyButton fancyButton932 \">\n\t\t<span>\n\t\t\t<span><span class=\"text\">X</span></span>\n\t\t</span>\n\t</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 105x23px. Must be at least 24x24px."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "url": "https://abilenetx.gov/AlertCenter.aspx?AID=Click-here-for-the-latest-on-connecting--13",
+    "timestamp": "2025-06-06T20:57:32.561Z",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "nodes": [
+          {
+            "html": "<a href=\"/AlertCenter.aspx\">All Categories</a>",
+            "target": [
+              ".all > a[href$=\"AlertCenter.aspx\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.74 (foreground color: #0071ce, background color: #e0e0e0, font size: 9.5pt (12.672px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/AlertCenter.aspx?CID=Citywide-Alerts-5\">City-wide Alerts</a>",
+            "target": [
+              ".categories > ol > li:nth-child(2) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.74 (foreground color: #0071ce, background color: #e0e0e0, font size: 9.5pt (12.672px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"#contentarea\" target=\"_self\" class=\"skipToContentLink\">Skip to Main Content</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 18x18px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a class=\"return\" id=\"lnkACBackTo\" href=\"javascript:backLinkClicked();\">◄&nbsp;Back</a>",
+            "target": [
+              "a#lnkACBackTo"
+            ],
+            "failureSummary": "Pointer target is only 37x17px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a class=\"viewAllUpdates\" href=\"/AlertCenter.aspx?AID=Click-here-for-the-latest-on-connecting--13&amp;action=showAllUpdates#updates\" onclick=\"showAllUpdates(); return false;\">View All Updates</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 123x22px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<input type=\"image\" id=\"alertsSearch\" class=\"searchButton\" title=\"Alert Center Search\" alt=\"Search\" src=\"/Common/images/ModuleSearchIcon.png\" onkeypress=\"this.onclick();\" onclick=\"alertCenterSearchFE(txtSearch,ctl00_ctl00_MainContent_ModuleContent_ctl00_ddlCategories); return false;\">",
+            "target": [
+              "input#alertsSearch"
+            ],
+            "failureSummary": "Pointer target is only 21x21px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a class=\"RSS\" href=\"/Rss.aspx\">RSS</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 435x20px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a class=\"notifyMe\" href=\"/list.aspx?Mode=Subscribe#alertCenter\">Notify Me</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 435x20px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a class=\"archLinkColor\" href=\"#\" onkeypress=\"this.onclick();\" onclick=\"gotoArchives(-1, -1); return false;\">Show Archived</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 435x20px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/facebook\" target=\"_self\" class=\"fancyButton fancyButton928 \">\n\t\t<span>\n\t\t\t<span><span class=\"text\">Facebook</span></span>\n\t\t</span>\n\t</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 105x23px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/instagram\" target=\"_self\" class=\"fancyButton fancyButton929 \">\n\t\t<span>\n\t\t\t<span><span class=\"text\">Instagram</span></span>\n\t\t</span>\n\t</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 105x23px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/linkedin\" target=\"_self\" class=\"fancyButton fancyButton930 \">\n\t\t<span>\n\t\t\t<span><span class=\"text\">LinkedIn</span></span>\n\t\t</span>\n\t</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 105x23px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/youtube\" target=\"_self\" class=\"fancyButton fancyButton931 \">\n\t\t<span>\n\t\t\t<span><span class=\"text\">Youtube</span></span>\n\t\t</span>\n\t</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 105x23px. Must be at least 24x24px."
+          }
+        ]
+      },
+      {
+        "id": "2.5.8",
+        "description": "Target Size (Minimum)",
+        "impact": "moderate",
+        "nodes": [
+          {
+            "html": "<a href=\"/x\" target=\"_self\" class=\"fancyButton fancyButton932 \">\n\t\t<span>\n\t\t\t<span><span class=\"text\">X</span></span>\n\t\t</span>\n\t</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Pointer target is only 105x23px. Must be at least 24x24px."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "url": "https://abilenetx.gov/MyAccount/ProfileCreate",
+    "timestamp": "2025-06-06T20:57:37.114Z",
+    "violations": []
+  },
+  {
+    "url": "https://abilenetx.gov/MyAccount",
+    "timestamp": "2025-06-06T20:57:39.072Z",
     "violations": []
   }
 ]
