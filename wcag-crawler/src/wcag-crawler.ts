@@ -106,9 +106,9 @@ async function extractLinks(page: Page, base: string) {
       await page.goto(url, { waitUntil: "networkidle2" });
 
       // run all rule functions then flatten
-      const violations = (await Promise.all(activeRules.map((fn) => fn(page)))).flat();
+      // const violations = (await Promise.all(activeRules.map((fn) => fn(page)))).flat();
 
-      results.push({ url, timestamp: new Date().toISOString(), violations });
+      // results.push({ url, timestamp: new Date().toISOString(), violations });
 
       const newLinks = await extractLinks(page, domain);
       newLinks.forEach((l) => {

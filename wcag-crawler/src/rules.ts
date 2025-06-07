@@ -65,6 +65,83 @@ export const rule_1_4_2_audio: RuleFunction = async (page) => {
   ];
 };
 
+export const rule_1_1_1_images: RuleFunction = async (page) => {
+  const offenders = await page.evaluate(() => {
+    return Array.from(document.querySelectorAll("img"))
+      .filter((img) => {
+        // Skip images that are clearly decorative
+        if (img.getAttribute("role") === "presentation" || 
+            img.getAttribute("role") === "none") {
+          return false;
+        }
+
+        // Skip images with empty alt="" (explicitly marked as decorative)
+        if (img.hasAttribute("alt") && img.getAttribute("alt") === "") {
+          return false;
+        }
+
+        // Skip images that are likely decorative based on context
+        const isDecorative = (
+          // Images in decorative containers
+          img.closest('[role="presentation"], [role="none"]') ||
+          // Images with decorative class names
+          /\b(decoration|decorative|ornament|divider|spacer|bullet)\b/i.test(img.className) ||
+          // Very small images (likely icons or spacers)
+          (img.width > 0 && img.height > 0 && img.width <= 10 && img.height <= 10) ||
+          // Images with decorative file names
+          /\b(decoration|ornament|divider|spacer|bullet|arrow|icon-small)\b/i.test(img.src)
+        );
+
+        if (isDecorative) return false;
+
+        // Check if image is informational but missing proper alt
+        const hasValidAlt = img.hasAttribute("alt") && 
+                           (img.getAttribute("alt")?.trim().length ?? 0) > 0;
+
+        // Image is likely informational if:
+        const isInformational = (
+          // Inside content areas
+          img.closest('article, main, section, .content, .post, .article') ||
+          // Has meaningful file names
+          /\b(chart|graph|diagram|photo|screenshot|figure|img|image)\b/i.test(img.src) ||
+          // Is part of a figure
+          img.closest('figure') ||
+          // Has a title attribute (suggests meaningful content)
+          img.hasAttribute('title') ||
+          // Is linked (suggests it's clickable content)
+          img.closest('a') ||
+          // Default assumption for images without clear decorative markers
+          true
+        );
+
+        return isInformational && !hasValidAlt;
+      })
+      .map((img) => ({
+        html: img.outerHTML.slice(0, 200),
+        src: img.src,
+        hasAlt: img.hasAttribute("alt"),
+        altText: img.getAttribute("alt") || "",
+      }));
+  });
+
+  if (!offenders.length) return [];
+  
+  return [
+    {
+      id: "1.1.1",
+      description: "Informational images missing meaningful alt text",
+      impact: "serious",
+      nodes: offenders.map((data) => ({
+        html: data.html,
+        target: [],
+        failureMessage: data.hasAlt 
+          ? `Image has empty alt attribute: "${data.altText}"`
+          : "Image missing alt attribute",
+      })),
+    },
+  ];
+};
+
 
 export const rule_2_5_8_targetSizeMin: RuleFunction = async (page) => {
   const result = await page.evaluate(() => {
@@ -116,10 +193,11 @@ export const rule_2_5_8_targetSizeMin: RuleFunction = async (page) => {
 
 // -------------------- Tier configuration -----------------------------------
 export const tiers = {
-  basic: [axeRule], // axe only
+  basic: [axeRule, rule_1_1_1_images], // axe only
   premium: [axeRule, 
     rule_1_4_2_audio, 
-    rule_2_5_8_targetSizeMin /* add more bespoke functions here */],
+    rule_2_5_8_targetSizeMin,
+    rule_1_1_1_images /* add more bespoke functions here */],
 } as const;
 
 export type TierName = keyof typeof tiers; 
