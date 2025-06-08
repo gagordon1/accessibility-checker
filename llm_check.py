@@ -29,15 +29,12 @@ def scan_url(url: str, model: str = DEFAULT_MODEL) -> List[Violation]:
         browser.close()
 
     client = OpenAIWCAGClient(model=model)
-    text = client.run_check(img_path, WCAG_RULES_VECTOR_STORE_ID, elements)
-    print(text)
-
-    return []
-    # return out
-
+    violations = client.run_check(img_path, WCAG_RULES_VECTOR_STORE_ID, elements)
+    return violations
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(description="WCAG scan via older SDK pattern")
     ap.add_argument("url"); ap.add_argument("--model", default=DEFAULT_MODEL)
     res = scan_url(**vars(ap.parse_args()))
-    print(json.dumps([v.__dict__ for v in res], indent=2))
+    # print(json.dumps([v.__dict__ for v in res], indent=2))
+    print(res)
