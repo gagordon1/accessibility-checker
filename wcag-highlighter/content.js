@@ -57,32 +57,63 @@ const styleSheet = document.createElement('style');
 styleSheet.textContent = iconStyles;
 document.head.appendChild(styleSheet);
 
-// --- 1. Kick off the fetch with error handling ---
+// --- Clear existing violations function ---
+function clearViolations() {
+  // Remove all violation icons
+  const icons = document.querySelectorAll('.wcag-violation-icon');
+  icons.forEach(icon => icon.remove());
+  
+  // Remove all tooltips
+  const tooltips = document.querySelectorAll('.wcag-violation-tooltip');
+  tooltips.forEach(tooltip => tooltip.remove());
+  
+  // Remove highlighting from elements
+  const highlightedElements = document.querySelectorAll('.wcag-highlighted-element');
+  highlightedElements.forEach(el => {
+    el.style.outline = '';
+    el.classList.remove('wcag-highlighted-element');
+    delete el.dataset.wcagFlagged;
+  });
+  
+  console.log("Cleared existing WCAG violations");
+}
+
+// --- Manual scan request function ---
 function requestViolations() {
+  console.log("Requesting WCAG violations scan...");
+  
+  // Clear any existing violations first
+  clearViolations();
+  
   chrome.runtime.sendMessage({
     action: "fetch_violations",
     url: window.location.href
   }, (response) => {
     if (chrome.runtime.lastError) {
       console.warn("WCAG extension: Failed to send message:", chrome.runtime.lastError.message);
-      // Retry after a short delay
-      setTimeout(requestViolations, 1000);
     }
   });
 }
 
-// Wait a bit for the page and extension to be fully loaded
-setTimeout(requestViolations, 500);
-
-// --- 2. Receive results and highlight ---
-chrome.runtime.onMessage.addListener((msg) => {
+// --- Message listener for scan requests and results ---
+chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   if (msg.action === "deliver_error") {
     console.warn("WCAG extension:", msg.error);
     return;
   }
 
   if (msg.action === "deliver_violations") {
+    console.log("Received violations, highlighting...");
     highlightViolations(msg.violations);
+    return;
+  }
+  
+  // Handle manual scan request from popup
+  if (msg.action === "scan_page") {
+    console.log("Manual scan requested");
+    requestViolations();
+    sendResponse({ success: true });
+    return;
   }
 });
 
