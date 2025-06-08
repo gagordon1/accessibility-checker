@@ -1,7 +1,48 @@
-
 from typing import Any, Dict, List, cast
 from playwright.sync_api import Page
 from constants import INTERESTING
+from urllib.parse import urlparse, urlunparse
+import urllib.parse
+import logging
+
+logger = logging.getLogger(__name__)
+
+def normalize_url(url: str) -> str:
+    """Normalize URL for consistent caching by removing variations."""
+    try:
+        # Parse the URL
+        parsed = urlparse(url.lower().strip())
+        
+        # Normalize scheme to https
+        scheme = 'https'
+        
+        # Remove www. prefix
+        netloc = parsed.netloc
+        if netloc.startswith('www.'):
+            netloc = netloc[4:]
+        
+        # Remove trailing slash from path
+        path = parsed.path.rstrip('/')
+        if not path:
+            path = '/'
+        
+        # Sort query parameters for consistent ordering
+        query = parsed.query
+        if query:
+            # Parse query parameters and sort them
+            params = urllib.parse.parse_qsl(query)
+            params.sort()
+            query = urllib.parse.urlencode(params)
+        
+        # Reconstruct normalized URL
+        normalized = urlunparse((scheme, netloc, path, parsed.params, query, ''))
+        
+        logger.debug(f"Normalized URL: {url} -> {normalized}")
+        return normalized
+        
+    except Exception as e:
+        logger.warning(f"Failed to normalize URL {url}: {e}")
+        return url
 
 def extract_elements(page: Page) -> List[Dict[str, Any]]:
     

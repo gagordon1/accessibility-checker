@@ -1,5 +1,5 @@
 {
-  "https://arc.gov": {
+  "https://arc.gov/": {
     "timestamp": "2025-06-08T18:00:35.075948",
     "violations": [
       {
@@ -109,33 +109,82 @@
       }
     ]
   },
-  "https://arc.gov/": {
-    "timestamp": "2025-06-08T18:10:07.842718",
+  "https://farsight-ai.com/": {
+    "timestamp": "2025-06-08T18:47:39.081481",
     "violations": [
       {
         "id": "1.1.1",
         "description": "All non-text content must have a text alternative that serves the equivalent purpose, so users who cannot see the content can understand its meaning via assistive technologies or text equivalents.",
         "nodes": [
           {
-            "html": "<img fetchpriority=\"high\" decoding=\"async\" width=\"1200\" height=\"675\" src=\"https://www.arc.gov/wp-content/uploads/2025/05/2025-Conf-Call-for-Proposals-Due-June-6.png\" alt=\"\" class=\"wp-image-48953\" style=\"width:1080px;height:auto\" srcset=\"https://arc.gov/wp-content/uploads/2025/05/2025-Conf-Call-for-P\" />",
+            "html": "<img decoding=\"async\" width=\"40\" height=\"40\" src=\"https://framerusercontent.com/images/Qxl0xOammq0Wuc1PWzewSLeFEeo.svg\" alt=\"\" style=\"display:block;width:100%;height:100%;border-radius:inherit;object-position:center;object-fit:cover\">",
             "target": [
-              "img.wp-image-48953"
+              "img[src=\"https://framerusercontent.com/images/Qxl0xOammq0Wuc1PWzewSLeFEeo.svg\"]"
             ],
-            "failureSummary": "Image missing meaningful alt text."
+            "failureSummary": "Image has empty alt attribute, which likely does not provide meaningful alternative text. This violates the requirement to provide meaningful text alternatives."
+          },
+          {
+            "html": "<img decoding=\"async\" width=\"40\" height=\"40\" src=\"https://framerusercontent.com/images/XgeHbKsC4LQyu2FVI2CvcsZPdBY.svg\" alt=\"\" style=\"display:block;width:100%;height:100%;border-radius:inherit;object-position:center;object-fit:cover\">",
+            "target": [
+              "img[src=\"https://framerusercontent.com/images/XgeHbKsC4LQyu2FVI2CvcsZPdBY.svg\"]"
+            ],
+            "failureSummary": "Image has empty alt attribute, which likely does not provide meaningful alternative text."
+          },
+          {
+            "html": "<img decoding=\"async\" width=\"40\" height=\"40\" src=\"https://framerusercontent.com/images/FY62FdJNRsWE4jzZ4CDPLIYo7bc.svg\" alt=\"\" style=\"display:block;width:100%;height:100%;border-radius:inherit;object-position:center;object-fit:cover\">",
+            "target": [
+              "img[src=\"https://framerusercontent.com/images/FY62FdJNRsWE4jzZ4CDPLIYo7bc.svg\"]"
+            ],
+            "failureSummary": "Image has empty alt attribute, which likely does not provide meaningful alternative text."
+          },
+          {
+            "html": "<img decoding=\"async\" width=\"40\" height=\"40\" src=\"https://framerusercontent.com/images/mCcjYKopISLeI31xOs7pGwiY4w.svg\" alt=\"\" style=\"display:block;width:100%;height:100%;border-radius:inherit;object-position:center;object-fit:cover\">",
+            "target": [
+              "img[src=\"https://framerusercontent.com/images/mCcjYKopISLeI31xOs7pGwiY4w.svg\"]"
+            ],
+            "failureSummary": "Image has empty alt attribute, which likely does not provide meaningful alternative text."
           }
         ],
         "impact": "serious"
       },
       {
-        "id": "1.1.1",
-        "description": "All non-text content must have a text alternative that serves the equivalent purpose, so users who cannot see the content can understand its meaning via assistive technologies or text equivalents.",
+        "id": "1.4.3",
+        "description": "Ensure text and images of text have a contrast ratio of at least 4.5:1 (3:1 for large text) so users with low vision or color deficiencies can read content.",
         "nodes": [
           {
-            "html": "<img decoding=\"async\" src=\"https://arc.gov/wp-content/uploads/2020/07/AppalachianRegionMap-700x664.jpg\" alt=\"\" />",
+            "html": "<a class=\"framer-1ah597z framer-1fm18o4\" style=\"border-radius: 8px; opacity: 1;\" href=\"./#benefits\"><div class=\"framer-t0llol\" data-framer-name=\"Text\" style=\"outline: none; display: flex; flex-direction: column; justify-content: flex-start; flex-shrink: 0; --extracted-r6o4lv: rgb(71, 84, 102); --fra",
             "target": [
-              "img[src=\"https://arc.gov/wp-content/uploads/2020/07/AppalachianRegionMap-700x664.jpg\"]"
+              "a.framer-1ah597z.framer-1fm18o4[href=\"./#benefits\"]"
             ],
-            "failureSummary": "Image missing meaningful alt text."
+            "failureSummary": "Text color rgb(71, 84, 102) on background color is too low contrast. Contrast ratio may be below 4.5:1 threshold."
+          },
+          {
+            "html": "<a class=\"framer-1ah597z framer-1fm18o4\" style=\"border-radius: 8px; opacity: 1;\" href=\"./team\"><div class=\"framer-t0llol\" data-framer-name=\"Text\" style=\"outline: none; display: flex; flex-direction: column; justify-content: flex-start; flex-shrink: 0; --extracted-r6o4lv: rgb(71, 84, 102); --framer-p",
+            "target": [
+              "a.framer-1ah597z.framer-1fm18o4[href=\"./team\"]"
+            ],
+            "failureSummary": "Text color rgb(71, 84, 102) on background color is too low contrast."
+          },
+          {
+            "html": "<a class=\"framer-1ah597z framer-1fm18o4\" style=\"border-radius: 8px; opacity: 1;\" href=\"./blog\"><div class=\"framer-t0llol\" data-framer-name=\"Text\" style=\"outline: none; display: flex; flex-direction: column; justify-content: flex-start; flex-shrink: 0; --extracted-r6o4lv: rgb(71, 84, 102); --framer-p",
+            "target": [
+              "a.framer-1ah597z.framer-1fm18o4[href=\"./blog\"]"
+            ],
+            "failureSummary": "Text color rgb(71, 84, 102) on background color is too low contrast."
+          }
+        ],
+        "impact": "moderate"
+      },
+      {
+        "id": "4.1.2",
+        "description": "UI components must expose programmatic name, role, state/value, and changes to assistive technologies.",
+        "nodes": [
+          {
+            "html": "<a data-framer-component-type=\"SVG\" data-framer-name=\"HorizontalLogo\" href=\"./\" data-framer-page-link-current=\"true\" style=\"image-rendering: pixelated; flex-shrink: 0; fill: rgb(0, 0, 0); color: rgb(0, 0, 0); opacity: 1;\" class=\"framer-3wl0f4 framer-1bnbn01\" aria-hidden=\"true\"><div class=\"svgContain",
+            "target": [
+              "a.framer-3wl0f4.framer-1bnbn01[data-framer-component-type=\"SVG\"]"
+            ],
+            "failureSummary": "Element is an SVG link but marked aria-hidden=true, so it may not expose accessible name or role to assistive technologies."
           }
         ],
         "impact": "serious"

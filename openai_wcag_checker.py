@@ -3,9 +3,12 @@ from pathlib import Path
 import os
 import json
 import base64
+import logging
 from typing import List, Dict, Any, Optional
 from type_hints.wcag_types import WCAGCheckResponse, Violation
 from type_hints.model_types import MODEL_PRICING_REGISTRY
+
+logger = logging.getLogger(__name__)
 
 class OpenAIWCAGClient:
     def __init__(self, model: str):
@@ -82,7 +85,7 @@ class OpenAIWCAGClient:
             if usage:
                 input_tokens, output_tokens = usage.input_tokens, usage.output_tokens
                 cost = MODEL_PRICING_REGISTRY[self.model].calculate_cost(input_tokens, output_tokens)
-                print(f"Cost: ${cost:.4f}")
+                logger.info(f"Cost: ${cost:.4f}")
             if not content:
                 raise RuntimeError("Empty response from OpenAI")
             return content.violations

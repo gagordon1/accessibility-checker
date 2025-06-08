@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 from llm_check import scan_url
 import json
 from pathlib import Path
-from datetime import datetime
+from utils.scrape import normalize_url
 import logging
 
 # Configure logging
@@ -18,22 +18,17 @@ app = Flask(__name__)
 def get_cached_violations(url: str) -> dict | None:
     """Get cached violations for a URL if they exist and are recent (less than 24 hours old)."""
     violations_file = Path("violations/violations.json")
+    normalized_url = normalize_url(url)
     if not violations_file.exists():
         return None
         
     with open(violations_file, 'r') as f:
         data = json.load(f)
         
-    if url not in data:
-        print(data)
+    if normalized_url not in data:
         return None
         
-    # # Check if the cached data is less than 24 hours old
-    # cached_time = datetime.fromisoformat(data[url]['timestamp'])
-    # if datetime.now() - cached_time > timedelta(hours=24):
-    #     return None
-        
-    return data[url]
+    return data[normalized_url]
 
 @app.route('/api/violations', methods=['GET'])
 def get_violations():

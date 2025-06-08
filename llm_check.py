@@ -12,7 +12,7 @@ import logging
 from playwright.sync_api import sync_playwright
 from dotenv import load_dotenv
 from constants import WCAG_RULES_VECTOR_STORE_ID
-from utils.scrape import extract_elements, scroll_to_bottom
+from utils.scrape import extract_elements, scroll_to_bottom, normalize_url
 from openai_wcag_checker import OpenAIWCAGClient
 from type_hints.wcag_types import Violation
 
@@ -46,7 +46,7 @@ def save_violations(url: str, violations: List[Violation]) -> str:
         data = {}
     
     # Update data for this URL
-    data[url] = {
+    data[normalize_url(url)] = {
         'timestamp': datetime.now().isoformat(),
         'violations': [v.model_dump() for v in violations]
     }
