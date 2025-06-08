@@ -1,8 +1,0 @@
-[
-  {
-    "url": "https://dnsops.gov/",
-    "timestamp": "2025-06-07T19:09:43.081Z",
-    "violations": [],
-    "error": "net::ERR_NAME_NOT_RESOLVED at https://dnsops.gov/"
-  }
-]

@@ -1,8 +1,0 @@
-[
-  {
-    "url": "https://cigie.gov/",
-    "timestamp": "2025-06-07T19:05:45.629Z",
-    "violations": [],
-    "error": "net::ERR_NAME_NOT_RESOLVED at https://cigie.gov/"
-  }
-]

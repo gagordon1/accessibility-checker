@@ -1,8 +1,0 @@
-[
-  {
-    "url": "https://cnss.gov/",
-    "timestamp": "2025-06-07T19:19:45.513Z",
-    "violations": [],
-    "error": "net::ERR_CERT_AUTHORITY_INVALID at https://cnss.gov/"
-  }
-]

@@ -1,8 +1,0 @@
-[
-  {
-    "url": "https://usandc.gov/",
-    "timestamp": "2025-06-07T19:27:22.834Z",
-    "violations": [],
-    "error": "net::ERR_NAME_NOT_RESOLVED at https://usandc.gov/"
-  }
-]

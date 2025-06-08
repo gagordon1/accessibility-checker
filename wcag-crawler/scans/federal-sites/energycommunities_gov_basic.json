@@ -1,8 +1,0 @@
-[
-  {
-    "url": "https://energycommunities.gov/",
-    "timestamp": "2025-06-07T19:35:16.995Z",
-    "violations": [],
-    "error": "net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://energycommunities.gov/"
-  }
-]

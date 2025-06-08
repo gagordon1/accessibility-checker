@@ -1,8 +1,0 @@
-[
-  {
-    "url": "https://hive.gov/",
-    "timestamp": "2025-06-07T19:22:17.485Z",
-    "violations": [],
-    "error": "net::ERR_CERT_COMMON_NAME_INVALID at https://hive.gov/"
-  }
-]

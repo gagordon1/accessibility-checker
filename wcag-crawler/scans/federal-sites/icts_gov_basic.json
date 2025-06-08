@@ -1,8 +1,0 @@
-[
-  {
-    "url": "https://icts.gov/",
-    "timestamp": "2025-06-07T19:11:40.711Z",
-    "violations": [],
-    "error": "net::ERR_DNS_NO_MATCHING_SUPPORTED_ALPN at https://icts.gov/"
-  }
-]

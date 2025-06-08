@@ -1,8 +1,0 @@
-[
-  {
-    "url": "https://osde.gov/",
-    "timestamp": "2025-06-07T18:59:41.235Z",
-    "violations": [],
-    "error": "net::ERR_NAME_NOT_RESOLVED at https://osde.gov/"
-  }
-]

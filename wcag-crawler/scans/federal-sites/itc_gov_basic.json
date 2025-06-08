@@ -1,8 +1,0 @@
-[
-  {
-    "url": "https://itc.gov/",
-    "timestamp": "2025-06-07T19:22:47.934Z",
-    "violations": [],
-    "error": "net::ERR_NAME_NOT_RESOLVED at https://itc.gov/"
-  }
-]

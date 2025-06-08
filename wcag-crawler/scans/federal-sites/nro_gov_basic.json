@@ -1,8 +1,0 @@
-[
-  {
-    "url": "https://nro.gov/",
-    "timestamp": "2025-06-07T19:25:24.060Z",
-    "violations": [],
-    "error": "net::ERR_NAME_NOT_RESOLVED at https://nro.gov/"
-  }
-]

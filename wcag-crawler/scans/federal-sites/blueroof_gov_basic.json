@@ -1,8 +1,0 @@
-[
-  {
-    "url": "https://blueroof.gov/",
-    "timestamp": "2025-06-07T19:18:59.451Z",
-    "violations": [],
-    "error": "net::ERR_CERT_COMMON_NAME_INVALID at https://blueroof.gov/"
-  }
-]

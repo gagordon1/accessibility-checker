@@ -1,8 +1,0 @@
-[
-  {
-    "url": "https://ameslab.gov/",
-    "timestamp": "2025-06-07T19:30:12.555Z",
-    "violations": [],
-    "error": "net::ERR_NAME_NOT_RESOLVED at https://ameslab.gov/"
-  }
-]

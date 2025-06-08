@@ -1,8 +1,0 @@
-[
-  {
-    "url": "https://consumerprotection.gov/",
-    "timestamp": "2025-06-07T19:02:09.508Z",
-    "violations": [],
-    "error": "net::ERR_CERT_COMMON_NAME_INVALID at https://consumerprotection.gov/"
-  }
-]

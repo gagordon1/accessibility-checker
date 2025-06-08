@@ -1,8 +1,0 @@
-[
-  {
-    "url": "https://gps.gov/",
-    "timestamp": "2025-06-07T19:11:10.611Z",
-    "violations": [],
-    "error": "net::ERR_CERT_DATE_INVALID at https://gps.gov/"
-  }
-]

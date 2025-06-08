@@ -1,8 +1,0 @@
-[
-  {
-    "url": "https://lps.gov/",
-    "timestamp": "2025-06-07T19:23:15.662Z",
-    "violations": [],
-    "error": "net::ERR_NAME_NOT_RESOLVED at https://lps.gov/"
-  }
-]
