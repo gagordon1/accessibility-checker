@@ -1,0 +1,145 @@
+{
+  "https://arc.gov": {
+    "timestamp": "2025-06-08T18:00:35.075948",
+    "violations": [
+      {
+        "id": "1.1.1",
+        "description": "All non-text content must have a text alternative that serves the equivalent purpose. The image with src \"https://www.arc.gov/wp-content/uploads/2025/05/2025-Conf-Call-for-Proposals-Due-June-6.png\" is missing alt text.",
+        "nodes": [
+          {
+            "html": "<img fetchpriority=\"high\" decoding=\"async\" width=\"1200\" height=\"675\" src=\"https://www.arc.gov/wp-content/uploads/2025/05/2025-Conf-Call-for-Proposals-Due-June-6.png\" alt=\"\" class=\"wp-image-48953\" style=\"width:1080px;height:auto\">",
+            "target": [
+              "img.wp-image-48953"
+            ],
+            "failureSummary": "Image element has empty alt attribute indicating missing alternative text."
+          }
+        ],
+        "impact": "critical"
+      },
+      {
+        "id": "1.1.1",
+        "description": "All non-text content must have a text alternative that serves the equivalent purpose. Some other images have empty alt attributes, missing meaningful alt text.",
+        "nodes": [
+          {
+            "html": "<img decoding=\"async\" src=\"https://arc.gov/wp-content/uploads/2020/07/AppalachianRegionMap-700x664.jpg\" alt=\"\">",
+            "target": [
+              "img"
+            ],
+            "failureSummary": "Image element has empty alt attribute indicating missing alternative text."
+          },
+          {
+            "html": "<img decoding=\"async\" src=\"https://arc.gov/wp-content/uploads/2025/05/2025-Conf-50-50-700x700.png\" alt=\"\">",
+            "target": [
+              "img"
+            ],
+            "failureSummary": "Image element has empty alt attribute indicating missing alternative text."
+          },
+          {
+            "html": "<img decoding=\"async\" src=\"https://arc.gov/wp-content/uploads/2020/07/48988521272_3ce1f91f05_o-scaled-600x500-c-top.jpg\" alt=\"\">",
+            "target": [
+              "img"
+            ],
+            "failureSummary": "Image element has empty alt attribute indicating missing alternative text."
+          },
+          {
+            "html": "<img decoding=\"async\" src=\"https://arc.gov/wp-content/uploads/2021/06/306654053-700x467.jpeg\" alt=\"\">",
+            "target": [
+              "img"
+            ],
+            "failureSummary": "Image element has empty alt attribute indicating missing alternative text."
+          }
+        ],
+        "impact": "critical"
+      },
+      {
+        "id": "1.4.3",
+        "description": "Ensure text and images of text have a contrast ratio of at least 4.5:1 (3:1 for large text) so users with low vision or color deficiencies can read content. Text \"Investing in Appalachia\u2019s economic future.\" in bright blue on white might meet contrast but verify the exact shade especially the blue links which appear light and might fail contrast requirements.",
+        "nodes": [
+          {
+            "html": "<h1 class=\"page-title\">Investing in Appalachia\u00039s economic future.</h1>",
+            "target": [
+              "h1.page-title"
+            ],
+            "failureSummary": "Potentially insufficient color contrast for text on background."
+          }
+        ],
+        "impact": "serious"
+      },
+      {
+        "id": "1.4.1",
+        "description": "Do not use color as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element. Some links or elements styled with only color might be difficult to distinguish for users with color blindness or low vision.",
+        "nodes": [
+          {
+            "html": "<a href=\"https://arc.gov/news/events/2025-soar-summit\" class=\"button button--green\">Learn More</a>",
+            "target": [
+              "a.button.button--green"
+            ],
+            "failureSummary": "Link styled with color alone; no additional visual cue."
+          }
+        ],
+        "impact": "moderate"
+      },
+      {
+        "id": "4.1.2",
+        "description": "Name, Role, Value: UI components must expose programmatic name, role, state/value, and changes to assistive technologies. Some menu toggle buttons with aria-haspopup=\"menu\" do not have an accessible label describing their function beyond 'Menu'.",
+        "nodes": [
+          {
+            "html": "<button class=\"mobile-menu-button mobile-menu-button--menu\" aria-haspopup=\"menu\" style=\"display: none;\"><span class=\"mobile-menu-button__icon\">Menu</span></button>",
+            "target": [
+              "button.mobile-menu-button.mobile-menu-button--menu"
+            ],
+            "failureSummary": "Toggle button lacks accessible name or label beyond visible text, which might not be exposed."
+          }
+        ],
+        "impact": "serious"
+      },
+      {
+        "id": "4.1.2",
+        "description": "Name, Role, Value: UI components must expose programmatic name, role, state/value, and changes to assistive technologies. Sub-navigation toggle buttons using aria-controls and aria-expanded do not provide accessible labels beyond visually hidden text 'Toggle SubNav'. Recommend more descriptive accessible names.",
+        "nodes": [
+          {
+            "html": "<button class=\"mobile-menu__subnav-arrow\" aria-controls=\"mobile-menu-appalachian-region\" aria-expanded=\"false\"><span class=\"visually-hidden\">Toggle SubNav</span></button>",
+            "target": [
+              "button.mobile-menu__subnav-arrow"
+            ],
+            "failureSummary": "Toggle button has a generic label 'Toggle SubNav' which may not fully describe the target or purpose."
+          }
+        ],
+        "impact": "moderate"
+      }
+    ]
+  },
+  "https://arc.gov/": {
+    "timestamp": "2025-06-08T18:10:07.842718",
+    "violations": [
+      {
+        "id": "1.1.1",
+        "description": "All non-text content must have a text alternative that serves the equivalent purpose, so users who cannot see the content can understand its meaning via assistive technologies or text equivalents.",
+        "nodes": [
+          {
+            "html": "<img fetchpriority=\"high\" decoding=\"async\" width=\"1200\" height=\"675\" src=\"https://www.arc.gov/wp-content/uploads/2025/05/2025-Conf-Call-for-Proposals-Due-June-6.png\" alt=\"\" class=\"wp-image-48953\" style=\"width:1080px;height:auto\" srcset=\"https://arc.gov/wp-content/uploads/2025/05/2025-Conf-Call-for-P\" />",
+            "target": [
+              "img.wp-image-48953"
+            ],
+            "failureSummary": "Image missing meaningful alt text."
+          }
+        ],
+        "impact": "serious"
+      },
+      {
+        "id": "1.1.1",
+        "description": "All non-text content must have a text alternative that serves the equivalent purpose, so users who cannot see the content can understand its meaning via assistive technologies or text equivalents.",
+        "nodes": [
+          {
+            "html": "<img decoding=\"async\" src=\"https://arc.gov/wp-content/uploads/2020/07/AppalachianRegionMap-700x664.jpg\" alt=\"\" />",
+            "target": [
+              "img[src=\"https://arc.gov/wp-content/uploads/2020/07/AppalachianRegionMap-700x664.jpg\"]"
+            ],
+            "failureSummary": "Image missing meaningful alt text."
+          }
+        ],
+        "impact": "serious"
+      }
+    ]
+  }
+}
