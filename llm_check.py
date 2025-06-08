@@ -14,16 +14,13 @@ from openai_wcag_checker import OpenAIWCAGClient
 from type_hints.wcag_types import Violation
 
 load_dotenv()
-DEFAULT_MODEL = "gpt-4o-mini"
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
-
-
+DEFAULT_MODEL = "gpt-4.1-mini"
 
 def scan_url(url: str, model: str = DEFAULT_MODEL) -> List[Violation]:
     # ── Playwright capture ──────────────────────────────────────────────────
     with sync_playwright() as p:
         browser = p.chromium.launch()
-        page = browser.new_page(device_scale_factor=1)
+        page = browser.new_page(device_scale_factor=0.8)
         page.goto(url, wait_until="networkidle")
         scroll_to_bottom(page)  # Scroll through page to trigger lazy loading
         elements = extract_elements(page)
@@ -31,7 +28,7 @@ def scan_url(url: str, model: str = DEFAULT_MODEL) -> List[Violation]:
         page.screenshot(path=str(img_path), full_page=True)
         browser.close()
 
-    client = OpenAIWCAGClient()
+    client = OpenAIWCAGClient(model=model)
     text = client.run_check(img_path, WCAG_RULES_VECTOR_STORE_ID, elements)
     print(text)
 

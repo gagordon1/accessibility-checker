@@ -5,14 +5,12 @@ import json
 import base64
 from typing import List, Dict, Any, Optional
 from type_hints.wcag_types import WCAGCheckResponse, Violation
-
+from type_hints.model_types import MODEL_PRICING_REGISTRY
 
 class OpenAIWCAGClient:
-    def __init__(self, api_key: Optional[str] = None):
-        if api_key:
-            os.environ['OPENAI_API_KEY'] = api_key
+    def __init__(self, model: str):
         self.client = OpenAI()
-        self.model = "gpt-4o"
+        self.model = model
 
     def run_check(
         self,
@@ -80,6 +78,11 @@ class OpenAIWCAGClient:
         # Validate and parse the structured output
         try:
             content = response.output_parsed
+            usage = response.usage
+            if usage:
+                input_tokens, output_tokens = usage.input_tokens, usage.output_tokens
+                cost = MODEL_PRICING_REGISTRY[self.model].calculate_cost(input_tokens, output_tokens)
+                print(f"Cost: ${cost:.4f}")
             if not content:
                 raise RuntimeError("Empty response from OpenAI")
             return content.violations

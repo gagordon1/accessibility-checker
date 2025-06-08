@@ -25,9 +25,8 @@ def scroll_to_bottom(page):
             while (totalHeight < document.body.scrollHeight) {
                 window.scrollBy(0, distance);
                 totalHeight += distance;
-                await new Promise(resolve => setTimeout(resolve, 300));
+                await new Promise(resolve => setTimeout(resolve, 500));
             }
-            window.scrollTo(0, 0);  // scroll back up if needed
         }
         """
     )
