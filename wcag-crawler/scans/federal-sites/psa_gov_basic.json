@@ -1,0 +1,64 @@
+[
+  {
+    "url": "https://psa.gov/",
+    "timestamp": "2025-06-07T19:06:44.061Z",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "nodes": [
+          {
+            "html": "<input title=\"Enter the terms you wish to search for.\" type=\"text\" id=\"edit-search-block-form--2\" name=\"search_block_form\" value=\"\" size=\"15\" maxlength=\"128\" class=\"form-text\">",
+            "target": [
+              "#edit-search-block-form--2"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.25 (foreground color: #77725f, background color: #f5f0ea, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/about/directors_message\">Read more...</a>",
+            "target": [
+              "font > a[href$=\"directors_message\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.65 (foreground color: #4f87be, background color: #1c2b52, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<strong>Judicial Concurrence</strong>",
+            "target": [
+              "td:nth-child(1) > h3 > a[href=\"/?q=node/718\"] > span > strong"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.23 (foreground color: #daa520, background color: #ffffff, font size: 14.0pt (18.6667px), font weight: bold). Expected contrast ratio of 3:1"
+          },
+          {
+            "html": "<strong>Continued Pretrial Release</strong>",
+            "target": [
+              "td:nth-child(2) > h3 > a[href=\"/?q=node/718\"] > span > strong"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.23 (foreground color: #daa520, background color: #ffffff, font size: 14.0pt (18.6667px), font weight: bold). Expected contrast ratio of 3:1"
+          },
+          {
+            "html": "<strong>Arrest-Free</strong>",
+            "target": [
+              "td:nth-child(3) > h3 > a[href=\"/?q=node/718\"] > span > strong"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.23 (foreground color: #daa520, background color: #ffffff, font size: 14.0pt (18.6667px), font weight: bold). Expected contrast ratio of 3:1"
+          },
+          {
+            "html": "<strong>Court Appearance</strong>",
+            "target": [
+              "td:nth-child(4) > h3 > a[href=\"/?q=node/718\"] > span > strong"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.23 (foreground color: #daa520, background color: #ffffff, font size: 14.0pt (18.6667px), font weight: bold). Expected contrast ratio of 3:1"
+          },
+          {
+            "html": "<a href=\"?q=en_espanol\">PSA.GOV en ESPAÑOL</a>",
+            "target": [
+              "a[href=\"?q=en_espanol\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.34 (foreground color: #4f87be, background color: #e8f2fb, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ]
+  }
+]

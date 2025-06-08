@@ -1,0 +1,29 @@
+[
+  {
+    "url": "https://spaceweather.gov/",
+    "timestamp": "2025-06-07T19:15:56.207Z",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "nodes": [
+          {
+            "html": "<th class=\"noaa_scale_bg_4\">Kp = 8, 9- (G4)</th>",
+            "target": [
+              ".noaa_scale_bg_4"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.15 (foreground color: #333333, background color: #ff0000, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<th class=\"noaa_scale_bg_5\">Kp = 9o (G5)</th>",
+            "target": [
+              ".noaa_scale_bg_5"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.07 (foreground color: #333333, background color: #c80000, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ]
+  }
+]

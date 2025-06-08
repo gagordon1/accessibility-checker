@@ -1,0 +1,8 @@
+[
+  {
+    "url": "https://defense.gov/",
+    "timestamp": "2025-06-07T19:20:09.791Z",
+    "violations": [],
+    "error": "net::ERR_ABORTED at https://defense.gov/"
+  }
+]

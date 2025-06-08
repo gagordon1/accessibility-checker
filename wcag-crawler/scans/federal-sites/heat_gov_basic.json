@@ -1,0 +1,8 @@
+[
+  {
+    "url": "https://heat.gov/",
+    "timestamp": "2025-06-07T19:11:17.023Z",
+    "violations": [],
+    "error": "net::ERR_CERT_DATE_INVALID at https://heat.gov/"
+  }
+]

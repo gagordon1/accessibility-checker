@@ -1,0 +1,8 @@
+[
+  {
+    "url": "https://fafsa.gov/",
+    "timestamp": "2025-06-07T19:29:22.337Z",
+    "violations": [],
+    "error": "net::ERR_HTTP2_PROTOCOL_ERROR at https://fafsa.gov/"
+  }
+]

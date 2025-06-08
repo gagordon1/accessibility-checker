@@ -1,0 +1,8 @@
+[
+  {
+    "url": "https://dnfsb.gov/",
+    "timestamp": "2025-06-07T19:06:50.536Z",
+    "violations": [],
+    "error": "net::ERR_NAME_NOT_RESOLVED at https://dnfsb.gov/"
+  }
+]

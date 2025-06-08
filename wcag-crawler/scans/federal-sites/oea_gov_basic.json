@@ -1,0 +1,8 @@
+[
+  {
+    "url": "https://oea.gov/",
+    "timestamp": "2025-06-07T19:26:30.962Z",
+    "violations": [],
+    "error": "net::ERR_NAME_NOT_RESOLVED at https://oea.gov/"
+  }
+]

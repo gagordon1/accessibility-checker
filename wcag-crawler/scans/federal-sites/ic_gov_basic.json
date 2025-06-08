@@ -1,0 +1,8 @@
+[
+  {
+    "url": "https://ic.gov/",
+    "timestamp": "2025-06-07T18:57:08.972Z",
+    "violations": [],
+    "error": "net::ERR_NAME_NOT_RESOLVED at https://ic.gov/"
+  }
+]

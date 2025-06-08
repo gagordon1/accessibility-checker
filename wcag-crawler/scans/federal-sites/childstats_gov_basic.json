@@ -1,0 +1,20 @@
+[
+  {
+    "url": "https://childstats.gov/",
+    "timestamp": "2025-06-07T19:28:56.378Z",
+    "violations": [
+      {
+        "id": "1.1.1",
+        "description": "Informational images missing meaningful alt text",
+        "impact": "serious",
+        "nodes": [
+          {
+            "html": "<img src=\"/images/hp_tableArrow.png\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          }
+        ]
+      }
+    ]
+  }
+]

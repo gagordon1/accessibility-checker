@@ -1,0 +1,64 @@
+[
+  {
+    "url": "https://poolsafely.gov/",
+    "timestamp": "2025-06-07T19:03:03.732Z",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "nodes": [
+          {
+            "html": "<a lang=\"es-ES\" hreflang=\"es-ES\" href=\"https://www.poolsafely.gov/espanol/\">Español</a>",
+            "target": [
+              ".lang-switcher > .lang-item.lang-item-47.lang-item-espanol > a[lang=\"es-ES\"][hreflang$=\"es-ES\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.76 (foreground color: #2863ce, background color: #ffcf06, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<button type=\"button\">Get Started</button>",
+            "target": [
+              "button[type=\"button\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.76 (foreground color: #2863ce, background color: #ffcf06, font size: 13.5pt (18px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"https://apps.apple.com/us/app/id986906451\" class=\"button apple\" target=\"_blank\">",
+            "target": [
+              ".apple"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.76 (foreground color: #2863ce, background color: #ffcf06, font size: 13.5pt (18px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"https://play.google.com/store/apps/details?id=gov.poolsafely.psgame.android\" class=\"button google\" target=\"_blank\">",
+            "target": [
+              ".google"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.76 (foreground color: #2863ce, background color: #ffcf06, font size: 13.5pt (18px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a class=\"orange-button\" href=\"https://www.poolsafely.gov/collaborators/become-a-collaborator/\">Become a Collaborator <i class=\"fa fa-caret-right\"></i></a>",
+            "target": [
+              ".orange-button"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.76 (foreground color: #2863ce, background color: #ffcf06, font size: 13.5pt (18px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<input name=\"s\" placeholder=\"Search\">",
+            "target": [
+              ".search > form[action=\"https://www.poolsafely.gov/\"][method=\"get\"] > label > input[placeholder=\"Search\"][name=\"s\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.56 (foreground color: #00afdd, background color: #ffffff, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<div class=\"mobile-lang-switcher\">",
+            "target": [
+              "#navPanel > .mobile-lang-switcher"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.48 (foreground color: #ffffff, background color: #ffcf06, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ]
+  }
+]

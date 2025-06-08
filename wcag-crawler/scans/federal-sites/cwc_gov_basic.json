@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://cwc.gov/",
+    "timestamp": "2025-06-07T19:08:52.578Z",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "nodes": [
+          {
+            "html": "<span style=\"color:red\">CWC Schedule 3 End-Use Certificates</span>",
+            "target": [
+              "div[align=\"left\"] > li > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.99 (foreground color: #ff0000, background color: #ffffff, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ]
+  }
+]

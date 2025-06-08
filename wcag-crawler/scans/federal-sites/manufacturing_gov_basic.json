@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://manufacturing.gov/",
+    "timestamp": "2025-06-07T19:12:33.102Z",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "nodes": [
+          {
+            "html": "<h3>Made in America Office (MIAO)</h3>",
+            "target": [
+              ".usa-summary-box__body > h3"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.63 (foreground color: #28a0cb, background color: #e1f3f8, font size: 16.6pt (22.08px), font weight: bold). Expected contrast ratio of 3:1"
+          }
+        ]
+      }
+    ]
+  }
+]

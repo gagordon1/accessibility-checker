@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://vistacampus.gov/",
+    "timestamp": "2025-06-07T19:05:27.202Z",
+    "violations": [
+      {
+        "id": "1.1.1",
+        "description": "Informational images missing meaningful alt text",
+        "impact": "serious",
+        "nodes": [
+          {
+            "html": "<img src=\"/sites/social/themes/custom/subsocialblue/logo.svg\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img src=\"/sites/social/themes/custom/subsocialblue/images/search.svg\" width=\"34px\" height=\"34px\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img src=\"/sites/opigno/themes/custom/subaristotle/images/mobile-icon.svg\" style=\"width: 43px; height: 38px\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img src=\"/sites/opigno/themes/custom/subaristotle/logo.svg\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "url": "https://bis.gov/",
+    "timestamp": "2025-06-07T19:07:47.287Z",
+    "violations": [
+      {
+        "id": "1.1.1",
+        "description": "Informational images missing meaningful alt text",
+        "impact": "serious",
+        "nodes": [
+          {
+            "html": "<img src=\"/_next/static/media/us_flag_small.ad6eb982.png\" class=\"w-4 h-[11px] mr-2\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          }
+        ]
+      }
+    ]
+  }
+]

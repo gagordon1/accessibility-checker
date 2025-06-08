@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://hurricanes.gov/",
+    "timestamp": "2025-06-07T19:11:25.717Z",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "nodes": [
+          {
+            "html": "<input id=\"inputstring\" name=\"inputstring\" type=\"text\" size=\"8\" value=\"Enter City,St or ZIP code\" onclick=\"this.value=''\">",
+            "target": [
+              "#inputstring"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.84 (foreground color: #999999, background color: #ffffff, font size: 7.0pt (9.33333px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ]
+  }
+]

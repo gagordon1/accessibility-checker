@@ -1,0 +1,8 @@
+[
+  {
+    "url": "https://devcftc.gov/",
+    "timestamp": "2025-06-07T19:00:15.496Z",
+    "violations": [],
+    "error": "net::ERR_NAME_NOT_RESOLVED at https://devcftc.gov/"
+  }
+]

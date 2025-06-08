@@ -1,0 +1,65 @@
+[
+  {
+    "url": "https://dra.gov/",
+    "timestamp": "2025-06-07T19:06:58.910Z",
+    "violations": [
+      {
+        "id": "1.1.1",
+        "description": "Informational images missing meaningful alt text",
+        "impact": "serious",
+        "nodes": [
+          {
+            "html": "<img data-gt-lazy-src=\"/wp-content/plugins/gtranslate/flags/svg/ar.svg\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img data-gt-lazy-src=\"/wp-content/plugins/gtranslate/flags/svg/zh-CN.svg\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img data-gt-lazy-src=\"/wp-content/plugins/gtranslate/flags/svg/en-us.svg\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img data-gt-lazy-src=\"/wp-content/plugins/gtranslate/flags/svg/fr-qc.svg\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img data-gt-lazy-src=\"/wp-content/plugins/gtranslate/flags/svg/de.svg\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img data-gt-lazy-src=\"/wp-content/plugins/gtranslate/flags/svg/ja.svg\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img data-gt-lazy-src=\"/wp-content/plugins/gtranslate/flags/svg/ko.svg\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img data-gt-lazy-src=\"/wp-content/plugins/gtranslate/flags/svg/pl.svg\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img data-gt-lazy-src=\"/wp-content/plugins/gtranslate/flags/svg/pt.svg\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img data-gt-lazy-src=\"/wp-content/plugins/gtranslate/flags/svg/es-mx.svg\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          }
+        ]
+      }
+    ]
+  }
+]

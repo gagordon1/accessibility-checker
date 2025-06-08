@@ -1,0 +1,164 @@
+[
+  {
+    "url": "https://nrd.gov/",
+    "timestamp": "2025-06-07T19:25:17.081Z",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "nodes": [
+          {
+            "html": "<a href=\"mailto:infonrd.osd@mail.mil\" class=\"text-red-cool-50v\" aria-label=\"Email infonrd.osd@mail.mil for information\"><i class=\"fa-regular fa-xl fa-envelope text-black\" aria-hidden=\"true\"></i> infonrd.osd@mail.mil</a>",
+            "target": [
+              ".text-red-cool-50v"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.57 (foreground color: #e41d3d, background color: #e4e2e0, font size: 9.4pt (12.6px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "id": "1.1.1",
+        "description": "Informational images missing meaningful alt text",
+        "impact": "serious",
+        "nodes": [
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/carousel/US_VA affairs_62025.png\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/carousel/Alzheimers n Brain_Month_62025.png\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/carousel/National_Headache_Foundation_Logo.png\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/carousel/wearblue-logo.png\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/carousel/NRPA_60th.png\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/carousel/Elder_Abuse_062025.png\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/carousel/US_VA affairs_62025.png\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/carousel/Alzheimers n Brain_Month_62025.png\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/carousel/National_Headache_Foundation_Logo.png\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/carousel/wearblue-logo.png\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/carousel/NRPA_60th.png\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/carousel/Elder_Abuse_062025.png\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/carousel/US_VA affairs_62025.png\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/carousel/Alzheimers n Brain_Month_62025.png\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/carousel/National_Headache_Foundation_Logo.png\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/carousel/wearblue-logo.png\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/carousel/NRPA_60th.png\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/carousel/Elder_Abuse_062025.png\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/logos/Defense-Suicide-Prevention-Office.jpg\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/logos/DVA_emblem.jpg\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/logos/VA-NCPTSD_Color-Logo.jpg\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/logos/Federal-Trade-Commission.jpg\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/logos/BBB.jpg\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/logos/American-Red-Cross.jpg\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/logos/Tricare.jpg\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/logos/Milconnect.jpg\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img rounded=\"0\" src=\"https://nrd.gov/images/logos/DFAS.jpg\" class=\"card-img\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          }
+        ]
+      }
+    ]
+  }
+]

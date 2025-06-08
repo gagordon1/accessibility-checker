@@ -1,0 +1,62 @@
+[
+  {
+    "url": "https://fvap.gov/",
+    "timestamp": "2025-06-07T19:22:09.136Z",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "nodes": [
+          {
+            "html": "<a target=\"_blank\" href=\"https://vote.gov/\">Vote.gov</a>",
+            "target": [
+              "a[href$=\"vote.gov/\"][target=\"_blank\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.63 (foreground color: #428bca, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"arizona\">Arizona</a>",
+            "target": [
+              "tr:nth-child(1) > td:nth-child(2) > div > .state > a[href$=\"arizona\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.63 (foreground color: #428bca, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"arizona\">Arizona</a>",
+            "target": [
+              "tr:nth-child(2) > td:nth-child(2) > div > .state > a[href$=\"arizona\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.63 (foreground color: #428bca, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "id": "meta-viewport",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "impact": "critical",
+        "nodes": [
+          {
+            "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">",
+            "target": [
+              "meta[name=\"viewport\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  user-scalable=no on <meta> tag disables zooming on mobile devices"
+          }
+        ]
+      },
+      {
+        "id": "1.1.1",
+        "description": "Informational images missing meaningful alt text",
+        "impact": "serious",
+        "nodes": [
+          {
+            "html": "<img src=\"/uploads/FVAP/Images/Hero-XS-Pre-479x493_v2a.jpg\" width=\"100%\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          }
+        ]
+      }
+    ]
+  }
+]

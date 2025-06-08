@@ -1,0 +1,8 @@
+[
+  {
+    "url": "https://my2020census.gov/",
+    "timestamp": "2025-06-07T19:13:11.626Z",
+    "violations": [],
+    "error": "net::ERR_CERT_COMMON_NAME_INVALID at https://my2020census.gov/"
+  }
+]

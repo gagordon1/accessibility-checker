@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://anchorit.gov/",
+    "timestamp": "2025-06-07T19:02:27.104Z",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "nodes": [
+          {
+            "html": "<a href=\"https://www.anchorit.gov/wp-content/uploads/2023/08/AnchorIt_TipCard_4x9_8-30-23.pdf\" data-type=\"link\" data-id=\"https://www.anchorit.gov/wp-content/uploads/2023/08/AnchorIt_TipCard_4x9_8-30-23.pdf\" target=\"_blank\" class=\"ga-processed\">Here</a>",
+            "target": [
+              "a[data-type=\"link\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.62 (foreground color: #1d9ddd, background color: #faaf3a, font size: 22.5pt (30px), font weight: bold). Expected contrast ratio of 3:1"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,8 @@
+[
+  {
+    "url": "https://mypay.gov/",
+    "timestamp": "2025-06-07T19:24:46.802Z",
+    "violations": [],
+    "error": "net::ERR_NAME_NOT_RESOLVED at https://mypay.gov/"
+  }
+]

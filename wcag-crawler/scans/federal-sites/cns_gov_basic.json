@@ -1,0 +1,8 @@
+[
+  {
+    "url": "https://cns.gov/",
+    "timestamp": "2025-06-07T19:04:23.894Z",
+    "violations": [],
+    "error": "net::ERR_NAME_NOT_RESOLVED at https://cns.gov/"
+  }
+]

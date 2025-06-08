@@ -1,0 +1,8 @@
+[
+  {
+    "url": "https://budgetlob.gov/",
+    "timestamp": "2025-06-07T19:28:46.944Z",
+    "violations": [],
+    "error": "net::ERR_NAME_NOT_RESOLVED at https://budgetlob.gov/"
+  }
+]

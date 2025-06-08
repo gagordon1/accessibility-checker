@@ -1,0 +1,55 @@
+[
+  {
+    "url": "https://tswg.gov/",
+    "timestamp": "2025-06-07T19:27:09.683Z",
+    "violations": [
+      {
+        "id": "1.1.1",
+        "description": "Informational images missing meaningful alt text",
+        "impact": "serious",
+        "nodes": [
+          {
+            "html": "<img class=\"cover\" src=\"Assets/News/I2CRecentAwardRecon.png\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img class=\"cover\" src=\"Assets/News/MeetingTable.png\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img class=\"cover\" src=\"Assets/IndustryDay/770by491.png\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img class=\"section-image cover\" src=\"Assets/MissionSectionThumbnail.png\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img class=\"cover\" src=\"Assets/Projects/AA/VANE.png\" style=\"width:40%\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img class=\"cover\" src=\"Assets/Projects/EODEXO/Humanoid600.png\" style=\"width:40%\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img class=\"h-md-100 vertical-centered-img contain w-100 p-4\" src=\"Assets/Membership/GlobalFlags.png\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img src=\"/Assets/Icons/fontsize.svg\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          }
+        ]
+      }
+    ]
+  }
+]

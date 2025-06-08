@@ -1,0 +1,8 @@
+[
+  {
+    "url": "https://ecs.gov/",
+    "timestamp": "2025-06-07T19:21:34.443Z",
+    "violations": [],
+    "error": "net::ERR_NAME_NOT_RESOLVED at https://ecs.gov/"
+  }
+]

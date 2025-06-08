@@ -1,0 +1,155 @@
+[
+  {
+    "url": "https://usicecenter.gov/",
+    "timestamp": "2025-06-07T19:17:47.635Z",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "nodes": [
+          {
+            "html": "<a class=\"text-info\" href=\"/PressRelease/IcebergD36B\">\n                            Iceberg D-36B Has Calved from Iceberg D-36A\n                        </a>",
+            "target": [
+              ".text-info[href$=\"IcebergD36B\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.04 (foreground color: #17a2b8, background color: #ffffff, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a class=\"text-info\" href=\"/PressRelease/IcebergD37\">\n                            Iceberg D-37 Has Calved From Roi Baudouin Ice Shelf\n                        </a>",
+            "target": [
+              ".text-info[href$=\"IcebergD37\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.04 (foreground color: #17a2b8, background color: #ffffff, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a class=\"text-info\" href=\"/PressRelease/IcebergA85\">\n                            Iceberg A-85 Has Calved From Ronne Ice Shelf\n                        </a>",
+            "target": [
+              ".text-info[href$=\"IcebergA85\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.04 (foreground color: #17a2b8, background color: #ffffff, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a class=\"text-info\" href=\"/PressRelease/ArcticMaximum2025\">\n                            Arctic Sea Ice at Maximum Extent\n                        </a>",
+            "target": [
+              ".py-3.row:nth-child(5) > .col-md-9.my-auto > h5 > .text-info"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.04 (foreground color: #17a2b8, background color: #ffffff, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a class=\"text-info\" href=\"/PressRelease/IcebergA23B\">\n                            Iceberg A-23B Has Calved from Iceberg A-23A in the northern Weddell Sea\n                        </a>",
+            "target": [
+              ".text-info[href$=\"IcebergA23B\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.04 (foreground color: #17a2b8, background color: #ffffff, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a class=\"text-info\" href=\"/PressRelease/IcebergA84\">\n                            Iceberg A-84 Has Calved From George VI ice shelf\n                        </a>",
+            "target": [
+              ".text-info[href$=\"IcebergA84\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.04 (foreground color: #17a2b8, background color: #ffffff, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/images/home/SF_onIce.jpg\" target=\"_blank\">View</a>",
+            "target": [
+              "a[href$=\"SF_onIce.jpg\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.97 (foreground color: #007bff, background color: #ffffff, font size: 12.6pt (16.8px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/images/home/DC_S2.gif\" target=\"_blank\">Sentinel-2 satellite imagery</a>",
+            "target": [
+              "p:nth-child(2) > a[href$=\"DC_S2.gif\"][target=\"_blank\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.97 (foreground color: #007bff, background color: #ffffff, font size: 12.6pt (16.8px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a class=\"text-info\" href=\"/PressRelease/ArcticMinimum2024\">Arctic Sea Ice at Minimum Extent</a>",
+            "target": [
+              ".py-3.row:nth-child(9) > .col-md-9.my-auto > h5 > .text-info"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.04 (foreground color: #17a2b8, background color: #ffffff, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a class=\"text-info\" href=\"/PressRelease/IcebergB22\">\n                            Icebergs B-22F and B-22G Have Calved from B-22A in the Amundsen Sea\n                        </a>",
+            "target": [
+              ".text-info[href$=\"IcebergB22\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.04 (foreground color: #17a2b8, background color: #ffffff, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a class=\"text-info\" href=\"/Resources/AntarcticShelf\">Antarctic Ice Shelf</a>",
+            "target": [
+              ".text-info[href$=\"AntarcticShelf\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.04 (foreground color: #17a2b8, background color: #ffffff, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a class=\"text-info\" href=\"/Products/ArcticSynopsis\">Regional Synopsis</a>",
+            "target": [
+              "h5 > .text-info[href$=\"ArcticSynopsis\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.04 (foreground color: #17a2b8, background color: #ffffff, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a class=\"text-info\" href=\"/Products/ArcticSynopsis\">Arctic</a>",
+            "target": [
+              "p > .text-info[href$=\"ArcticSynopsis\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.04 (foreground color: #17a2b8, background color: #ffffff, font size: 12.6pt (16.8px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a class=\"text-info\" href=\"/Products/AntarcSynopsis\">Antarctic</a>",
+            "target": [
+              "a[href$=\"AntarcSynopsis\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.04 (foreground color: #17a2b8, background color: #ffffff, font size: 12.6pt (16.8px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a class=\"text-info\" href=\"/Products\">Animated Charts</a>",
+            "target": [
+              ".text-info[href$=\"Products\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.04 (foreground color: #17a2b8, background color: #ffffff, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a class=\"text-info\" href=\"/Products/ArcticCharts\">Arctic</a>",
+            "target": [
+              "a[href$=\"ArcticCharts\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.04 (foreground color: #17a2b8, background color: #ffffff, font size: 12.6pt (16.8px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a class=\"text-info\" href=\"/Products/AntarcCharts\">Antarctic</a>",
+            "target": [
+              "a[href$=\"AntarcCharts\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.04 (foreground color: #17a2b8, background color: #ffffff, font size: 12.6pt (16.8px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a class=\"text-info\" href=\"/Products/ImsCharts\">IMS snow and ice charts</a>",
+            "target": [
+              "a[href$=\"ImsCharts\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.04 (foreground color: #17a2b8, background color: #ffffff, font size: 12.6pt (16.8px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a class=\"text-info\" href=\"/Products/ArcticTrivariate\">Trivariate Products</a>",
+            "target": [
+              "h5 > .text-info[href$=\"ArcticTrivariate\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.04 (foreground color: #17a2b8, background color: #ffffff, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a class=\"text-info\" href=\"/Products/AntarcTrivariate\">Antarctic</a>",
+            "target": [
+              "a[href$=\"AntarcTrivariate\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.04 (foreground color: #17a2b8, background color: #ffffff, font size: 12.6pt (16.8px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,59 @@
+[
+  {
+    "url": "https://csosa.gov/",
+    "timestamp": "2025-06-07T19:06:24.886Z",
+    "violations": [
+      {
+        "id": "meta-viewport",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "impact": "critical",
+        "nodes": [
+          {
+            "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0\">",
+            "target": [
+              "meta[name=\"viewport\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  user-scalable on <meta> tag disables zooming on mobile devices"
+          }
+        ]
+      },
+      {
+        "id": "1.1.1",
+        "description": "Informational images missing meaningful alt text",
+        "impact": "serious",
+        "nodes": [
+          {
+            "html": "<img src=\"/wp-content/uploads/2017/09/csosa_top_bar_tagline_smaller.png\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img decoding=\"async\" src=\"https://www.csosa.gov/wp-content/plugins/revslider//admin/assets/images/tp-brokenimage.png\" data-no-retina=\"\" data-src-rs-ref=\"https://www.csosa.gov/wp-content/plugins/revsl",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img decoding=\"async\" src=\"//www.csosa.gov/wp-content/plugins/revslider//admin/assets/images/tp-brokenimage.png\" data-no-retina=\"\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img decoding=\"async\" src=\"https://www.csosa.gov/wp-content/plugins/revslider//admin/assets/images/tp-brokenimage.png\" data-no-retina=\"\" data-src-rs-ref=\"https://www.csosa.gov/wp-content/plugins/revsl",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img decoding=\"async\" src=\"//www.csosa.gov/wp-content/plugins/revslider//admin/assets/images/tp-brokenimage.png\" data-no-retina=\"\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          },
+          {
+            "html": "<img decoding=\"async\" src=\"/wp-content/uploads/2017/09/csosa_footer_seal-1.png\">",
+            "target": [],
+            "failureMessage": "Image missing alt attribute"
+          }
+        ]
+      }
+    ]
+  }
+]
