@@ -319,22 +319,32 @@ class VisualReportGenerator:
                 html_file_url = f"file://{Path(html_file_path).absolute()}"
                 page.goto(html_file_url, wait_until="networkidle")
                 
-                # Generate PDF with good settings for accessibility reports
+                # Get the full content height to create one long page
+                content_height = page.evaluate("document.body.scrollHeight")
+                
+                # Set a reasonable width (A4 width in pixels at 96 DPI)
+                page_width = 794  # ~8.27 inches at 96 DPI (A4 width)
+                
+                # Add some padding to the height to ensure nothing gets cut off
+                page_height = content_height + 100
+                
+                # Generate PDF as one long page with custom dimensions
                 page.pdf(
                     path=str(pdf_file),
-                    format='A4',
+                    width=f"{page_width}px",
+                    height=f"{page_height}px",
                     print_background=True,
                     margin={
-                        'top': '1cm',
-                        'right': '1cm', 
-                        'bottom': '1cm',
-                        'left': '1cm'
+                        'top': '0.5cm',
+                        'right': '0.5cm', 
+                        'bottom': '0.5cm',
+                        'left': '0.5cm'
                     }
                 )
                 
                 browser.close()
             
-            logger.info(f"PDF report saved: {pdf_file}")
+            logger.info(f"PDF report saved as single long page: {pdf_file}")
             return str(pdf_file)
             
         except Exception as e:

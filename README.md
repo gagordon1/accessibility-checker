@@ -6,6 +6,8 @@ A comprehensive WCAG 2.2 accessibility scanning tool that combines automated axe
 
 - **Automated axe-core scanning** for standards-based accessibility testing
 - **AI-powered WCAG analysis** using OpenAI GPT-4 or DeepSeek models
+- **Visual accessibility reports** with highlighted violation screenshots
+- **HTML and PDF report generation** for professional accessibility audits
 - **Batch processing** of multiple URLs from CSV files
 - **Federal government website scanning** using .gov domain data
 - **Real-time progress monitoring** with JSON output
@@ -134,6 +136,56 @@ python batch_axe_scan.py
 }
 ```
 
+### Visual Report Generation with `visual_report_generator.py`
+
+Generate professional accessibility reports with annotated screenshots showing where violations occur on the webpage:
+
+```bash
+# Generate visual report for a single URL
+python visual_report_generator.py https://example.com
+
+# Specify custom output directory
+python visual_report_generator.py https://example.com --output my-reports
+```
+
+**Prerequisites:**
+- Must run an axe-core scan first (`url_check.py` or `batch_axe_scan.py`) to populate violation data
+- Uses cached violation data from previous scans
+
+**Features:**
+- **Annotated Screenshots**: Full-page website screenshots with red numbered boxes highlighting each violation
+- **Comprehensive Reports**: Detailed HTML reports with embedded screenshots and violation explanations
+- **PDF Generation**: Professional PDF reports as single continuous pages (no page breaks)
+- **Violation Details**: Each violation includes description, impact level, target selector, and remediation guidance
+- **Impact Color Coding**: Visual indicators for critical, serious, moderate, and minor violations
+
+**Report Contents:**
+- Executive summary with violation count and timestamp
+- Full-page website screenshot with numbered violation annotations
+- Detailed breakdown of each violation with:
+  - WCAG rule ID and description
+  - Impact level (Critical, Serious, Moderate, Minor)
+  - CSS selector targeting the problematic element
+  - Specific failure explanation
+  - Element index information for multi-element violations
+
+**Output Files:**
+- `reports/[domain]_[timestamp]_comprehensive.html` - Interactive HTML report
+- `reports/[domain]_[timestamp]_comprehensive.pdf` - Printable PDF report (single long page)
+
+**Example Workflow:**
+```bash
+# Step 1: Scan website for violations
+python url_check.py https://example.com
+
+# Step 2: Generate visual report
+python visual_report_generator.py https://example.com
+
+# Step 3: Open generated reports
+open reports/example_com_20241201_143022_comprehensive.html
+open reports/example_com_20241201_143022_comprehensive.pdf
+```
+
 ### Monitoring Progress
 
 Since `batch_axe_scan.py` saves results after each scan, you can monitor progress in real-time:
@@ -154,6 +206,10 @@ cat results/federal_axe_violations.json | jq '.violation_counts | to_entries | m
 ### Violation Data
 - `violations/violations.json` - Single URL scan results with full violation details
 - `results/federal_axe_violations.json` - Batch scan results with violation counts
+
+### Visual Reports
+- `reports/[domain]_[timestamp]_comprehensive.html` - Interactive HTML accessibility report with annotated screenshots
+- `reports/[domain]_[timestamp]_comprehensive.pdf` - Professional PDF accessibility report (single continuous page)
 
 ### Screenshots and Context
 - `model_context/screenshot.png` - Full page screenshot (when using AI models)
@@ -191,12 +247,21 @@ The project includes federal government domain data from the .gov registry:
 
 3. **Permission errors on macOS/Linux**
    ```bash
-   chmod +x batch_axe_scan.py url_check.py
+   chmod +x batch_axe_scan.py url_check.py visual_report_generator.py
    ```
 
 4. **API key errors**
    - Ensure `.env` file exists with valid API keys
    - Check that environment variables are loaded
+
+5. **Visual report generator shows "No violations found"**
+   - Run `url_check.py` or `batch_axe_scan.py` first to populate violation data
+   - Check that `violations/violations.json` exists and contains data for the target URL
+
+6. **PDF generation fails**
+   - Ensure Playwright browsers are installed: `playwright install`
+   - Check that HTML report is generated successfully first
+   - Verify sufficient disk space for PDF creation
 
 ### Performance Tips
 
