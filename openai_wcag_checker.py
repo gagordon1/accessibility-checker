@@ -63,7 +63,7 @@ class OpenAIWCAGClient:
             input=input_payload,
             instructions=system_instruction or (
                 "You are a strict WCAG 2.2 accessibility auditor. Analyze the image and element list. "
-                "Use the uploaded WCAG rules file to guide your audit. "
+                "Use the uploaded WCAG rules file to guide your audit. IMPORTANT: Do not include color contrast violations in your response."
                 "Return a list of violations using this exact schema: "
                 "[{id, description, impact?, nodes:[{html, target, failureSummary?}]}]"
             ),

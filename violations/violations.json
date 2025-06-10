@@ -1,64 +1,7 @@
 {
   "https://arc.gov/": {
-    "timestamp": "2025-06-10T13:45:54.370220",
-    "violations": [
-      {
-        "id": "img-alt-empty",
-        "description": "The image at 'https://arc.gov/wp-content/uploads/2020/07/AppalachianRegionMap-700x664.jpg' has an empty alt attribute, which makes it inaccessible for users relying on screen readers.",
-        "nodes": [
-          {
-            "html": "<img decoding=\"async\" src=\"https://arc.gov/wp-content/uploads/2020/07/AppalachianRegionMap-700x664.jpg\" alt=\"\">",
-            "target": [
-              "img.wp-image-47612"
-            ],
-            "failureSummary": "The img element has an empty alt attribute."
-          }
-        ],
-        "impact": "This fails because it provides no accessible name or description for the image, making it inaccessible to screen reader users."
-      },
-      {
-        "id": "generictructural-element-role-banner",
-        "description": "The header element with role='banner' does not have an explicit or implicit banner role according to WCAG, but header elements are generally recognized as banner roles.",
-        "nodes": [
-          {
-            "html": "<header class=\"l-header\" role=\"banner\">",
-            "target": [
-              "header.l-header"
-            ],
-            "failureSummary": "The header element with role='banner' may cause confusion as role='banner' is implied by the header element."
-          }
-        ],
-        "impact": "This may cause a misunderstanding of the role of the header element for assistive technology."
-      },
-      {
-        "id": "aria-role-invalid",
-        "description": "The mobile menu has 'aria-role=\"menu\"', which is not a valid ARIA attribute; it should be 'role=\"menu\"' instead.",
-        "nodes": [
-          {
-            "html": "<nav class=\"mobile-menu\" aria-role=\"menu\" aria-modal=\"true\" style=\"display: none;\">",
-            "target": [
-              "nav.mobile-menu"
-            ],
-            "failureSummary": "The aria-role attribute is invalid; it should be role=\"menu\"."
-          }
-        ],
-        "impact": "Assistive technologies may not recognize the role properly, leading to confusion."
-      },
-      {
-        "id": "label-has-associated-control",
-        "description": "The label element with 'for=\"s\"' properly associates with the input element with id=\"s\". No violation here.",
-        "nodes": [
-          {
-            "html": "<label for=\"s\" class=\"visually-hidden\">Search</label>",
-            "target": [
-              "label.visually-hidden"
-            ],
-            "failureSummary": "The label properly describes the input element."
-          }
-        ],
-        "impact": "This is compliant, no violation."
-      }
-    ]
+    "timestamp": "2025-06-10T14:14:44.172044",
+    "violations": []
   },
   "https://farsight-ai.com/": {
     "timestamp": "2025-06-08T18:47:39.081481",
@@ -197,21 +140,483 @@
     ]
   },
   "https://cia.gov/": {
-    "timestamp": "2025-06-10T13:15:25.844578",
+    "timestamp": "2025-06-10T14:15:26.449487",
+    "violations": []
+  },
+  "https://consumerfinance.gov/": {
+    "timestamp": "2025-06-10T13:58:07.159164",
+    "violations": []
+  },
+  "https://cfpb.gov/": {
+    "timestamp": "2025-06-10T14:00:22.203021",
+    "violations": []
+  },
+  "https://mlkday.gov/": {
+    "timestamp": "2025-06-10T14:00:43.585141",
+    "violations": []
+  },
+  "https://serve.gov/": {
+    "timestamp": "2025-06-10T14:01:03.630002",
+    "violations": []
+  },
+  "https://oversight.gov/": {
+    "timestamp": "2025-06-10T14:02:24.570429",
     "violations": [
       {
-        "id": "1.1.1",
-        "description": "The image does not have a descriptive alternate text.",
+        "id": "meta-viewport",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
         "nodes": [
           {
-            "html": "<img src=\"https://images.edgecast-cdn.net/18/d0542117/1749575720/23c51d99\" alt=\"\" />",
+            "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0\">",
             "target": [
-              "img"
+              "meta"
             ],
-            "failureSummary": "Image element with no alt attribute or empty alt attribute."
+            "failureSummary": "Fix any of the following:\n  user-scalable on <meta> tag disables zooming on mobile devices"
           }
         ],
-        "impact": "Critical"
+        "impact": "critical"
+      }
+    ]
+  },
+  "https://time.gov/": {
+    "timestamp": "2025-06-10T14:06:30.834907",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodes": [
+          {
+            "html": "<div class=\"title\">Pacific <span class=\"DSTterm\">DAYLIGHT</span> Time</div>",
+            "target": [
+              ".orange > .title"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #d66733, background color: #ffffff, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<span class=\"DSTterm\">DAYLIGHT</span>",
+            "target": [
+              ".orange > .title > .DSTterm"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.59 (foreground color: #d66733, background color: #ffffff, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<div class=\"title\">Mountain <span class=\"DSTterm\">DAYLIGHT</span> Time</div>",
+            "target": [
+              ".green.dst-clock.clock-box > .title"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.86 (foreground color: #63a952, background color: #ffffff, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<span class=\"DSTterm\">DAYLIGHT</span>",
+            "target": [
+              ".green.dst-clock.clock-box > .title > .DSTterm"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.86 (foreground color: #63a952, background color: #ffffff, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<div class=\"title\">Central <span class=\"DSTterm\">DAYLIGHT</span> Time</div>",
+            "target": [
+              ".yellow > .title"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.11 (foreground color: #e6a730, background color: #ffffff, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<span class=\"DSTterm\">DAYLIGHT</span>",
+            "target": [
+              ".yellow > .title > .DSTterm"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.11 (foreground color: #e6a730, background color: #ffffff, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "impact": "serious"
+      }
+    ]
+  },
+  "https://acus.gov/": {
+    "timestamp": "2025-06-10T14:13:03.492550",
+    "violations": []
+  },
+  "https://abmc.gov/": {
+    "timestamp": "2025-06-10T14:14:28.707847",
+    "violations": [
+      {
+        "id": "target-size",
+        "description": "Ensure touch targets have sufficient size and space",
+        "nodes": [
+          {
+            "html": "<button id=\"e-n-menu-dropdown-icon-1871\" class=\"e-n-menu-dropdown-icon e-focus\" data-tab-index=\"1\" aria-haspopup=\"true\" aria-expanded=\"false\" aria-controls=\"e-n-menu-content-1871\" data-focus-index=\"2\">",
+            "target": [
+              "#e-n-menu-dropdown-icon-1871"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (12px by 18px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 12px instead of at least 24px."
+          },
+          {
+            "html": "<button id=\"e-n-menu-dropdown-icon-1872\" class=\"e-n-menu-dropdown-icon e-focus\" data-tab-index=\"2\" aria-haspopup=\"true\" aria-expanded=\"false\" aria-controls=\"e-n-menu-content-1872\" data-focus-index=\"4\">",
+            "target": [
+              "#e-n-menu-dropdown-icon-1872"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (12px by 18px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 12px instead of at least 24px."
+          },
+          {
+            "html": "<button id=\"e-n-menu-dropdown-icon-1873\" class=\"e-n-menu-dropdown-icon e-focus\" data-tab-index=\"3\" aria-haspopup=\"true\" aria-expanded=\"false\" aria-controls=\"e-n-menu-content-1873\" data-focus-index=\"6\">",
+            "target": [
+              "#e-n-menu-dropdown-icon-1873"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (12px by 18px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 12px instead of at least 24px."
+          },
+          {
+            "html": "<button id=\"e-n-menu-dropdown-icon-1874\" class=\"e-n-menu-dropdown-icon e-focus\" data-tab-index=\"4\" aria-haspopup=\"true\" aria-expanded=\"false\" aria-controls=\"e-n-menu-content-1874\" data-focus-index=\"8\">",
+            "target": [
+              "#e-n-menu-dropdown-icon-1874"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (12px by 18px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 12px instead of at least 24px."
+          },
+          {
+            "html": "<button id=\"e-n-menu-dropdown-icon-1875\" class=\"e-n-menu-dropdown-icon e-focus\" data-tab-index=\"5\" aria-haspopup=\"true\" aria-expanded=\"false\" aria-controls=\"e-n-menu-content-1875\" data-focus-index=\"10\">",
+            "target": [
+              "#e-n-menu-dropdown-icon-1875"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (12px by 18px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 22px instead of at least 24px."
+          },
+          {
+            "html": "<button role=\"button\" class=\"owl-dot\"><span></span></button>",
+            "target": [
+              ".owl-dot[role=\"button\"]:nth-child(1)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (8px by 8px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 12px instead of at least 24px."
+          },
+          {
+            "html": "<button role=\"button\" class=\"owl-dot active\"><span></span></button>",
+            "target": [
+              ".active.owl-dot[role=\"button\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (8px by 8px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 12px instead of at least 24px."
+          },
+          {
+            "html": "<button role=\"button\" class=\"owl-dot\"><span></span></button>",
+            "target": [
+              ".owl-dot[role=\"button\"]:nth-child(3)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (8px by 8px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 12px instead of at least 24px."
+          },
+          {
+            "html": "<button role=\"button\" class=\"owl-dot\"><span></span></button>",
+            "target": [
+              ".owl-dot[role=\"button\"]:nth-child(4)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (8px by 8px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 12px instead of at least 24px."
+          },
+          {
+            "html": "<button role=\"button\" class=\"owl-dot\"><span></span></button>",
+            "target": [
+              ".owl-dot[role=\"button\"]:nth-child(5)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (8px by 8px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 12px instead of at least 24px."
+          }
+        ],
+        "impact": "serious"
+      }
+    ]
+  },
+  "https://amtrakoig.gov/": {
+    "timestamp": "2025-06-10T14:14:36.640508",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodes": [
+          {
+            "html": "<input size=\"40\" placeholder=\"Search all of AmtrakOIG.gov\" data-drupal-selector=\"edit-search-key\" type=\"text\" id=\"edit-search-key\" name=\"search_key\" maxlength=\"128\" class=\"form-text\">",
+            "target": [
+              "#edit-search-key"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.29 (foreground color: #c3c7cb, background color: #455967, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "impact": "serious"
+      },
+      {
+        "id": "target-size",
+        "description": "Ensure touch targets have sufficient size and space",
+        "nodes": [
+          {
+            "html": "<a href=\"#\" class=\"flex-active\">1</a>",
+            "target": [
+              ".flex-active"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (11px by 11px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 18px instead of at least 24px."
+          },
+          {
+            "html": "<a href=\"#\">2</a>",
+            "target": [
+              "ol > li:nth-child(2) > a[href=\"#\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (11px by 11px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 18px instead of at least 24px."
+          },
+          {
+            "html": "<a href=\"#\">3</a>",
+            "target": [
+              "li:nth-child(3) > a[href=\"#\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (11px by 11px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 18px instead of at least 24px."
+          },
+          {
+            "html": "<a href=\"#\">4</a>",
+            "target": [
+              "li:nth-child(4) > a[href=\"#\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (11px by 11px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 18px instead of at least 24px."
+          },
+          {
+            "html": "<a href=\"#\">5</a>",
+            "target": [
+              "li:nth-child(5) > a[href=\"#\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (11px by 11px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 18px instead of at least 24px."
+          },
+          {
+            "html": "<a href=\"#\">6</a>",
+            "target": [
+              "li:nth-child(6) > a[href=\"#\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (11px by 11px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 18px instead of at least 24px."
+          },
+          {
+            "html": "<a href=\"#\">7</a>",
+            "target": [
+              "li:nth-child(7) > a[href=\"#\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (11px by 11px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 18px instead of at least 24px."
+          },
+          {
+            "html": "<a href=\"#\">8</a>",
+            "target": [
+              "li:nth-child(8) > a[href=\"#\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (11px by 11px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 18px instead of at least 24px."
+          },
+          {
+            "html": "<a href=\"#\">9</a>",
+            "target": [
+              "li:nth-child(9) > a[href=\"#\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (11px by 11px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 18px instead of at least 24px."
+          },
+          {
+            "html": "<a href=\"#\">10</a>",
+            "target": [
+              "li:nth-child(10) > a[href=\"#\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (11px by 11px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 18px instead of at least 24px."
+          }
+        ],
+        "impact": "serious"
+      }
+    ]
+  },
+  "https://asc.gov/": {
+    "timestamp": "2025-06-10T14:14:56.032656",
+    "violations": [
+      {
+        "id": "target-size",
+        "description": "Ensure touch targets have sufficient size and space",
+        "nodes": [
+          {
+            "html": "<a href=\"/about\" data-drupal-link-system-path=\"node/266029\">About</a>",
+            "target": [
+              "a[data-drupal-link-system-path=\"node/266029\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (119.4px by 22px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 22px instead of at least 24px."
+          },
+          {
+            "html": "<a href=\"/about/staff\" data-drupal-link-system-path=\"node/266038\">Staff</a>",
+            "target": [
+              "a[data-drupal-link-system-path=\"node/266038\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (119.4px by 22px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 22px instead of at least 24px."
+          },
+          {
+            "html": "<a href=\"/appraiser\" data-drupal-link-system-path=\"appraiser\">Appraiser Registry</a>",
+            "target": [
+              "a[data-drupal-link-system-path=\"appraiser\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (119.4px by 22px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 20px instead of at least 24px."
+          },
+          {
+            "html": "<a href=\"/amc\" data-drupal-link-system-path=\"amc\">AMC Registry</a>",
+            "target": [
+              "a[data-drupal-link-system-path=\"amc\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (119.4px by 22px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 20px instead of at least 24px."
+          },
+          {
+            "html": "<a href=\"/resources\" data-drupal-link-system-path=\"node/266042\">Resources</a>",
+            "target": [
+              "a[data-drupal-link-system-path=\"node/266042\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (119.4px by 22px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 20px instead of at least 24px."
+          },
+          {
+            "html": "<a href=\"/resources/governance\" data-drupal-link-system-path=\"node/266035\">ASC Governance</a>",
+            "target": [
+              "a[data-drupal-link-system-path=\"node/266035\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (119.4px by 22px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 20px instead of at least 24px."
+          },
+          {
+            "html": "<a href=\"/resources/faq\" data-drupal-link-system-path=\"node/266026\">FAQs</a>",
+            "target": [
+              "a[data-drupal-link-system-path=\"node/266026\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (119.4px by 22px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 20px instead of at least 24px."
+          },
+          {
+            "html": "<a href=\"/resources/public-records\" data-drupal-link-system-path=\"resources/public-records\">Public Records</a>",
+            "target": [
+              "a[data-drupal-link-system-path=\"resources/public-records\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (119.4px by 22px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 20px instead of at least 24px."
+          },
+          {
+            "html": "<a href=\"/grants\" data-drupal-link-system-path=\"node/266040\">Grants</a>",
+            "target": [
+              "a[data-drupal-link-system-path=\"node/266040\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (263.7px by 22px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 20px instead of at least 24px."
+          },
+          {
+            "html": "<a href=\"/grants/state-programs\" data-drupal-link-system-path=\"node/266041\">State Support Grants</a>",
+            "target": [
+              "a[data-drupal-link-system-path=\"node/266041\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (263.7px by 22px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 20px instead of at least 24px."
+          },
+          {
+            "html": "<a href=\"/grants/appraisal-foundation\" data-drupal-link-system-path=\"node/266043\">Appraisal Foundation Grants</a>",
+            "target": [
+              "a[data-drupal-link-system-path=\"node/266043\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Target has insufficient size (263.7px by 22px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 20px instead of at least 24px."
+          }
+        ],
+        "impact": "serious"
+      }
+    ]
+  },
+  "https://goldwaterscholarship.gov/": {
+    "timestamp": "2025-06-10T14:15:18.024449",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodes": [
+          {
+            "html": "<a href=\"mailto:goldwaterao@goldwaterscholarship.gov\">goldwaterao@goldwaterscholarship.gov</a>",
+            "target": [
+              "p:nth-child(9) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.27 (foreground color: #6897e5, background color: #e6e2db, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"https://goldwaterscholarship.gov/2025-scholars/\">Please click here to view the table of 2025 Scholars</a>",
+            "target": [
+              "h2 > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.27 (foreground color: #6897e5, background color: #e6e2db, font size: 19.5pt (26px), font weight: normal). Expected contrast ratio of 3:1"
+          },
+          {
+            "html": "<a href=\"https://www.uworld.com/\">UWorld</a>",
+            "target": [
+              "a[href$=\"uworld.com/\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.27 (foreground color: #6897e5, background color: #e6e2db, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<strong>Read more</strong>",
+            "target": [
+              "#wpexlink469166 > strong"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.27 (foreground color: #6897e5, background color: #e6e2db, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"https://www.ic3.gov/Home/ComplaintChoice\">proper authorities</a>",
+            "target": [
+              ".siteorigin-widget-tinymce.textwidget > p:nth-child(2) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.27 (foreground color: #6897e5, background color: #e6e2db, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<strong>Read more</strong>",
+            "target": [
+              "#wpexlink330199931 > strong"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.27 (foreground color: #6897e5, background color: #e6e2db, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"https://www.cur.org/membership-community/honors-awards/cur-goldwater-scholars-faculty-mentor-award/cur-goldwater-scholars-faculty-mentor-award-nominations-process/\" target=\"_blank\" rel=\"noopener\">",
+            "target": [
+              "p:nth-child(1) > a[rel=\"noopener\"][target=\"_blank\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.27 (foreground color: #6897e5, background color: #e6e2db, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"https://www.cur.org/what/recognition/goldwater/\" target=\"_blank\" rel=\"noopener\">",
+            "target": [
+              "p:nth-child(2) > a[rel=\"noopener\"][target=\"_blank\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.27 (foreground color: #6897e5, background color: #e6e2db, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"https://www.cur.org/coas-anderson-selected-as-2024-cur-goldwater-scholars-faculty-mentor-awardee/\">CoA\u2019s Anderson Selected as 2024 CUR-Goldwater Scholars Faculty Mentor Awardee</a>",
+            "target": [
+              "#panel-2-2-1-0 > .textwidget > p:nth-child(3) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.27 (foreground color: #6897e5, background color: #e6e2db, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"https://goldwaterscholarship.gov/webinar-2018-2020/\">Webinar Archives.</a>",
+            "target": [
+              "h4 > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.27 (foreground color: #6897e5, background color: #e6e2db, font size: 16.5pt (22px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<div class=\"textwidget\">",
+            "target": [
+              "#text-11 > .textwidget"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.52 (foreground color: #848484, background color: #f8f8f8, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"https://goldwaterscholarship.gov/required-statements/\">Required Statements</a>",
+            "target": [
+              "a:nth-child(4)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.76 (foreground color: #6897e5, background color: #f8f8f8, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"https://scholarshipamerica.org/\">Scholarship America<sup>\u00ae</sup></a>",
+            "target": [
+              "a:nth-child(5)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.76 (foreground color: #6897e5, background color: #f8f8f8, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a title=\"Barry Goldwater\" target=\"_blank\" href=\"https://goldwaterscholarship.gov/\">Barry Goldwater</a>",
+            "target": [
+              "a[title=\"Barry Goldwater\"][target=\"_blank\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.62 (foreground color: #747474, background color: #e6e2db, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a title=\"Themefreesia\" target=\"_blank\" href=\"https://themefreesia.com\">Theme Freesia</a>",
+            "target": [
+              "a[title=\"Themefreesia\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.62 (foreground color: #747474, background color: #e6e2db, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "impact": "serious"
       }
     ]
   }

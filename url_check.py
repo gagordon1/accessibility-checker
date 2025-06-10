@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import argparse, json, os
 from pathlib import Path
-from typing import List
+from typing import List, Optional
 from datetime import datetime
 import re
 import logging
@@ -25,7 +25,6 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 load_dotenv()
-DEFAULT_MODEL = "deepseek-chat"
 
 def sanitize_url(url: str) -> str:
     """Convert URL to a valid filename."""
@@ -57,39 +56,47 @@ def save_violations(url: str, violations: List[Violation]) -> str:
     
     return str(violations_file)
 
-def scan_url(url: str, model: str = DEFAULT_MODEL) -> List[Violation]:
+def scan_url(url: str, model: Optional[str] = None) -> List[Violation]:
     # ── Playwright capture ──────────────────────────────────────────────────
-    with sync_playwright() as p:
-        browser = p.chromium.launch()
-        page = browser.new_page(device_scale_factor=0.8)
-        page.goto(url, wait_until="networkidle")
-        scroll_to_bottom(page)  # Scroll through page to trigger lazy loading
-        elements = extract_elements(page)
-        img_path = Path("model_context/screenshot.png")
-        page.screenshot(path=str(img_path), full_page=True)
-        logger.info(f"Screenshot of {url} saved to {img_path}")
-        browser.close()
-
+ 
 
     axe_violations = run_axe_scan(url)
-    
-    client = WCAGAIClient(model=model)
-    logger.info(f"Running WCAG check on {url} with {model} (provider: {client.provider})")
-    violations = client.run_check(img_path, WCAG_RULES_VECTOR_STORE_ID, elements)
+
+    # Only run AI model if specified
+    if model:
+        with sync_playwright() as p:
+            browser = p.chromium.launch()
+            page = browser.new_page(device_scale_factor=0.8)
+            page.goto(url, wait_until="networkidle")
+            scroll_to_bottom(page)  # Scroll through page to trigger lazy loading
+            elements = extract_elements(page)
+            img_path = Path("model_context/screenshot.png")
+            page.screenshot(path=str(img_path), full_page=True)
+            logger.info(f"Screenshot of {url} saved to {img_path}")
+            browser.close()
+
+        logger.info(f"Running WCAG AI check on {url} with {model}")
+        client = WCAGAIClient(model=model)
+        logger.info(f"Using provider: {client.provider}")
+        ai_violations = client.run_check(img_path, WCAG_RULES_VECTOR_STORE_ID, elements)
+        logger.info(f"AI model found {len(ai_violations)} violations")
+        all_violations = ai_violations
+    else:
+        logger.info("No AI model specified, skipping AI-based WCAG check")
+        all_violations = []
 
     # Save violations to file
-    filepath = save_violations(url, violations + axe_violations)
+    filepath = save_violations(url, all_violations + axe_violations)
     logger.info(f"Violations saved to: {filepath}")
 
-    return violations
+    return all_violations + axe_violations
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(description="WCAG scan via older SDK pattern")
     ap.add_argument("url")
     ap.add_argument(
         "--model", 
-        default=DEFAULT_MODEL,
-        help=f"Model to use for WCAG checking. Available: {', '.join(WCAGAIClient.get_available_models())}"
+        help=f"Model to use for AI-based WCAG checking. Available: {', '.join(WCAGAIClient.get_available_models())}. If not specified, only axe-core will be used."
     )
     res = scan_url(**vars(ap.parse_args()))
     logger.info("Scan results:")
