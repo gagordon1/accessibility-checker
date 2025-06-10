@@ -9,11 +9,10 @@ from datetime import datetime
 from pathlib import Path
 from typing import List, Dict
 import argparse
-from bs4 import BeautifulSoup
 from collections import defaultdict
 import base64
 
-from utils.scrape import normalize_url, capture_website_with_playwright, resize_viewport_to_full_page
+from utils.scrape import capture_website_with_playwright, resize_viewport_to_full_page
 from utils.highlight_violations import highlight_violations_on_page
 from app import get_cached_violations
 from playwright.sync_api import sync_playwright
@@ -335,7 +334,6 @@ class VisualReportGenerator:
                 <h1>🔍 Comprehensive Accessibility Report</h1>
                 <p><strong>Website:</strong> {report_data['url']}</p>
                 <p><strong>Generated:</strong> {report_data['timestamp']}</p>
-                <p><strong>Total Violations:</strong> {report_data['violation_count']}</p>
             </div>
             
             <div class="report-summary">
