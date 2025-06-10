@@ -1,111 +1,286 @@
 {
   "https://arc.gov/": {
-    "timestamp": "2025-06-08T18:00:35.075948",
+    "timestamp": "2025-06-10T13:01:05.029632",
     "violations": [
       {
-        "id": "1.1.1",
-        "description": "All non-text content must have a text alternative that serves the equivalent purpose. The image with src \"https://www.arc.gov/wp-content/uploads/2025/05/2025-Conf-Call-for-Proposals-Due-June-6.png\" is missing alt text.",
+        "id": "contrast",
+        "description": "There is insufficient contrast between the text color and background color, which impacts readability for users with visual disabilities.",
         "nodes": [
           {
-            "html": "<img fetchpriority=\"high\" decoding=\"async\" width=\"1200\" height=\"675\" src=\"https://www.arc.gov/wp-content/uploads/2025/05/2025-Conf-Call-for-Proposals-Due-June-6.png\" alt=\"\" class=\"wp-image-48953\" style=\"width:1080px;height:auto\">",
+            "html": "<h1 class=\"page-title\">Investing in Appalachia\u0019s economic future.</h1>",
             "target": [
-              "img.wp-image-48953"
+              "h1.page-title"
             ],
-            "failureSummary": "Image element has empty alt attribute indicating missing alternative text."
+            "failureSummary": "Text contrast is insufficient for the page title."
+          },
+          {
+            "html": "<h2 class=\"section-intro__title\" id=\"available-opportunities\">Available Opportunities</h2>",
+            "target": [
+              "h2#available-opportunities"
+            ],
+            "failureSummary": "Text contrast is insufficient for section titles."
+          },
+          {
+            "html": "<h2 class=\"section-intro__title\" id=\"appalachian-places\">Appalachian Places</h2>",
+            "target": [
+              "h2#appalachian-places"
+            ],
+            "failureSummary": "Text contrast is insufficient for section titles."
+          },
+          {
+            "html": "<h2 class=\"section-intro__title\" id=\"research-and-resources\">Research and Resources</h2>",
+            "target": [
+              "h2#research-and-resources"
+            ],
+            "failureSummary": "Text contrast is insufficient for section titles."
+          },
+          {
+            "html": "<h2 class=\"wp-block-heading has-text-align-center\">Research and Resources</h2>",
+            "target": [
+              "h2.wp-block-heading"
+            ],
+            "failureSummary": "Text contrast is insufficient for section titles."
+          },
+          {
+            "html": "<h2 class=\"section-intro__title\" id=\"available-opportunities\">Available Opportunities</h2>",
+            "target": [
+              "h2#available-opportunities"
+            ],
+            "failureSummary": "Text contrast is insufficient for section titles."
+          },
+          {
+            "html": "<h2 class=\"recent-2col__title\">Latest News</h2>",
+            "target": [
+              "h2.recent-2col__title"
+            ],
+            "failureSummary": "Text contrast is insufficient for section titles."
+          },
+          {
+            "html": "<h2 class=\"recent-2col__title\">Upcoming Events</h2>",
+            "target": [
+              "h2.recent-2col__title"
+            ],
+            "failureSummary": "Text contrast is insufficient for section titles."
+          },
+          {
+            "html": "<h2 class=\"callout__title\">Get ARC News and Updates</h2>",
+            "target": [
+              "h2.callout__title"
+            ],
+            "failureSummary": "Text contrast is insufficient for callout title."
+          },
+          {
+            "html": "<h2 class=\"newsletter__title\">Get ARC News and Updates</h2>",
+            "target": [
+              "h2.newsletter__title"
+            ],
+            "failureSummary": "Text contrast is insufficient for newsletter title."
+          },
+          {
+            "html": "<h1 class=\"site-name__text\">Appalachian Regional Commission</h1>",
+            "target": [
+              "h1.site-name__text"
+            ],
+            "failureSummary": "Text contrast is insufficient for site name header."
+          },
+          {
+            "html": "<h3 class=\"card__title\">Area Development Program</h3>",
+            "target": [
+              "h3.card__title"
+            ],
+            "failureSummary": "Text contrast is insufficient for card titles."
+          },
+          {
+            "html": "<h3 class=\"card__title\">Appalachian Leadership Institute</h3>",
+            "target": [
+              "h3.card__title"
+            ],
+            "failureSummary": "Text contrast is insufficient for card titles."
+          },
+          {
+            "html": "<h3 class=\"card__title\">J-1 Visa Waiver Program</h3>",
+            "target": [
+              "h3.card__title"
+            ],
+            "failureSummary": "Text contrast is insufficient for card titles."
+          },
+          {
+            "html": "<h3 class=\"card__title\">Research and Data</h3>",
+            "target": [
+              "h3.card__title"
+            ],
+            "failureSummary": "Text contrast is insufficient for card titles."
+          },
+          {
+            "html": "<h3 class=\"card__title\">Economic Opportunity</h3>",
+            "target": [
+              "h3.card__title"
+            ],
+            "failureSummary": "Text contrast is insufficient for card titles."
+          },
+          {
+            "html": "<h3 class=\"card__title\">Appalachia Envisioned</h3>",
+            "target": [
+              "h3.card__title"
+            ],
+            "failureSummary": "Text contrast is insufficient for card titles."
+          },
+          {
+            "html": "<h2 class=\"section-intro__title\" id=\"available-opportunities\">Available Opportunities</h2>",
+            "target": [
+              "h2#available-opportunities"
+            ],
+            "failureSummary": "Text contrast is insufficient for section titles."
+          },
+          {
+            "html": "<h2 class=\"wp-block-heading has-text-align-center\">Research and Resources</h2>",
+            "target": [
+              "h2.wp-block-heading"
+            ],
+            "failureSummary": "Text contrast is insufficient for section titles."
+          },
+          {
+            "html": "<h2 class=\"recent-2col__title\">Latest News</h2>",
+            "target": [
+              "h2.recent-2col__title"
+            ],
+            "failureSummary": "Text contrast is insufficient for section titles."
+          },
+          {
+            "html": "<h2 class=\"recent-2col__title\">Upcoming Events</h2>",
+            "target": [
+              "h2.recent-2col__title"
+            ],
+            "failureSummary": "Text contrast is insufficient for section titles."
+          },
+          {
+            "html": "<h2 class=\"callout__title\">Get ARC News and Updates</h2>",
+            "target": [
+              "h2.callout__title"
+            ],
+            "failureSummary": "Text contrast is insufficient for callout title."
+          },
+          {
+            "html": "<h2 class=\"newsletter__title\">Get ARC News and Updates</h2>",
+            "target": [
+              "h2.newsletter__title"
+            ],
+            "failureSummary": "Text contrast is insufficient for newsletter title."
+          },
+          {
+            "html": "<h1 class=\"site-name__text\">Appalachian Regional Commission</h1>",
+            "target": [
+              "h1.site-name__text"
+            ],
+            "failureSummary": "Text contrast is insufficient for site name header."
+          },
+          {
+            "html": "<h3 class=\"card__title\">Area Development Program</h3>",
+            "target": [
+              "h3.card__title"
+            ],
+            "failureSummary": "Text contrast is insufficient for card titles."
+          },
+          {
+            "html": "<h3 class=\"card__title\">Appalachian Leadership Institute</h3>",
+            "target": [
+              "h3.card__title"
+            ],
+            "failureSummary": "Text contrast is insufficient for card titles."
+          },
+          {
+            "html": "<h3 class=\"card__title\">J-1 Visa Waiver Program</h3>",
+            "target": [
+              "h3.card__title"
+            ],
+            "failureSummary": "Text contrast is insufficient for card titles."
+          },
+          {
+            "html": "<h3 class=\"card__title\">Research and Data</h3>",
+            "target": [
+              "h3.card__title"
+            ],
+            "failureSummary": "Text contrast is insufficient for card titles."
+          },
+          {
+            "html": "<h3 class=\"card__title\">Economic Opportunity</h3>",
+            "target": [
+              "h3.card__title"
+            ],
+            "failureSummary": "Text contrast is insufficient for card titles."
+          },
+          {
+            "html": "<h3 class=\"card__title\">Appalachia Envisioned</h3>",
+            "target": [
+              "h3.card__title"
+            ],
+            "failureSummary": "Text contrast is insufficient for card titles."
           }
         ],
-        "impact": "critical"
+        "impact": "This impacts readability and thus accessibility for users with visual disabilities, including color vision deficiencies."
       },
       {
-        "id": "1.1.1",
-        "description": "All non-text content must have a text alternative that serves the equivalent purpose. Some other images have empty alt attributes, missing meaningful alt text.",
+        "id": "alt-text",
+        "description": "Images are missing alt text, which impairs screen reader interpretation of visual content.",
         "nodes": [
+          {
+            "html": "<img fetchpriority=\"high\" decoding=\"async\" width=\"1000\" height=\"563\" src=\"https://www.arc.gov/wp-content/uploads/2025/01/Norton-VA-Feature.png\" alt=\"\" class=\"wp-image-47612\" style=\"width:1080px;height:auto\" srcset=\"https://arc.gov/wp-content/uploads/2025/01/Norton-VA-Feature.png 1000w, https://arc.g\"",
+            "target": [
+              "img.wp-image-47612"
+            ],
+            "failureSummary": "Image missing alt attribute or alt is empty."
+          },
+          {
+            "html": "<img decoding=\"async\" src=\"https://arc.gov/wp-content/uploads/2020/07/AppalachianRegionMap-700x664.jpg\" alt=\"\" class=\"wp-image-47612\" style=\"width:1080px;height:auto\" srcset=\"https://arc.gov/wp-content/uploads/2025/01/Norton-VA-Feature.png 1000w, https://arc.g\"",
+            "target": [
+              "img.wp-image-47612"
+            ],
+            "failureSummary": "Image missing alt attribute or alt is empty."
+          },
+          {
+            "html": "<img decoding=\"async\" src=\"https://arc.gov/wp-content/uploads/2021/07/ARC_Johnstown_PA_55-700x467.jpg\" alt=\"\" style=\"width:1080px;height:auto\" srcset=\"https://arc.gov/wp-content/uploads/2021/07/ARC_Johnstown_PA_55-700x467.jpg 700w, https://arc.gov/wp-content/uploads/2021/07/ARC_Johnstown_PA_55-700x467.jpg 600w\"",
+            "target": [
+              "img"
+            ],
+            "failureSummary": "Image missing alt attribute or alt is empty."
+          },
           {
             "html": "<img decoding=\"async\" src=\"https://arc.gov/wp-content/uploads/2020/07/AppalachianRegionMap-700x664.jpg\" alt=\"\">",
             "target": [
               "img"
             ],
-            "failureSummary": "Image element has empty alt attribute indicating missing alternative text."
+            "failureSummary": "Image missing alt attribute or alt is empty."
           },
           {
-            "html": "<img decoding=\"async\" src=\"https://arc.gov/wp-content/uploads/2025/05/2025-Conf-50-50-700x700.png\" alt=\"\">",
+            "html": "<img decoding=\"async\" src=\"https://arc.gov/wp-content/uploads/2025/05/2025-Conf-50-50-700x700.png\" alt=\"\" style=\"width:1080px;height:auto\" srcset=\"https://arc.gov/wp-content/uploads/2025/05/2025-Conf-50-50-700x700.png 700w, https://arc.gov/wp-content/uploads/2025/05/2025-Conf-50-50-700x700.png 600w\"",
             "target": [
               "img"
             ],
-            "failureSummary": "Image element has empty alt attribute indicating missing alternative text."
+            "failureSummary": "Image missing alt attribute or alt is empty."
           },
           {
-            "html": "<img decoding=\"async\" src=\"https://arc.gov/wp-content/uploads/2020/07/48988521272_3ce1f91f05_o-scaled-600x500-c-top.jpg\" alt=\"\">",
+            "html": "<img decoding=\"async\" src=\"https://arc.gov/wp-content/uploads/2021/06/306654053-700x467.jpeg\" alt=\"\" style=\"width:1080px;height:auto\" srcset=\"https://arc.gov/wp-content/uploads/2021/06/306654053-700x467.jpeg 700w, https://arc.gov/wp-content/uploads/2021/06/306654053-700x467.jpeg 600w\"",
             "target": [
               "img"
             ],
-            "failureSummary": "Image element has empty alt attribute indicating missing alternative text."
+            "failureSummary": "Image missing alt attribute or alt is empty."
           },
           {
-            "html": "<img decoding=\"async\" src=\"https://arc.gov/wp-content/uploads/2021/06/306654053-700x467.jpeg\" alt=\"\">",
+            "html": "<img decoding=\"async\" src=\"https://arc.gov/wp-content/uploads/2020/09/leadership-terry-bellamy2-600x500-c-top.jpg\" alt=\"Three women gather around table during educational session\" style=\"width:600px;height:auto\" srcset=\"https://arc.gov/wp-content/uploads/2020/09/leadership-terry-bellamy2-600x500-c-top.jpg 600w, https://arc.gov/wp-content/uploads/2020/09/leadership-terry-bellamy2-600x500-c-top.jpg 600w\"",
             "target": [
               "img"
             ],
-            "failureSummary": "Image element has empty alt attribute indicating missing alternative text."
-          }
-        ],
-        "impact": "critical"
-      },
-      {
-        "id": "1.4.3",
-        "description": "Ensure text and images of text have a contrast ratio of at least 4.5:1 (3:1 for large text) so users with low vision or color deficiencies can read content. Text \"Investing in Appalachia\u2019s economic future.\" in bright blue on white might meet contrast but verify the exact shade especially the blue links which appear light and might fail contrast requirements.",
-        "nodes": [
+            "failureSummary": "Image missing alt attribute or alt is empty."
+          },
           {
-            "html": "<h1 class=\"page-title\">Investing in Appalachia\u00039s economic future.</h1>",
+            "html": "<img decoding=\"async\" src=\"https://arc.gov/wp-content/uploads/2025/05/2025-Conf-50-50-700x700.png\" alt=\"\" style=\"width:1080px;height:auto\" srcset=\"https://arc.gov/wp-content/uploads/2025/05/2025-Conf-50-50-700x700.png 700w, https://arc.gov/wp-content/uploads/2025/05/2025-Conf-50-50-700x700.png 600w\"",
             "target": [
-              "h1.page-title"
+              "img"
             ],
-            "failureSummary": "Potentially insufficient color contrast for text on background."
+            "failureSummary": "Image missing alt attribute or alt is empty."
           }
         ],
-        "impact": "serious"
-      },
-      {
-        "id": "1.4.1",
-        "description": "Do not use color as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element. Some links or elements styled with only color might be difficult to distinguish for users with color blindness or low vision.",
-        "nodes": [
-          {
-            "html": "<a href=\"https://arc.gov/news/events/2025-soar-summit\" class=\"button button--green\">Learn More</a>",
-            "target": [
-              "a.button.button--green"
-            ],
-            "failureSummary": "Link styled with color alone; no additional visual cue."
-          }
-        ],
-        "impact": "moderate"
-      },
-      {
-        "id": "4.1.2",
-        "description": "Name, Role, Value: UI components must expose programmatic name, role, state/value, and changes to assistive technologies. Some menu toggle buttons with aria-haspopup=\"menu\" do not have an accessible label describing their function beyond 'Menu'.",
-        "nodes": [
-          {
-            "html": "<button class=\"mobile-menu-button mobile-menu-button--menu\" aria-haspopup=\"menu\" style=\"display: none;\"><span class=\"mobile-menu-button__icon\">Menu</span></button>",
-            "target": [
-              "button.mobile-menu-button.mobile-menu-button--menu"
-            ],
-            "failureSummary": "Toggle button lacks accessible name or label beyond visible text, which might not be exposed."
-          }
-        ],
-        "impact": "serious"
-      },
-      {
-        "id": "4.1.2",
-        "description": "Name, Role, Value: UI components must expose programmatic name, role, state/value, and changes to assistive technologies. Sub-navigation toggle buttons using aria-controls and aria-expanded do not provide accessible labels beyond visually hidden text 'Toggle SubNav'. Recommend more descriptive accessible names.",
-        "nodes": [
-          {
-            "html": "<button class=\"mobile-menu__subnav-arrow\" aria-controls=\"mobile-menu-appalachian-region\" aria-expanded=\"false\"><span class=\"visually-hidden\">Toggle SubNav</span></button>",
-            "target": [
-              "button.mobile-menu__subnav-arrow"
-            ],
-            "failureSummary": "Toggle button has a generic label 'Toggle SubNav' which may not fully describe the target or purpose."
-          }
-        ],
-        "impact": "moderate"
+        "impact": "Missing or empty alt text renders images inaccessible for users utilizing screen readers, impairing comprehension of visual content."
       }
     ]
   },
@@ -188,6 +363,60 @@
           }
         ],
         "impact": "serious"
+      }
+    ]
+  },
+  "https://abilenetx.gov/": {
+    "timestamp": "2025-06-09T17:59:04.627437",
+    "violations": [
+      {
+        "id": "contrast-ratiog",
+        "description": "Text and background have insufficient color contrast (e.g., the white text over white or light backgrounds).",
+        "nodes": [
+          {
+            "html": "<div class=\"widgetItem GraphicLinks\">\n\n<div>\n\t<a href=\"/561/Live-Archived-Video\" target=\"_self\" class=\"fancyButton fancyButton1194 \">\n\t\t<span>\n\t\t\t<span><span class=\"text\">Watch a Meeting</span></span>\n\t\t</span>\n\t</a>\n</div>",
+            "target": [
+              "div.widgetItem.GraphicLinks"
+            ],
+            "failureSummary": "Text 'Watch a Meeting' over the background has insufficient contrast."
+          }
+        ],
+        "impact": "high"
+      },
+      {
+        "id": "alt-text-missing",
+        "description": "Image elements that are not purely decorative must have descriptive alt text. Decorative images should have role=\"presentation\" or alt=\"\".",
+        "nodes": [
+          {
+            "html": "<img src=\"/ImageRepository/Document?documentID=33775\" class=\"fr-dib\" alt=\"Abilene TX Homepage\">",
+            "target": [
+              "img.fr-dib"
+            ],
+            "failureSummary": "Image with src '/ImageRepository/Document?documentID=33775' should have descriptive alt text if it conveys information."
+          }
+        ],
+        "impact": "high"
+      },
+      {
+        "id": "role-undefined",
+        "description": "Interactive elements such as role=\"button\" must be explicitly labeled or have accessible names.",
+        "nodes": [
+          {
+            "html": "<div class=\"ulsti hidden userway_dark\" id=\"userwayLstIcon\" aria-label=\"Translations Menu\" role=\"button\" tabindex=\"0\" aria-haspopup=\"dialog\" data-uw-s19-ignore=\"\" title=\"Translations Menu\" style=\"background: rgb(0, 72, 255) !important;\"><span class=\"uiiw\"></span></div>",
+            "target": [
+              "div#userwayLstIcon"
+            ],
+            "failureSummary": "Button role without a label or accessible name."
+          },
+          {
+            "html": "<div class=\"uai userway_dark\" id=\"userwayAccessibilityIcon\" aria-label=\"Accessibility Menu\" role=\"button\" tabindex=\"0\" aria-haspopup=\"dialog\" title=\"Accessibility Menu\" style=\"background: rgb(0, 72, 255) !important;\"><span class=\"uiiw\"><img data-uw-rm-ignore=\"\" class=\"ui_w\" role=\"presentation\" alt=\"\" src=\"https://cdn.userway.org/widgetapp/images/wheel_left_wh.svg\"></span></div>",
+            "target": [
+              "div#userwayAccessibilityIcon"
+            ],
+            "failureSummary": "Button role without a label or accessible name."
+          }
+        ],
+        "impact": "high"
       }
     ]
   }

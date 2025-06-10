@@ -15,7 +15,7 @@ class ProviderPricing(BaseModel):
 
 class ModelPricingInfo(BaseModel):
     model: str
-    provider: Literal["openai", "anthropic", "google"]
+    provider: Literal["openai", "anthropic", "google", "deepseek"]
     pricing: ProviderPricing
 
     def calculate_cost(self, input_tokens: int, output_tokens: int) -> float:
@@ -55,4 +55,30 @@ MODEL_PRICING_REGISTRY: Dict[str, ModelPricingInfo] = {
             output_per_million=8.00
         )
     ),
+    "gpt-4.1-nano": ModelPricingInfo(
+        model="gpt-4.1-nano",
+        provider="openai",
+        pricing=ProviderPricing(
+            input_per_million=0.1,
+            output_per_million=0.4
+        )
+    ),
+    # --- DeepSeek ---
+    "deepseek-chat": ModelPricingInfo(
+        model="deepseek-chat",
+        provider="deepseek",
+        pricing=ProviderPricing(
+            input_per_million=0.27,
+            output_per_million=1.1
+        )
+    ),
+    # --- DeepSeek ---
+    "deepseek-reasoner": ModelPricingInfo(
+        model="deepseek-reasoner",
+        provider="deepseek",
+        pricing=ProviderPricing(
+            input_per_million=0.55,
+            output_per_million=2.19
+        )
+    )
 }

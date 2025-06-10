@@ -4,6 +4,7 @@ from constants import INTERESTING
 from urllib.parse import urlparse, urlunparse
 import urllib.parse
 import logging
+import json
 
 logger = logging.getLogger(__name__)
 
@@ -46,15 +47,21 @@ def normalize_url(url: str) -> str:
 
 def extract_elements(page: Page) -> List[Dict[str, Any]]:
     
-    script = f"""
-      () => Array.from(document.querySelectorAll('{INTERESTING}')).map(el => {{
-        const r = el.getBoundingClientRect();
-        const cls = (el.getAttribute('class')||'').trim().split(/\\s+/).map(c=>'.'+c).join('');
-        const selector = el.id ? '#'+el.id : el.tagName.toLowerCase()+cls;
-        return {{selector, html: el.outerHTML.slice(0,300), bbox:[r.x,r.y,r.width,r.height]}};
-      }})
+    script = """
+      function(selector) {
+        return Array.from(document.querySelectorAll(selector)).map(function(el) {
+          const r = el.getBoundingClientRect();
+          const cls = (el.getAttribute('class')||'').trim().split(/\\s+/).map(c=>'.'+c).join('');
+          const selectorStr = el.id ? '#'+el.id : el.tagName.toLowerCase()+cls;
+          return {
+            selector: selectorStr, 
+            html: el.outerHTML.slice(0,300), 
+            bbox: [r.x, r.y, r.width, r.height]
+          };
+        });
+      }
     """
-    return cast(List[Dict[str, Any]], page.evaluate(script))
+    return cast(List[Dict[str, Any]], page.evaluate(script, INTERESTING))
 
 
 def scroll_to_bottom(page):

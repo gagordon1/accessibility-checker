@@ -13,7 +13,7 @@ from playwright.sync_api import sync_playwright
 from dotenv import load_dotenv
 from constants import WCAG_RULES_VECTOR_STORE_ID
 from utils.scrape import extract_elements, scroll_to_bottom, normalize_url
-from openai_wcag_checker import OpenAIWCAGClient
+from wcag_client import WCAGAIClient
 from type_hints.wcag_types import Violation
 
 # Configure logging
@@ -25,7 +25,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 load_dotenv()
-DEFAULT_MODEL = "gpt-4.1-mini"
+DEFAULT_MODEL = "deepseek-chat"
 
 def sanitize_url(url: str) -> str:
     """Convert URL to a valid filename."""
@@ -70,8 +70,10 @@ def scan_url(url: str, model: str = DEFAULT_MODEL) -> List[Violation]:
         logger.info(f"Screenshot of {url} saved to {img_path}")
         browser.close()
 
-    client = OpenAIWCAGClient(model=model)
-    logger.info(f"Running WCAG check on {url} with {model}")
+
+
+    client = WCAGAIClient(model=model)
+    logger.info(f"Running WCAG check on {url} with {model} (provider: {client.provider})")
     violations = client.run_check(img_path, WCAG_RULES_VECTOR_STORE_ID, elements)
 
     # Save violations to file
@@ -82,7 +84,12 @@ def scan_url(url: str, model: str = DEFAULT_MODEL) -> List[Violation]:
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(description="WCAG scan via older SDK pattern")
-    ap.add_argument("url"); ap.add_argument("--model", default=DEFAULT_MODEL)
+    ap.add_argument("url")
+    ap.add_argument(
+        "--model", 
+        default=DEFAULT_MODEL,
+        help=f"Model to use for WCAG checking. Available: {', '.join(WCAGAIClient.get_available_models())}"
+    )
     res = scan_url(**vars(ap.parse_args()))
     logger.info("Scan results:")
     logger.info(json.dumps([v.model_dump_json() for v in res], indent=2))

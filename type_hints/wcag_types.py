@@ -16,3 +16,4 @@ class Violation(BaseModel):
 
 class WCAGCheckResponse(BaseModel):
     violations: List[Violation]
+    reference : str

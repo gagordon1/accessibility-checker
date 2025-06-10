@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from llm_check import scan_url
+from url_check import scan_url
 import json
 from pathlib import Path
 from utils.scrape import normalize_url
