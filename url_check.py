@@ -12,7 +12,7 @@ import logging
 from playwright.sync_api import sync_playwright
 from dotenv import load_dotenv
 from constants import WCAG_RULES_VECTOR_STORE_ID
-from utils.scrape import extract_elements, scroll_to_bottom, normalize_url
+from utils.scrape import extract_elements, scroll_to_bottom, normalize_url, capture_website_with_playwright
 from wcag_client import WCAGAIClient
 from type_hints.wcag_types import Violation
 from axe_scan import run_axe_scan
@@ -64,16 +64,10 @@ def scan_url(url: str, model: Optional[str] = None) -> List[Violation]:
 
     # Only run AI model if specified
     if model:
-        with sync_playwright() as p:
-            browser = p.chromium.launch()
-            page = browser.new_page(device_scale_factor=0.8)
-            page.goto(url, wait_until="networkidle")
-            scroll_to_bottom(page)  # Scroll through page to trigger lazy loading
-            elements = extract_elements(page)
-            img_path = Path("model_context/screenshot.png")
-            page.screenshot(path=str(img_path), full_page=True)
-            logger.info(f"Screenshot of {url} saved to {img_path}")
-            browser.close()
+        elements, img_path, html_content = capture_website_with_playwright(url, take_screenshot=True)
+
+        if img_path is None:
+            raise ValueError("Screenshot was not captured successfully")
 
         logger.info(f"Running WCAG AI check on {url} with {model}")
         client = WCAGAIClient(model=model)

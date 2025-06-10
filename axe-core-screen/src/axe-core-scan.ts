@@ -104,7 +104,7 @@ async function runAxeScan(page: Page): Promise<Violation[]> {
     page.setDefaultNavigationTimeout(30000);
 
     // Navigate to the URL
-    await page.goto(url, { waitUntil: "networkidle2" });
+      await page.goto(url, { waitUntil: "networkidle2" });
 
     // Run axe-core scan
     const violations = await runAxeScan(page);
