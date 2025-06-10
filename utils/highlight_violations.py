@@ -18,25 +18,23 @@ def get_violation_highlight_css() -> str:
     """
     return """
         .wcag-violation-icon {
-            position: absolute !important;
+            position: fixed !important;
             width: 28px !important;
             height: 28px !important;
             background-color: #dc3545 !important;
             border: 3px solid white !important;
             border-radius: 50% !important;
-            z-index: 999999 !important;
+            z-index: 2147483647 !important;
             font-size: 16px !important;
             color: white !important;
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
             font-weight: bold !important;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.6) !important;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.8) !important;
             font-family: Arial, sans-serif !important;
             line-height: 1 !important;
             text-align: center !important;
-            top: -14px !important;
-            left: -14px !important;
             pointer-events: none !important;
         }
         
@@ -76,23 +74,24 @@ def get_violation_highlight_javascript(violations: List[Dict]) -> str:
                                     violationNumber++;
                                     
                                     // Highlight the element (exact same as extension)
-                                    el.style.outline = "3px solid red";
+                                    el.style.outline = "4px solid #dc3545";
+                                    el.style.outlineOffset = "2px";
                                     el.classList.add('wcag-highlighted-element');
                                     el.dataset.wcagFlagged = "true";
                                     
-                                    // Create numbered icon (similar to extension but simplified for screenshots)
+                                    // Create numbered icon with fixed positioning
                                     const icon = document.createElement('div');
                                     icon.className = 'wcag-violation-icon';
                                     icon.textContent = violationNumber;
                                     icon.dataset.wcagIcon = 'true';
                                     
-                                    // Ensure element can contain the icon
-                                    if (window.getComputedStyle(el).position === 'static') {
-                                        el.style.position = 'relative';
-                                    }
+                                    // Position the icon relative to the element using fixed positioning
+                                    const rect = el.getBoundingClientRect();
+                                    icon.style.left = (rect.left - 14) + 'px';
+                                    icon.style.top = (rect.top - 14) + 'px';
                                     
-                                    // Add icon to element
-                                    el.appendChild(icon);
+                                    // Add to body (not to the element) to avoid z-index stacking issues
+                                    document.body.appendChild(icon);
                                     
                                     successful_annotations++;
                                 }
@@ -163,7 +162,7 @@ def clear_violations_javascript() -> str:
     """
     return """
         () => {
-            // Remove all violation icons
+            // Remove all violation icons (now attached to body)
             const icons = document.querySelectorAll('.wcag-violation-icon');
             icons.forEach(icon => icon.remove());
             
@@ -171,6 +170,7 @@ def clear_violations_javascript() -> str:
             const highlightedElements = document.querySelectorAll('.wcag-highlighted-element');
             highlightedElements.forEach(el => {
                 el.style.outline = '';
+                el.style.outlineOffset = '';
                 el.classList.remove('wcag-highlighted-element');
                 delete el.dataset.wcagFlagged;
             });

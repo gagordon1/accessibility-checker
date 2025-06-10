@@ -170,7 +170,7 @@ class VisualReportGenerator:
         # Step 3: Group violations by type and create numbered list
         logger.info("Processing violations...")
         grouped_violations = self.group_violations_by_type(violations)
-        numbered_violations = self.create_numbered_violations_list(violations)
+        numbered_violations = self.create_numbered_violations_list(url, violations)
         
         # Step 4: Create comprehensive report with embedded screenshot and violation details
         logger.info("Generating comprehensive report...")
@@ -182,41 +182,80 @@ class VisualReportGenerator:
         logger.info(f"Comprehensive report generated successfully!")
         return report_data
     
-    def create_numbered_violations_list(self, violations: List[Dict]) -> List[Dict]:
+    def create_numbered_violations_list(self, url: str, violations: List[Dict]) -> List[Dict]:
         """
-        Create a numbered list of all violations for reference
+        Create a numbered list that matches exactly what the JavaScript annotation logic produces
+        This queries the actual DOM to count elements per selector, ensuring 1:1 alignment
         
         Args:
+            url: The URL to query for element counts
             violations: List of violation dictionaries
             
         Returns:
-            List of numbered violations with details
+            List of numbered violations with details that match the annotations
         """
         numbered_violations = []
         violation_number = 0
         
-        for violation in violations:
-            nodes = violation.get('nodes', [])
+        # We need to query the actual DOM to count elements like the JavaScript does
+        with sync_playwright() as p:
+            browser = p.chromium.launch()
+            page = browser.new_page()
+            page.goto(url, wait_until="networkidle")
             
-            for node in nodes:
-                targets = node.get('target', [])
+            # Resize viewport to match what we do for annotations
+            resize_viewport_to_full_page(page)
+            
+            for violation in violations:
+                nodes = violation.get('nodes', [])
                 
-                for target in targets:
-                    violation_number += 1
+                for node in nodes:
+                    targets = node.get('target', [])
                     
-                    numbered_violations.append({
-                        'number': violation_number,
-                        'rule_id': violation.get('id', 'unknown'),
-                        'description': violation.get('description', 'No description'),
-                        'impact': violation.get('impact', 'unknown'),
-                        'target': target,
-                        'html': node.get('html', ''),
-                        'failure_summary': node.get('failureSummary', 'No failure summary available'),
-                        'help': violation.get('help', 'No help available'),
-                        'help_url': violation.get('helpUrl', '')
-                    })
+                    for target in targets:
+                        try:
+                            # Count how many elements this selector will match (same as JavaScript)
+                            element_count = page.evaluate(f"document.querySelectorAll('{target}').length")
+                            
+                            # Create one description entry for each element that will be annotated
+                            for element_index in range(element_count):
+                                violation_number += 1
+                                
+                                numbered_violations.append({
+                                    'number': violation_number,
+                                    'rule_id': violation.get('id', 'unknown'),
+                                    'description': violation.get('description', 'No description'),
+                                    'impact': violation.get('impact', 'unknown'),
+                                    'target': target,
+                                    'element_index': element_index + 1,  # Human-readable index
+                                    'total_elements': element_count,      # Total for this selector
+                                    'html': node.get('html', ''),
+                                    'failure_summary': node.get('failureSummary', 'No failure summary available'),
+                                    'help': violation.get('help', 'No help available'),
+                                    'help_url': violation.get('helpUrl', '')
+                                })
+                                
+                        except Exception as e:
+                            # If selector fails, still create one entry
+                            violation_number += 1
+                            numbered_violations.append({
+                                'number': violation_number,
+                                'rule_id': violation.get('id', 'unknown'),
+                                'description': violation.get('description', 'No description'),
+                                'impact': violation.get('impact', 'unknown'),
+                                'target': target,
+                                'element_index': 1,
+                                'total_elements': 1,
+                                'html': node.get('html', ''),
+                                'failure_summary': node.get('failureSummary', 'No failure summary available'),
+                                'help': violation.get('help', 'No help available'),
+                                'help_url': violation.get('helpUrl', '')
+                            })
+                            logger.warning(f"Failed to count elements for selector '{target}': {e}")
+            
+            browser.close()
         
-        logger.info(f"Created {len(numbered_violations)} numbered violation entries")
+        logger.info(f"Created {len(numbered_violations)} numbered violation entries matching DOM element count")
         return numbered_violations
     
     def _create_violation_details_html(self, numbered_violations: List[Dict]) -> str:
@@ -233,9 +272,14 @@ class VisualReportGenerator:
                 'minor': '#28a745'
             }.get(violation['impact'], '#6c757d')
             
+            # Show element index if there are multiple elements for this selector
+            element_info = ""
+            if violation.get('total_elements', 1) > 1:
+                element_info = f" (Element {violation.get('element_index', 1)} of {violation.get('total_elements', 1)})"
+            
             violation_items.append(f'''
             <div class="violation-detail" style="border-left: 4px solid {impact_color};">
-                <h4>#{violation['number']} - {violation['rule_id']}</h4>
+                <h4>#{violation['number']} - {violation['rule_id']}{element_info}</h4>
                 <p><strong>Impact:</strong> <span style="color: {impact_color}; font-weight: bold;">{violation['impact'].title()}</span></p>
                 <p><strong>Description:</strong> {violation['description']}</p>
                 <p><strong>Target Element:</strong> <code>{violation['target']}</code></p>
