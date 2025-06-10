@@ -178,7 +178,12 @@ class VisualReportGenerator:
         )
         report_data["files"]["comprehensive_report"] = comprehensive_report
         
-        logger.info(f"Comprehensive report generated successfully!")
+        # Step 5: Generate PDF version of the report
+        logger.info("Generating PDF report...")
+        pdf_report = self._generate_pdf_report(comprehensive_report, output_path, safe_url, timestamp)
+        report_data["files"]["pdf_report"] = pdf_report
+        
+        logger.info(f"Reports generated successfully!")
         return report_data
     
     def create_numbered_violations_list(self, url: str, violations: List[Dict]) -> List[Dict]:
@@ -290,6 +295,52 @@ class VisualReportGenerator:
         
         return ''.join(violation_items)
     
+    def _generate_pdf_report(self, html_file_path: str, output_path: Path, safe_url: str, timestamp: str) -> str:
+        """
+        Generate a PDF version of the HTML report using Playwright
+        
+        Args:
+            html_file_path: Path to the HTML report file
+            output_path: Directory to save the PDF
+            safe_url: Sanitized URL for filename
+            timestamp: Timestamp string for filename
+            
+        Returns:
+            Path to the generated PDF file
+        """
+        try:
+            pdf_file = output_path / f"{safe_url}_{timestamp}_comprehensive.pdf"
+            
+            with sync_playwright() as p:
+                browser = p.chromium.launch()
+                page = browser.new_page()
+                
+                # Load the HTML file
+                html_file_url = f"file://{Path(html_file_path).absolute()}"
+                page.goto(html_file_url, wait_until="networkidle")
+                
+                # Generate PDF with good settings for accessibility reports
+                page.pdf(
+                    path=str(pdf_file),
+                    format='A4',
+                    print_background=True,
+                    margin={
+                        'top': '1cm',
+                        'right': '1cm', 
+                        'bottom': '1cm',
+                        'left': '1cm'
+                    }
+                )
+                
+                browser.close()
+            
+            logger.info(f"PDF report saved: {pdf_file}")
+            return str(pdf_file)
+            
+        except Exception as e:
+            logger.error(f"Failed to generate PDF report: {e}")
+            raise
+    
     def _generate_comprehensive_report_with_image(self, report_data: Dict, png_base64: str, 
                                                  numbered_violations: List[Dict], output_path: Path, 
                                                  safe_url: str, timestamp: str) -> str:
@@ -395,7 +446,8 @@ def main():
         print(f"\n✅ Report generated successfully!")
         print(f"📁 Output directory: {args.output}")
         print(f"🔍 Violations found: {report_data['violation_count']}")
-        print(f"📄 Comprehensive Report: {report_data['files']['comprehensive_report']}")
+        print(f"📄 HTML Report: {report_data['files']['comprehensive_report']}")
+        print(f"📋 PDF Report: {report_data['files']['pdf_report']}")
         print(f"🌐 View violations on website: {args.url}")
     
     except Exception as e:
