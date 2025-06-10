@@ -13,7 +13,8 @@ from bs4 import BeautifulSoup
 from collections import defaultdict
 import base64
 
-from utils.scrape import normalize_url, capture_website_with_playwright
+from utils.scrape import normalize_url, capture_website_with_playwright, resize_viewport_to_full_page
+from utils.highlight_violations import highlight_violations_on_page
 from app import get_cached_violations
 from playwright.sync_api import sync_playwright
 
@@ -81,7 +82,7 @@ class VisualReportGenerator:
     
     def create_annotated_website_screenshot(self, url: str, violations: List[Dict]) -> str:
         """
-        Create an annotated screenshot by injecting highlights directly into the DOM
+        Create an annotated screenshot using the proven extension highlighting logic
         
         Args:
             url: The URL to capture
@@ -92,24 +93,8 @@ class VisualReportGenerator:
         """
         logger.info(f"Creating annotated website screenshot for {url}")
         
-        # Get violation targets and create numbered list
-        violation_targets = []
-        violation_number = 0
-        
-        for violation in violations:
-            nodes = violation.get('nodes', [])
-            for node in nodes:
-                targets = node.get('target', [])
-                for target in targets:
-                    violation_number += 1
-                    violation_targets.append({
-                        'number': violation_number,
-                        'target': target,
-                        'impact': violation.get('impact', 'unknown')
-                    })
-        
-        if not violation_targets:
-            logger.info("No violation targets found, returning clean screenshot")
+        if not violations:
+            logger.info("No violations found, returning clean screenshot")
             # Return clean screenshot if no violations
             _, _, clean_png = capture_website_with_playwright(url)
             return clean_png
@@ -119,110 +104,13 @@ class VisualReportGenerator:
             page = browser.new_page(device_scale_factor=1)
             page.goto(url, wait_until="networkidle")
             
-            # Scroll through page to trigger lazy loading
-            page.evaluate("""
-                async () => {
-                    let totalHeight = 0;
-                    const distance = 500;
-                    while (totalHeight < document.body.scrollHeight) {
-                        window.scrollBy(0, distance);
-                        totalHeight += distance;
-                        await new Promise(resolve => setTimeout(resolve, 500));
-                    }
-                }
-            """)
+            # Resize viewport to capture full content efficiently
+            resize_viewport_to_full_page(page)
             
-            # Inject CSS for violation highlights
-            page.add_style_tag(content="""
-                .wcag-violation-highlight {
-                    position: relative !important;
-                    outline: 3px solid #ff0000 !important;
-                    outline-offset: 2px !important;
-                    background-color: rgba(255, 0, 0, 0.1) !important;
-                    z-index: 9999 !important;
-                }
-                
-                .wcag-violation-number {
-                    position: absolute !important;
-                    top: -15px !important;
-                    left: -5px !important;
-                    background-color: #ff0000 !important;
-                    color: white !important;
-                    font-size: 14px !important;
-                    font-weight: bold !important;
-                    padding: 4px 8px !important;
-                    border-radius: 50% !important;
-                    z-index: 10000 !important;
-                    font-family: Arial, sans-serif !important;
-                    min-width: 20px !important;
-                    min-height: 20px !important;
-                    display: flex !important;
-                    align-items: center !important;
-                    justify-content: center !important;
-                    box-shadow: 0 2px 4px rgba(0,0,0,0.3) !important;
-                }
-                
-                .wcag-violation-serious .wcag-violation-number {
-                    background-color: #ff6600 !important;
-                }
-                
-                .wcag-violation-moderate .wcag-violation-number {
-                    background-color: #ffcc00 !important;
-                    color: black !important;
-                }
-                
-                .wcag-violation-minor .wcag-violation-number {
-                    background-color: #00aa00 !important;
-                }
-            """)
+            # Use the reusable highlighting utility
+            result = highlight_violations_on_page(page, violations)
             
-            # Inject violation highlights for each target
-            successful_annotations = 0
-            for violation_target in violation_targets:
-                try:
-                    target_selector = violation_target['target']
-                    number = violation_target['number']
-                    impact = violation_target['impact']
-                    
-                    # Try to find and annotate the element
-                    success = page.evaluate(f"""
-                        () => {{
-                            try {{
-                                const element = document.querySelector('{target_selector}');
-                                if (element) {{
-                                    // Add highlight class
-                                    element.classList.add('wcag-violation-highlight');
-                                    element.classList.add('wcag-violation-{impact}');
-                                    
-                                    // Create number badge
-                                    const badge = document.createElement('div');
-                                    badge.className = 'wcag-violation-number';
-                                    badge.textContent = '{number}';
-                                    
-                                    // Position the badge
-                                    element.style.position = element.style.position || 'relative';
-                                    element.appendChild(badge);
-                                    
-                                    return true;
-                                }}
-                                return false;
-                            }} catch (e) {{
-                                console.log('Error annotating element:', e);
-                                return false;
-                            }}
-                        }}
-                    """)
-                    
-                    if success:
-                        successful_annotations += 1
-                        logger.debug(f"Successfully annotated violation {number}: {target_selector}")
-                    else:
-                        logger.warning(f"Could not find element for violation {number}: {target_selector}")
-                        
-                except Exception as e:
-                    logger.warning(f"Error annotating violation {violation_target['number']}: {e}")
-            
-            # Wait a moment for annotations to render
+            # Wait for annotations to render
             page.wait_for_timeout(1000)
             
             # Take screenshot with annotations
@@ -231,7 +119,9 @@ class VisualReportGenerator:
             
             browser.close()
         
-        logger.info(f"Created annotated screenshot with {successful_annotations}/{len(violation_targets)} successful annotations")
+        successful = result.get('successful_annotations', 0)
+        total = result.get('total_violations', 0)
+        logger.info(f"Created annotated screenshot with {successful}/{total} successful annotations")
         return png_base64
     
     def generate_report(self, url: str, output_dir: str = "reports") -> Dict:
@@ -343,13 +233,6 @@ class VisualReportGenerator:
                 'minor': '#28a745'
             }.get(violation['impact'], '#6c757d')
             
-            html_snippet = ""
-            if violation['html']:
-                html_content = violation['html'][:200]
-                if len(violation['html']) > 200:
-                    html_content += "..."
-                html_snippet = f'<div class="html-snippet"><strong>HTML:</strong><br><code>{html_content}</code></div>'
-            
             violation_items.append(f'''
             <div class="violation-detail" style="border-left: 4px solid {impact_color};">
                 <h4>#{violation['number']} - {violation['rule_id']}</h4>
@@ -359,7 +242,6 @@ class VisualReportGenerator:
                 <div class="failure-summary">
                     <strong>Issue:</strong> {violation['failure_summary']}
                 </div>
-                {html_snippet}
             </div>
             ''')
         

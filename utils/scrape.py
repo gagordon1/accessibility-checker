@@ -65,21 +65,40 @@ def extract_elements(page: Page) -> List[Dict[str, Any]]:
     """
     return cast(List[Dict[str, Any]], page.evaluate(script, INTERESTING))
 
-
-def scroll_to_bottom(page):
-    page.evaluate(
-        """
-        async () => {
-            let totalHeight = 0;
-            const distance = 500;
-            while (totalHeight < document.body.scrollHeight) {
-                window.scrollBy(0, distance);
-                totalHeight += distance;
-                await new Promise(resolve => setTimeout(resolve, 500));
-            }
+def resize_viewport_to_full_page(page):
+    """
+    Resize the viewport to the full page dimensions to capture everything at once
+    This keeps dynamic elements like navbars in correct positions
+    """
+    # Get the full content dimensions
+    dimensions = page.evaluate("""
+        () => {
+            return {
+                width: Math.max(
+                    document.body.scrollWidth,
+                    document.body.offsetWidth,
+                    document.documentElement.clientWidth,
+                    document.documentElement.scrollWidth,
+                    document.documentElement.offsetWidth
+                ),
+                height: Math.max(
+                    document.body.scrollHeight,
+                    document.body.offsetHeight,
+                    document.documentElement.clientHeight,
+                    document.documentElement.scrollHeight,
+                    document.documentElement.offsetHeight
+                )
+            };
         }
-        """
-    )
+    """)
+    
+    # Set viewport to capture full page content
+    page.set_viewport_size({
+        'width': max(1200, dimensions['width']),  # At least 1200px wide
+        'height': min(dimensions['height'], 32767)  # Browser height limit
+    })
+    
+    logger.debug(f"Resized viewport to full page: {max(1200, dimensions['width'])}x{min(dimensions['height'], 32767)}")
 
 def capture_website_with_playwright(url: str, take_screenshot: bool = False, 
                                   screenshot_path: Optional[str] = None) -> Tuple[List[Dict[str, Any]], Optional[Path], str]:
@@ -108,8 +127,8 @@ def capture_website_with_playwright(url: str, take_screenshot: bool = False,
         page = browser.new_page(device_scale_factor=1)
         page.goto(url, wait_until="networkidle")
         
-        # Scroll through page to trigger lazy loading
-        scroll_to_bottom(page)
+        # Resize viewport to full page dimensions to capture everything at once
+        resize_viewport_to_full_page(page)
         
         # Extract elements for AI analysis
         elements = extract_elements(page)

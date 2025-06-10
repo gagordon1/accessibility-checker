@@ -12,7 +12,7 @@ import logging
 from playwright.sync_api import sync_playwright
 from dotenv import load_dotenv
 from constants import WCAG_RULES_VECTOR_STORE_ID
-from utils.scrape import extract_elements, scroll_to_bottom, normalize_url, capture_website_with_playwright
+from utils.scrape import extract_elements, normalize_url, capture_website_with_playwright
 from wcag_client import WCAGAIClient
 from type_hints.wcag_types import Violation
 from axe_scan import run_axe_scan

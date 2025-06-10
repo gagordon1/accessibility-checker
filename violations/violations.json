@@ -4,81 +4,95 @@
     "violations": []
   },
   "https://farsight-ai.com/": {
-    "timestamp": "2025-06-08T18:47:39.081481",
+    "timestamp": "2025-06-10T16:55:30.117990",
     "violations": [
       {
-        "id": "1.1.1",
-        "description": "All non-text content must have a text alternative that serves the equivalent purpose, so users who cannot see the content can understand its meaning via assistive technologies or text equivalents.",
+        "id": "SC1.1.1",
+        "description": "All images must have appropriate alternative text (alt text) for screen reader users.",
         "nodes": [
           {
-            "html": "<img decoding=\"async\" width=\"40\" height=\"40\" src=\"https://framerusercontent.com/images/Qxl0xOammq0Wuc1PWzewSLeFEeo.svg\" alt=\"\" style=\"display:block;width:100%;height:100%;border-radius:inherit;object-position:center;object-fit:cover\">",
+            "html": "<img decoding=\"async\" width=\"150\" height=\"150\" src=\"https://framerusercontent.com/images/b5xr2S8M8lzlgvisYNxsGMx7m0.s\" alt=\"\" style=\"display:block;width:100%;height:100%;border-radius:inherit;object-position:center;object-fit:cover\">",
             "target": [
-              "img[src=\"https://framerusercontent.com/images/Qxl0xOammq0Wuc1PWzewSLeFEeo.svg\"]"
+              "img"
             ],
-            "failureSummary": "Image has empty alt attribute, which likely does not provide meaningful alternative text. This violates the requirement to provide meaningful text alternatives."
-          },
-          {
-            "html": "<img decoding=\"async\" width=\"40\" height=\"40\" src=\"https://framerusercontent.com/images/XgeHbKsC4LQyu2FVI2CvcsZPdBY.svg\" alt=\"\" style=\"display:block;width:100%;height:100%;border-radius:inherit;object-position:center;object-fit:cover\">",
-            "target": [
-              "img[src=\"https://framerusercontent.com/images/XgeHbKsC4LQyu2FVI2CvcsZPdBY.svg\"]"
-            ],
-            "failureSummary": "Image has empty alt attribute, which likely does not provide meaningful alternative text."
-          },
-          {
-            "html": "<img decoding=\"async\" width=\"40\" height=\"40\" src=\"https://framerusercontent.com/images/FY62FdJNRsWE4jzZ4CDPLIYo7bc.svg\" alt=\"\" style=\"display:block;width:100%;height:100%;border-radius:inherit;object-position:center;object-fit:cover\">",
-            "target": [
-              "img[src=\"https://framerusercontent.com/images/FY62FdJNRsWE4jzZ4CDPLIYo7bc.svg\"]"
-            ],
-            "failureSummary": "Image has empty alt attribute, which likely does not provide meaningful alternative text."
-          },
-          {
-            "html": "<img decoding=\"async\" width=\"40\" height=\"40\" src=\"https://framerusercontent.com/images/mCcjYKopISLeI31xOs7pGwiY4w.svg\" alt=\"\" style=\"display:block;width:100%;height:100%;border-radius:inherit;object-position:center;object-fit:cover\">",
-            "target": [
-              "img[src=\"https://framerusercontent.com/images/mCcjYKopISLeI31xOs7pGwiY4w.svg\"]"
-            ],
-            "failureSummary": "Image has empty alt attribute, which likely does not provide meaningful alternative text."
+            "failureSummary": "Image missing appropriate alt text."
           }
         ],
-        "impact": "serious"
+        "impact": "High"
       },
       {
-        "id": "1.4.3",
-        "description": "Ensure text and images of text have a contrast ratio of at least 4.5:1 (3:1 for large text) so users with low vision or color deficiencies can read content.",
+        "id": "ARIA1.1",
+        "description": "Interactive elements like links must have accessible names, such as meaningful text labels or aria-labels.",
         "nodes": [
           {
-            "html": "<a class=\"framer-1ah597z framer-1fm18o4\" style=\"border-radius: 8px; opacity: 1;\" href=\"./#benefits\"><div class=\"framer-t0llol\" data-framer-name=\"Text\" style=\"outline: none; display: flex; flex-direction: column; justify-content: flex-start; flex-shrink: 0; --extracted-r6o4lv: rgb(71, 84, 102); --fra",
+            "html": "<a class=\"framer-T4XbY framer-19hi7n9 framer-v-19hi7n9 framer-14rcait\" data-framer-name=\"Variant 1\" data-highlight=\"true\" href=\"https://app.dover.com/jobs/farsight-ai\" rel=\"noopener\"><div class=\"framer-aojig7\" data-framer-name=\"Text\" style=\"outline: none; display: flex; flex-direction: column; justify-content: flex-start; flex-shrink: 0; -</div></a>",
             "target": [
-              "a.framer-1ah597z.framer-1fm18o4[href=\"./#benefits\"]"
+              "a"
             ],
-            "failureSummary": "Text color rgb(71, 84, 102) on background color is too low contrast. Contrast ratio may be below 4.5:1 threshold."
-          },
-          {
-            "html": "<a class=\"framer-1ah597z framer-1fm18o4\" style=\"border-radius: 8px; opacity: 1;\" href=\"./team\"><div class=\"framer-t0llol\" data-framer-name=\"Text\" style=\"outline: none; display: flex; flex-direction: column; justify-content: flex-start; flex-shrink: 0; --extracted-r6o4lv: rgb(71, 84, 102); --framer-p",
-            "target": [
-              "a.framer-1ah597z.framer-1fm18o4[href=\"./team\"]"
-            ],
-            "failureSummary": "Text color rgb(71, 84, 102) on background color is too low contrast."
-          },
-          {
-            "html": "<a class=\"framer-1ah597z framer-1fm18o4\" style=\"border-radius: 8px; opacity: 1;\" href=\"./blog\"><div class=\"framer-t0llol\" data-framer-name=\"Text\" style=\"outline: none; display: flex; flex-direction: column; justify-content: flex-start; flex-shrink: 0; --extracted-r6o4lv: rgb(71, 84, 102); --framer-p",
-            "target": [
-              "a.framer-1ah597z.framer-1fm18o4[href=\"./blog\"]"
-            ],
-            "failureSummary": "Text color rgb(71, 84, 102) on background color is too low contrast."
+            "failureSummary": "Link does not have a meaningful accessible name."
           }
         ],
-        "impact": "moderate"
+        "impact": "High"
       },
       {
-        "id": "4.1.2",
-        "description": "UI components must expose programmatic name, role, state/value, and changes to assistive technologies.",
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
         "nodes": [
           {
-            "html": "<a data-framer-component-type=\"SVG\" data-framer-name=\"HorizontalLogo\" href=\"./\" data-framer-page-link-current=\"true\" style=\"image-rendering: pixelated; flex-shrink: 0; fill: rgb(0, 0, 0); color: rgb(0, 0, 0); opacity: 1;\" class=\"framer-3wl0f4 framer-1bnbn01\" aria-hidden=\"true\"><div class=\"svgContain",
+            "html": "<p style=\"--font-selector:SW50ZXItTWVkaXVt;--framer-font-family:&quot;Inter-Medium&quot;, &quot;Inter&quot;, &quot;Inter Placeholder&quot;, sans-serif;--framer-font-size:18px;--framer-font-weight:500;--framer-letter-spacing:-0.36px;--framer-line-height:0.9em;--framer-text-alignment:center;--framer-text-color:var(--extracted-r6o4lv, var(--token-cf8e9f02-190f-4c1a-b25c-0be448eac23b, rgb(24, 59, 86)))\" class=\"framer-text\">",
             "target": [
-              "a.framer-3wl0f4.framer-1bnbn01[data-framer-component-type=\"SVG\"]"
+              ".framer-T4XbY[href=\"./\"][data-framer-page-link-current=\"true\"] > .framer-13g0p7r[data-framer-name=\"Our Portfolio\"][data-framer-component-type=\"RichTextContainer\"] > p"
             ],
-            "failureSummary": "Element is an SVG link but marked aria-hidden=true, so it may not expose accessible name or role to assistive technologies."
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.11 (foreground color: #698091, background color: #ffffff, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<p style=\"--font-selector:SW50ZXItTWVkaXVt;--framer-font-family:&quot;Inter-Medium&quot;, &quot;Inter&quot;, &quot;Inter Placeholder&quot;, sans-serif;--framer-font-size:18px;--framer-font-weight:500;--framer-letter-spacing:-0.36px;--framer-line-height:0.9em;--framer-text-alignment:center;--framer-text-color:var(--extracted-r6o4lv, var(--token-cf8e9f02-190f-4c1a-b25c-0be448eac23b, rgb(24, 59, 86)))\" class=\"framer-text\">",
+            "target": [
+              "a[href$=\"team\"] > .framer-13g0p7r[data-framer-name=\"Our Portfolio\"][data-framer-component-type=\"RichTextContainer\"] > p"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.11 (foreground color: #698091, background color: #ffffff, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<p style=\"--font-selector:SW50ZXItTWVkaXVt;--framer-font-family:&quot;Inter-Medium&quot;, &quot;Inter&quot;, &quot;Inter Placeholder&quot;, sans-serif;--framer-font-size:18px;--framer-font-weight:500;--framer-letter-spacing:-0.36px;--framer-line-height:0.9em;--framer-text-alignment:center;--framer-text-color:var(--extracted-r6o4lv, var(--token-cf8e9f02-190f-4c1a-b25c-0be448eac23b, rgb(24, 59, 86)))\" class=\"framer-text\">",
+            "target": [
+              "a[href$=\"blog\"] > .framer-13g0p7r[data-framer-name=\"Our Portfolio\"][data-framer-component-type=\"RichTextContainer\"] > p"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.11 (foreground color: #698091, background color: #ffffff, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<p style=\"--font-selector:SW50ZXItTWVkaXVt;--framer-font-family:&quot;Inter-Medium&quot;, &quot;Inter&quot;, &quot;Inter Placeholder&quot;, sans-serif;--framer-font-size:18px;--framer-font-weight:500;--framer-letter-spacing:-0.36px;--framer-line-height:0.9em;--framer-text-alignment:center;--framer-text-color:var(--extracted-r6o4lv, var(--token-cf8e9f02-190f-4c1a-b25c-0be448eac23b, rgb(24, 59, 86)))\" class=\"framer-text\">",
+            "target": [
+              "a[href$=\"./#contact-us\"] > .framer-13g0p7r[data-framer-name=\"Our Portfolio\"][data-framer-component-type=\"RichTextContainer\"] > p"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.11 (foreground color: #698091, background color: #ffffff, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<p style=\"--font-selector:SW50ZXItTWVkaXVt;--framer-font-family:&quot;Inter-Medium&quot;, &quot;Inter&quot;, &quot;Inter Placeholder&quot;, sans-serif;--framer-font-size:18px;--framer-font-weight:500;--framer-letter-spacing:-0.36px;--framer-line-height:0.9em;--framer-text-alignment:center;--framer-text-color:var(--extracted-r6o4lv, var(--token-cf8e9f02-190f-4c1a-b25c-0be448eac23b, rgb(24, 59, 86)))\" class=\"framer-text\">",
+            "target": [
+              "a[href$=\"privacy-policy\"] > .framer-13g0p7r[data-framer-name=\"Our Portfolio\"][data-framer-component-type=\"RichTextContainer\"] > p"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.11 (foreground color: #698091, background color: #ffffff, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<p style=\"--font-selector:SW50ZXItTWVkaXVt;--framer-font-family:&quot;Inter-Medium&quot;, &quot;Inter&quot;, &quot;Inter Placeholder&quot;, sans-serif;--framer-font-size:18px;--framer-font-weight:500;--framer-letter-spacing:-0.36px;--framer-line-height:0.9em;--framer-text-alignment:center;--framer-text-color:var(--extracted-r6o4lv, var(--token-cf8e9f02-190f-4c1a-b25c-0be448eac23b, rgb(24, 59, 86)))\" class=\"framer-text\">",
+            "target": [
+              ".framer-1u6ta7i-container > .framer-T4XbY.framer-19hi7n9.framer-v-19hi7n9 > .framer-13g0p7r[data-framer-name=\"Our Portfolio\"][data-framer-component-type=\"RichTextContainer\"] > p"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.11 (foreground color: #698091, background color: #ffffff, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<p style=\"--font-selector:SW50ZXItTWVkaXVt;--framer-font-family:&quot;Inter-Medium&quot;, &quot;Inter&quot;, &quot;Inter Placeholder&quot;, sans-serif;--framer-font-size:18px;--framer-font-weight:500;--framer-letter-spacing:-0.36px;--framer-line-height:0.9em;--framer-text-alignment:center;--framer-text-color:var(--extracted-r6o4lv, var(--token-cf8e9f02-190f-4c1a-b25c-0be448eac23b, rgb(24, 59, 86)))\" class=\"framer-text\">",
+            "target": [
+              ".framer-eu9sk6-container > .framer-T4XbY.framer-19hi7n9.framer-v-19hi7n9 > .framer-13g0p7r[data-framer-name=\"Our Portfolio\"][data-framer-component-type=\"RichTextContainer\"] > p"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.11 (foreground color: #698091, background color: #ffffff, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<p style=\"--font-selector:SW50ZXItTWVkaXVt;--framer-font-family:&quot;Inter-Medium&quot;, &quot;Inter&quot;, &quot;Inter Placeholder&quot;, sans-serif;--framer-font-size:18px;--framer-font-weight:500;--framer-letter-spacing:-0.36px;--framer-line-height:0.9em;--framer-text-alignment:center;--framer-text-color:var(--extracted-r6o4lv, var(--token-cf8e9f02-190f-4c1a-b25c-0be448eac23b, rgb(24, 59, 86)))\" class=\"framer-text\">",
+            "target": [
+              ".framer-r8kmdv-container > .framer-T4XbY.framer-19hi7n9.framer-v-19hi7n9 > .framer-13g0p7r[data-framer-name=\"Our Portfolio\"][data-framer-component-type=\"RichTextContainer\"] > p"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.11 (foreground color: #698091, background color: #ffffff, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
           }
         ],
         "impact": "serious"
@@ -12983,6 +12997,1412 @@
   },
   "https://mymoney.gov/": {
     "timestamp": "2025-06-10T16:32:51.560040",
+    "violations": []
+  },
+  "https://nationalbank.gov/": {
+    "timestamp": "2025-06-10T16:33:33.022756",
+    "violations": []
+  },
+  "https://nationalbanknet.gov/": {
+    "timestamp": "2025-06-10T16:34:14.969237",
+    "violations": []
+  },
+  "https://navycash.gov/": {
+    "timestamp": "2025-06-10T16:34:23.505538",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodes": [
+          {
+            "html": "<a class=\"hidden-link\" href=\"#main\">Skip Navigation</a>",
+            "target": [
+              ".hidden-link"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.15 (foreground color: #0379ca, background color: #f4f4f4, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"resources.html#cardholder\" class=\"arrow-right-yellow-icon\">Cardholder Basics</a>",
+            "target": [
+              "a[href$=\"resources.html#cardholder\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.18 (foreground color: #0379ca, background color: #ecf7f7, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"resources.html#forms\" class=\"arrow-right-yellow-icon\">Forms</a>",
+            "target": [
+              "a[href$=\"resources.html#forms\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.18 (foreground color: #0379ca, background color: #ecf7f7, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"maintenance.html\" class=\"arrow-right-yellow-icon\">Maintenance</a>",
+            "target": [
+              ".arrow-right-yellow-icon[href$=\"maintenance.html\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.18 (foreground color: #0379ca, background color: #ecf7f7, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"procedures.html\" class=\"arrow-right-yellow-icon\">Procedures</a>",
+            "target": [
+              ".arrow-right-yellow-icon[href$=\"procedures.html\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.18 (foreground color: #0379ca, background color: #ecf7f7, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/files/navycash/navy-cash-educational-trifold.pdf\" class=\"arrow-right-yellow-icon\">User Guide</a>",
+            "target": [
+              "v-box[data-border=\"top-medium\"][data-span=\"lg-4\"][data-margin=\"bottom-medium\"]:nth-child(2) > .arrow-right-yellow-icon"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.18 (foreground color: #0379ca, background color: #ecf7f7, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "impact": "serious"
+      }
+    ]
+  },
+  "https://occ.gov/": {
+    "timestamp": "2025-06-10T16:34:33.548816",
+    "violations": []
+  },
+  "https://ots.gov/": {
+    "timestamp": "2025-06-10T16:35:25.599258",
+    "violations": []
+  },
+  "https://pay.gov/": {
+    "timestamp": "2025-06-10T16:35:39.277681",
+    "violations": []
+  },
+  "https://savingsbond.gov/": {
+    "timestamp": "2025-06-10T16:36:29.121846",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodes": [
+          {
+            "html": "<a href=\"https://directfile.irs.gov?utm_source=treasury&amp;utm_medium=blog&amp;utm_campaign=directfile&amp;utm_id=C%26L&amp;utm_content=link\" target=\"_blank\" rel=\"noopener noreferrer\">directfile.irs.gov</a>",
+            "target": [
+              "p > a[rel=\"noopener noreferrer\"][target=\"_blank\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.02 (foreground color: #0379ca, background color: #e1f3ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/1099/\">information</a>",
+            "target": [
+              "a[href=\"/1099/\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.02 (foreground color: #0379ca, background color: #e1f3ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"tel:+18442842676\">844-284-2676</a>",
+            "target": [
+              "a[href=\"tel:+18442842676\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.02 (foreground color: #0379ca, background color: #e1f3ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"https://fiscaldata.treasury.gov/treasury-savings-bonds/\" target=\"_blank\" rel=\"nofollow noopener no referrer\">savings bond explainer page</a>",
+            "target": [
+              "a[rel=\"nofollow noopener no referrer\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.02 (foreground color: #0379ca, background color: #e1f3ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-06-05-strips/\">The Fiscal Service Announces Activity for Securities in the STRIPS Program for May 2025</a>",
+            "target": [
+              ".body-copy > ul:nth-child(3) > li > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-30c-disaster/\">Fiscal Service Aids Savings Bonds Owners in Arkansas Affected by Severe Storms, Tornadoes, and Flooding; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(1) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-30b-disaster/\">Fiscal Service Aids Savings Bonds Owners in\n                  Oklahoma Affected by Wildfires and Straight-Line Winds; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(2) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-30a-disaster/\">Fiscal Service Aids Savings Bonds Owners in Missouri\n                  Affected by Severe Storms, Straight-Line Winds, Tornadoes, and Wildfires; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(3) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-29b-disaster/\">Fiscal Service Aids Savings Bonds Owners in Mississippi Affected by Severe Storms, Straight-Line Winds, Tornadoes and Flooding; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(4) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-29a-disaster/\">Fiscal Service Aids Savings Bonds Owners in Texas\n                  Affected by Severe Storms and Flooding; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(5) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-27-disaster/\">Fiscal Service Aids Savings Bonds Owners in Kentucky\n                  Affected by Severe Storms, Straight-Line Winds and Tornadoes; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(6) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-04-28-disaster/\">Fiscal Service Aids Savings Bonds Owners in Kentucky Affected by Severe Storms, Straight-Line Winds, Tornadoes, Flooding, Landslides, and Mudslides; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(7) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-15-disaster/\">Fiscal Service Aids Savings Bonds Owners in Arkansas Affected by Severe Storms and Tornadoes; One-year minimum holding period waived </a>",
+            "target": [
+              "li:nth-child(8) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-06-strips/\">The Fiscal Service Announces Activity for Securities in the STRIPS Program for April 2025</a>",
+            "target": [
+              "li:nth-child(9) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-01-rates/\">Fiscal Service Announces New Savings Bonds Rates, Series I to Earn 3.98%, Series EE to Earn 2.70% </a>",
+            "target": [
+              "li:nth-child(10) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-04-04-strips/\">The Fiscal Service Announces Activity for Securities in the STRIPS Program for March 2025</a>",
+            "target": [
+              "ul:nth-child(7) > li > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-03-06-strips/\">The Fiscal Service Announces Activity for Securities in the STRIPS Program for February 2025</a>",
+            "target": [
+              "ul:nth-child(9) > li > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "impact": "serious"
+      }
+    ]
+  },
+  "https://savingsbonds.gov/": {
+    "timestamp": "2025-06-10T16:36:41.402785",
+    "violations": []
+  },
+  "https://savingsbondwizard.gov/": {
+    "timestamp": "2025-06-10T16:36:52.991446",
+    "violations": []
+  },
+  "https://sigpr.gov/": {
+    "timestamp": "2025-06-10T16:37:12.001043",
+    "violations": []
+  },
+  "https://slgs.gov/": {
+    "timestamp": "2025-06-10T16:37:21.077085",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodes": [
+          {
+            "html": "<a href=\"#guidance\">guidance provided</a>",
+            "target": [
+              "a[href$=\"#guidance\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.39 (foreground color: #0379ca, background color: #fffbe6, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/government/slgs/slgsafe/slgsafe-videos/\" target=\"_blank\">instructional videos</a>",
+            "target": [
+              "p:nth-child(2) > a[target=\"_blank\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.39 (foreground color: #0379ca, background color: #fffbe6, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/GA-SL/SLGS/selectSLGSDate.htm\" class=\"no-icon\">daily rate table</a>",
+            "target": [
+              ".no-icon[href$=\"selectSLGSDate.htm\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.08 (foreground color: #0379ca, background color: #f2f2f2, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/auctions/results/\">most recent auction of the 13-week Bill</a>",
+            "target": [
+              "p > a[href$=\"results/\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.08 (foreground color: #0379ca, background color: #f2f2f2, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "impact": "serious"
+      }
+    ]
+  },
+  "https://taaps.gov/": {
+    "timestamp": "2025-06-10T16:37:30.605649",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodes": [
+          {
+            "html": "<a href=\"https://directfile.irs.gov?utm_source=treasury&amp;utm_medium=blog&amp;utm_campaign=directfile&amp;utm_id=C%26L&amp;utm_content=link\" target=\"_blank\" rel=\"noopener noreferrer\">directfile.irs.gov</a>",
+            "target": [
+              "p > a[rel=\"noopener noreferrer\"][target=\"_blank\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.02 (foreground color: #0379ca, background color: #e1f3ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/1099/\">information</a>",
+            "target": [
+              "a[href=\"/1099/\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.02 (foreground color: #0379ca, background color: #e1f3ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"tel:+18442842676\">844-284-2676</a>",
+            "target": [
+              "a[href=\"tel:+18442842676\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.02 (foreground color: #0379ca, background color: #e1f3ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"https://fiscaldata.treasury.gov/treasury-savings-bonds/\" target=\"_blank\" rel=\"nofollow noopener no referrer\">savings bond explainer page</a>",
+            "target": [
+              "a[rel=\"nofollow noopener no referrer\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.02 (foreground color: #0379ca, background color: #e1f3ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-06-05-strips/\">The Fiscal Service Announces Activity for Securities in the STRIPS Program for May 2025</a>",
+            "target": [
+              ".body-copy > ul:nth-child(3) > li > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-30c-disaster/\">Fiscal Service Aids Savings Bonds Owners in Arkansas Affected by Severe Storms, Tornadoes, and Flooding; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(1) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-30b-disaster/\">Fiscal Service Aids Savings Bonds Owners in\n                  Oklahoma Affected by Wildfires and Straight-Line Winds; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(2) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-30a-disaster/\">Fiscal Service Aids Savings Bonds Owners in Missouri\n                  Affected by Severe Storms, Straight-Line Winds, Tornadoes, and Wildfires; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(3) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-29b-disaster/\">Fiscal Service Aids Savings Bonds Owners in Mississippi Affected by Severe Storms, Straight-Line Winds, Tornadoes and Flooding; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(4) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-29a-disaster/\">Fiscal Service Aids Savings Bonds Owners in Texas\n                  Affected by Severe Storms and Flooding; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(5) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-27-disaster/\">Fiscal Service Aids Savings Bonds Owners in Kentucky\n                  Affected by Severe Storms, Straight-Line Winds and Tornadoes; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(6) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-04-28-disaster/\">Fiscal Service Aids Savings Bonds Owners in Kentucky Affected by Severe Storms, Straight-Line Winds, Tornadoes, Flooding, Landslides, and Mudslides; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(7) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-15-disaster/\">Fiscal Service Aids Savings Bonds Owners in Arkansas Affected by Severe Storms and Tornadoes; One-year minimum holding period waived </a>",
+            "target": [
+              "li:nth-child(8) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-06-strips/\">The Fiscal Service Announces Activity for Securities in the STRIPS Program for April 2025</a>",
+            "target": [
+              "li:nth-child(9) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-01-rates/\">Fiscal Service Announces New Savings Bonds Rates, Series I to Earn 3.98%, Series EE to Earn 2.70% </a>",
+            "target": [
+              "li:nth-child(10) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-04-04-strips/\">The Fiscal Service Announces Activity for Securities in the STRIPS Program for March 2025</a>",
+            "target": [
+              "ul:nth-child(7) > li > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-03-06-strips/\">The Fiscal Service Announces Activity for Securities in the STRIPS Program for February 2025</a>",
+            "target": [
+              "ul:nth-child(9) > li > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "impact": "serious"
+      }
+    ]
+  },
+  "https://tigta.gov/": {
+    "timestamp": "2025-06-10T16:38:50.743604",
+    "violations": [
+      {
+        "id": "meta-viewport",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "nodes": [
+          {
+            "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0\">",
+            "target": [
+              "meta"
+            ],
+            "failureSummary": "Fix any of the following:\n  user-scalable on <meta> tag disables zooming on mobile devices"
+          }
+        ],
+        "impact": "critical"
+      }
+    ]
+  },
+  "https://treas.gov/": {
+    "timestamp": "2025-06-10T16:39:32.462193",
+    "violations": []
+  },
+  "https://treasuryauctions.gov/": {
+    "timestamp": "2025-06-10T16:39:59.490105",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodes": [
+          {
+            "html": "<a href=\"https://directfile.irs.gov?utm_source=treasury&amp;utm_medium=blog&amp;utm_campaign=directfile&amp;utm_id=C%26L&amp;utm_content=link\" target=\"_blank\" rel=\"noopener noreferrer\">directfile.irs.gov</a>",
+            "target": [
+              "p > a[rel=\"noopener noreferrer\"][target=\"_blank\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.02 (foreground color: #0379ca, background color: #e1f3ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/1099/\">information</a>",
+            "target": [
+              "a[href=\"/1099/\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.02 (foreground color: #0379ca, background color: #e1f3ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"tel:+18442842676\">844-284-2676</a>",
+            "target": [
+              "a[href=\"tel:+18442842676\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.02 (foreground color: #0379ca, background color: #e1f3ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"https://fiscaldata.treasury.gov/treasury-savings-bonds/\" target=\"_blank\" rel=\"nofollow noopener no referrer\">savings bond explainer page</a>",
+            "target": [
+              "a[rel=\"nofollow noopener no referrer\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.02 (foreground color: #0379ca, background color: #e1f3ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-06-05-strips/\">The Fiscal Service Announces Activity for Securities in the STRIPS Program for May 2025</a>",
+            "target": [
+              ".body-copy > ul:nth-child(3) > li > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-30c-disaster/\">Fiscal Service Aids Savings Bonds Owners in Arkansas Affected by Severe Storms, Tornadoes, and Flooding; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(1) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-30b-disaster/\">Fiscal Service Aids Savings Bonds Owners in\n                  Oklahoma Affected by Wildfires and Straight-Line Winds; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(2) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-30a-disaster/\">Fiscal Service Aids Savings Bonds Owners in Missouri\n                  Affected by Severe Storms, Straight-Line Winds, Tornadoes, and Wildfires; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(3) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-29b-disaster/\">Fiscal Service Aids Savings Bonds Owners in Mississippi Affected by Severe Storms, Straight-Line Winds, Tornadoes and Flooding; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(4) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-29a-disaster/\">Fiscal Service Aids Savings Bonds Owners in Texas\n                  Affected by Severe Storms and Flooding; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(5) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-27-disaster/\">Fiscal Service Aids Savings Bonds Owners in Kentucky\n                  Affected by Severe Storms, Straight-Line Winds and Tornadoes; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(6) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-04-28-disaster/\">Fiscal Service Aids Savings Bonds Owners in Kentucky Affected by Severe Storms, Straight-Line Winds, Tornadoes, Flooding, Landslides, and Mudslides; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(7) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-15-disaster/\">Fiscal Service Aids Savings Bonds Owners in Arkansas Affected by Severe Storms and Tornadoes; One-year minimum holding period waived </a>",
+            "target": [
+              "li:nth-child(8) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-06-strips/\">The Fiscal Service Announces Activity for Securities in the STRIPS Program for April 2025</a>",
+            "target": [
+              "li:nth-child(9) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-01-rates/\">Fiscal Service Announces New Savings Bonds Rates, Series I to Earn 3.98%, Series EE to Earn 2.70% </a>",
+            "target": [
+              "li:nth-child(10) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-04-04-strips/\">The Fiscal Service Announces Activity for Securities in the STRIPS Program for March 2025</a>",
+            "target": [
+              "ul:nth-child(7) > li > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-03-06-strips/\">The Fiscal Service Announces Activity for Securities in the STRIPS Program for February 2025</a>",
+            "target": [
+              "ul:nth-child(9) > li > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "impact": "serious"
+      }
+    ]
+  },
+  "https://treasurydirect.gov/": {
+    "timestamp": "2025-06-10T16:40:08.845020",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodes": [
+          {
+            "html": "<a href=\"https://directfile.irs.gov?utm_source=treasury&amp;utm_medium=blog&amp;utm_campaign=directfile&amp;utm_id=C%26L&amp;utm_content=link\" target=\"_blank\" rel=\"noopener noreferrer\">directfile.irs.gov</a>",
+            "target": [
+              "p > a[rel=\"noopener noreferrer\"][target=\"_blank\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.02 (foreground color: #0379ca, background color: #e1f3ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/1099/\">information</a>",
+            "target": [
+              "a[href=\"/1099/\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.02 (foreground color: #0379ca, background color: #e1f3ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"tel:+18442842676\">844-284-2676</a>",
+            "target": [
+              "a[href=\"tel:+18442842676\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.02 (foreground color: #0379ca, background color: #e1f3ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"https://fiscaldata.treasury.gov/treasury-savings-bonds/\" target=\"_blank\" rel=\"nofollow noopener no referrer\">savings bond explainer page</a>",
+            "target": [
+              "a[rel=\"nofollow noopener no referrer\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.02 (foreground color: #0379ca, background color: #e1f3ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-06-05-strips/\">The Fiscal Service Announces Activity for Securities in the STRIPS Program for May 2025</a>",
+            "target": [
+              ".body-copy > ul:nth-child(3) > li > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-30c-disaster/\">Fiscal Service Aids Savings Bonds Owners in Arkansas Affected by Severe Storms, Tornadoes, and Flooding; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(1) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-30b-disaster/\">Fiscal Service Aids Savings Bonds Owners in\n                  Oklahoma Affected by Wildfires and Straight-Line Winds; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(2) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-30a-disaster/\">Fiscal Service Aids Savings Bonds Owners in Missouri\n                  Affected by Severe Storms, Straight-Line Winds, Tornadoes, and Wildfires; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(3) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-29b-disaster/\">Fiscal Service Aids Savings Bonds Owners in Mississippi Affected by Severe Storms, Straight-Line Winds, Tornadoes and Flooding; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(4) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-29a-disaster/\">Fiscal Service Aids Savings Bonds Owners in Texas\n                  Affected by Severe Storms and Flooding; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(5) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-27-disaster/\">Fiscal Service Aids Savings Bonds Owners in Kentucky\n                  Affected by Severe Storms, Straight-Line Winds and Tornadoes; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(6) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-04-28-disaster/\">Fiscal Service Aids Savings Bonds Owners in Kentucky Affected by Severe Storms, Straight-Line Winds, Tornadoes, Flooding, Landslides, and Mudslides; One-year minimum holding period waived</a>",
+            "target": [
+              "ul:nth-child(5) > li:nth-child(7) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-15-disaster/\">Fiscal Service Aids Savings Bonds Owners in Arkansas Affected by Severe Storms and Tornadoes; One-year minimum holding period waived </a>",
+            "target": [
+              "li:nth-child(8) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-06-strips/\">The Fiscal Service Announces Activity for Securities in the STRIPS Program for April 2025</a>",
+            "target": [
+              "li:nth-child(9) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-05-01-rates/\">Fiscal Service Announces New Savings Bonds Rates, Series I to Earn 3.98%, Series EE to Earn 2.70% </a>",
+            "target": [
+              "li:nth-child(10) > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-04-04-strips/\">The Fiscal Service Announces Activity for Securities in the STRIPS Program for March 2025</a>",
+            "target": [
+              "ul:nth-child(7) > li > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news/2025/release-03-06-strips/\">The Fiscal Service Announces Activity for Securities in the STRIPS Program for February 2025</a>",
+            "target": [
+              "ul:nth-child(9) > li > a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.12 (foreground color: #0379ca, background color: #f3f3f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "impact": "serious"
+      }
+    ]
+  },
+  "https://treasury.gov/": {
+    "timestamp": "2025-06-10T16:41:08.745248",
+    "violations": []
+  },
+  "https://treasuryhunt.gov/": {
+    "timestamp": "2025-06-10T16:41:17.792970",
+    "violations": []
+  },
+  "https://treasuryscams.gov/": {
+    "timestamp": "2025-06-10T16:41:36.007115",
+    "violations": []
+  },
+  "https://ttb.gov/": {
+    "timestamp": "2025-06-10T16:41:57.882543",
+    "violations": []
+  },
+  "https://ttbonline.gov/": {
+    "timestamp": "2025-06-10T16:42:11.353902",
+    "violations": []
+  },
+  "https://usaspending.gov/": {
+    "timestamp": "2025-06-10T16:43:10.174858",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodes": [
+          {
+            "html": "<span class=\"usa-banner__button-text\">Here\u2019s how you know</span>",
+            "target": [
+              ".usa-banner__button-text"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.05 (foreground color: #2378c3, background color: #f0f0f0, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<button type=\"button\" aria-label=\"Start Searching Awards\" class=\" button__lg  button-type__primary-light \" tabindex=\"0\">Start Searching Awards</button>",
+            "target": [
+              "button[aria-label=\"Start Searching Awards\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #fbfcfd, background color: #2378c3, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<button type=\"button\" aria-label=\"Learn About USAspending.gov\" class=\" button__lg  button-type__secondary-light \" tabindex=\"0\">Learn About USAspending.gov</button>",
+            "target": [
+              "button[aria-label=\"Learn About USAspending.gov\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.15 (foreground color: #2378c3, background color: #edf4f6, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<button type=\"button\" aria-label=\"View spending by state\" class=\" button__md  button-type__primary-light  button-text__center-align \" tabindex=\"0\">View spending by state</button>",
+            "target": [
+              "button[aria-label=\"View spending by state\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #fbfcfd, background color: #2378c3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<div>",
+            "target": [
+              ".award-search__card2.card-column[role=\"presentation\"] > .lg.elevated.card-container > .card__body > .text > div"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.21 (foreground color: #aeaeae, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<div class=\"award-search__glossary\">Fiscal Year</div>",
+            "target": [
+              ".award-search__card2.card-column[role=\"presentation\"] > .lg.elevated.card-container > .card__body > .text > div > .award-search__glossary"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.21 (foreground color: #aeaeae, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<button type=\"button\" aria-label=\"Share Now\" class=\" button__md  button-type__text-right-icon-light  button-text__left-align \" tabindex=\"0\">",
+            "target": [
+              "button[aria-label=\"Share Now\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #2378c3, background color: #edf5ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<button type=\"button\" aria-label=\"Learn More\" class=\" button__md  button-type__text-right-icon-light  button-text__left-align \" tabindex=\"0\">",
+            "target": [
+              "button[aria-label=\"Learn More\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #2378c3, background color: #edf5ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<button type=\"button\" aria-label=\"Sign Up\" class=\" button__md  button-type__text-right-icon-light  button-text__left-align \" tabindex=\"0\">",
+            "target": [
+              "button[aria-label=\"Sign Up\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #2378c3, background color: #edf5ff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<span class=\"_acsBadgeLabel\" style=\"color:#fff\">Feedback</span>",
+            "target": [
+              "._acsBadgeLabel"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.64 (foreground color: #ffffff, background color: #f24554, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "impact": "serious"
+      }
+    ]
+  },
+  "https://usdebitcard.gov/": {
+    "timestamp": "2025-06-10T16:43:19.753991",
+    "violations": [
+      {
+        "id": "meta-viewport",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "nodes": [
+          {
+            "html": "<meta name=\"viewport\" content=\"width=device-width; initial-scale=1; maximum-scale=1\">",
+            "target": [
+              "meta[name=\"viewport\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  maximum-scale on <meta> tag disables zooming on mobile devices"
+          }
+        ],
+        "impact": "critical"
+      }
+    ]
+  },
+  "https://usmint.gov/": {
+    "timestamp": "2025-06-10T16:43:32.588433",
+    "violations": []
+  },
+  "https://ustreas.gov/": {
+    "timestamp": "2025-06-10T16:43:50.831986",
+    "violations": []
+  },
+  "https://wizard.gov/": {
+    "timestamp": "2025-06-10T16:43:59.582422",
+    "violations": []
+  },
+  "https://faa.gov/": {
+    "timestamp": "2025-06-10T16:45:54.418736",
+    "violations": []
+  },
+  "https://safeocs.gov/": {
+    "timestamp": "2025-06-10T16:47:11.869119",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodes": [
+          {
+            "html": "<span class=\"usa-banner-button-text\">Here's how you\n                      know</span>",
+            "target": [
+              ".usa-banner-button-text"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.47 (foreground color: #0079c0, background color: #fafafa, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<span class=\"menu-collapsed\">Home</span>",
+            "target": [
+              ".list-group-item.list-group-item-action[href=\"index.htm\"] > .w-100.justify-content-start.align-items-center > .menu-collapsed"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.89 (foreground color: #0081ba, background color: #d3d3d3, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<span class=\"menu-collapsed\">About SafeOCS</span>",
+            "target": [
+              "a[href$=\"about.htm\"] > .w-100.justify-content-start.align-items-center > .menu-collapsed"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.33 (foreground color: #0081ba, background color: #ffffff, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<span class=\"menu-collapsed\">Program Areas</span>",
+            "target": [
+              ".align-items-start > .w-100.justify-content-start.align-items-center > .menu-collapsed"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.33 (foreground color: #0081ba, background color: #ffffff, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<span class=\"menu-collapsed\">Dashboards</span>",
+            "target": [
+              "a[href$=\"dashboards.htm\"] > .w-100.justify-content-start.align-items-center > .menu-collapsed"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.33 (foreground color: #0081ba, background color: #ffffff, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<span class=\"menu-collapsed\">Publications</span>",
+            "target": [
+              "a[href$=\"publications.htm\"] > .w-100.justify-content-start.align-items-center > .menu-collapsed"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.33 (foreground color: #0081ba, background color: #ffffff, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<span id=\"collapse-text\" class=\"menu-collapsed\">FAQs</span>",
+            "target": [
+              "a[href$=\"faqs.htm\"] > .w-100.justify-content-start.align-items-center > .menu-collapsed"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.33 (foreground color: #0081ba, background color: #ffffff, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<span class=\"menu-collapsed\">Newsroom</span>",
+            "target": [
+              "a[href$=\"newsroom.htm\"] > .w-100.justify-content-start.align-items-center > .menu-collapsed"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.33 (foreground color: #0081ba, background color: #ffffff, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<span class=\"menu-collapsed\">Contact Us</span>",
+            "target": [
+              "a[href$=\"contact.htm\"] > .w-100.justify-content-start.align-items-center > .menu-collapsed"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.33 (foreground color: #0081ba, background color: #ffffff, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<span id=\"collapse-text\" class=\"menu-collapsed\">Create Account</span>",
+            "target": [
+              "a[href$=\"reg_home\"] > .w-100.justify-content-start.align-items-center > .menu-collapsed"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.33 (foreground color: #0081ba, background color: #ffffff, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<font color=\"#ffffff\" size=\"2\">Get SafeOCS news.</font>",
+            "target": [
+              "font"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.33 (foreground color: #ffffff, background color: #0081ba, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"https://www.bsee.gov/\" target=\"_blank\">Bureau of Safety and Environmental Enforcement (BSEE)</a>",
+            "target": [
+              "a[href$=\"bsee.gov/\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.33 (foreground color: #0081ba, background color: #ffffff, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"https://www.bts.gov/browse-statistical-products-and-data/precursor-safety-data-program/precursor-safety-data-program\" target=\"_blank\">Bureau of Transportation Statistics\u2019 (BTS) Precursor Safety\n                  Data Analysis Program</a>",
+            "target": [
+              "a[target=\"_blank\"]:nth-child(2)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.33 (foreground color: #0081ba, background color: #ffffff, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"https://www.bts.gov/confidentiality\" target=\"_blank\">Learn more about CIPSEA protections.</a>",
+            "target": [
+              "p:nth-child(8) > a[target=\"_blank\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.33 (foreground color: #0081ba, background color: #ffffff, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"mailto:safeOCS@dot.gov\">SafeOCS@dot.gov</a>",
+            "target": [
+              "a[href$=\"mailto:safeOCS@dot.gov\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.14 (foreground color: #0081ba, background color: #fafafa, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "impact": "serious"
+      }
+    ]
+  },
+  "https://reach.gov/": {
+    "timestamp": "2025-06-10T16:48:22.137919",
+    "violations": []
+  },
+  "https://va.gov/": {
+    "timestamp": "2025-06-10T16:48:32.261043",
+    "violations": []
+  },
+  "https://vaoig.gov/": {
+    "timestamp": "2025-06-10T16:48:40.663469",
+    "violations": [
+      {
+        "id": "meta-viewport",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "nodes": [
+          {
+            "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0\">",
+            "target": [
+              "meta"
+            ],
+            "failureSummary": "Fix any of the following:\n  user-scalable on <meta> tag disables zooming on mobile devices"
+          }
+        ],
+        "impact": "critical"
+      }
+    ]
+  },
+  "https://vets.gov/": {
+    "timestamp": "2025-06-10T16:48:52.585116",
+    "violations": []
+  },
+  "https://vsafe.gov/": {
+    "timestamp": "2025-06-10T16:49:02.497045",
+    "violations": []
+  },
+  "https://dni.gov/": {
+    "timestamp": "2025-06-10T16:49:16.177630",
+    "violations": []
+  },
+  "https://iarpa.gov/": {
+    "timestamp": "2025-06-10T16:49:23.911275",
+    "violations": []
+  },
+  "https://icjointduty.gov/": {
+    "timestamp": "2025-06-10T16:49:40.728580",
+    "violations": []
+  },
+  "https://intel.gov/": {
+    "timestamp": "2025-06-10T16:49:49.824539",
+    "violations": []
+  },
+  "https://intelligence.gov/": {
+    "timestamp": "2025-06-10T16:50:05.648274",
+    "violations": []
+  },
+  "https://ise.gov/": {
+    "timestamp": "2025-06-10T16:50:16.070060",
+    "violations": []
+  },
+  "https://ncsc.gov/": {
+    "timestamp": "2025-06-10T16:51:01.034900",
+    "violations": []
+  },
+  "https://nctc.gov/": {
+    "timestamp": "2025-06-10T16:51:08.394365",
+    "violations": []
+  },
+  "https://odni.gov/": {
+    "timestamp": "2025-06-10T16:51:15.724688",
+    "violations": []
+  },
+  "https://eac.gov/": {
+    "timestamp": "2025-06-10T16:51:50.600583",
+    "violations": []
+  },
+  "https://helpamericavote.gov/": {
+    "timestamp": "2025-06-10T16:52:02.398111",
+    "violations": []
+  },
+  "https://votebymail.gov/": {
+    "timestamp": "2025-06-10T16:52:13.421449",
+    "violations": []
+  },
+  "https://airknowledge.gov/": {
+    "timestamp": "2025-06-10T16:52:20.661713",
+    "violations": []
+  },
+  "https://energystar.gov/": {
+    "timestamp": "2025-06-10T16:52:45.144685",
+    "violations": []
+  },
+  "https://epa.gov/": {
+    "timestamp": "2025-06-10T16:52:56.138939",
+    "violations": []
+  },
+  "https://epaoig.gov/": {
+    "timestamp": "2025-06-10T16:53:05.587261",
+    "violations": [
+      {
+        "id": "meta-viewport",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "nodes": [
+          {
+            "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0\">",
+            "target": [
+              "meta"
+            ],
+            "failureSummary": "Fix any of the following:\n  user-scalable on <meta> tag disables zooming on mobile devices"
+          }
+        ],
+        "impact": "critical"
+      }
+    ]
+  },
+  "https://fedcenter.gov/": {
+    "timestamp": "2025-06-10T16:53:17.275268",
+    "violations": []
+  },
+  "https://frtr.gov/": {
+    "timestamp": "2025-06-10T16:53:27.497527",
+    "violations": []
+  },
+  "https://relocatefeds.gov/": {
+    "timestamp": "2025-06-10T16:54:28.750315",
+    "violations": []
+  },
+  "https://sustainability.gov/": {
+    "timestamp": "2025-06-10T16:54:42.899635",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodes": [
+          {
+            "html": "<a class=\"nav-link active\" href=\"index.html\">Home</a>",
+            "target": [
+              ".active"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.19 (foreground color: #ffffff, background color: #4698c7, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "impact": "serious"
+      }
+    ]
+  },
+  "https://urbanwaters.gov/": {
+    "timestamp": "2025-06-10T16:55:06.465532",
+    "violations": []
+  },
+  "https://eeoc.gov/": {
+    "timestamp": "2025-06-10T16:55:23.951475",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodes": [
+          {
+            "html": "<button class=\"prefix-overlay-action-dismiss\" id=\"prefix-dismissButton\">No Thanks</button>",
+            "target": [
+              "#prefix-dismissButton"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.24 (foreground color: #428bca, background color: #f2f2f2, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<button class=\"prefix-overlay-action-later\" id=\"prefix-laterButton\">Remind Me Later</button>",
+            "target": [
+              "#prefix-laterButton"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.24 (foreground color: #428bca, background color: #f2f2f2, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "impact": "serious"
+      }
+    ]
+  },
+  "https://ai.gov/": {
+    "timestamp": "2025-06-10T16:55:39.619008",
+    "violations": []
+  },
+  "https://budget.gov/": {
+    "timestamp": "2025-06-10T16:55:52.874384",
+    "violations": []
+  },
+  "https://coronavirus.gov/": {
+    "timestamp": "2025-06-10T16:56:09.302258",
+    "violations": []
+  },
+  "https://covid.gov/": {
+    "timestamp": "2025-06-10T16:56:32.101317",
+    "violations": []
+  },
+  "https://covidtest.gov/": {
+    "timestamp": "2025-06-10T16:56:49.020098",
+    "violations": []
+  },
+  "https://covidtests.gov/": {
+    "timestamp": "2025-06-10T16:57:04.482432",
+    "violations": []
+  },
+  "https://creators.gov/": {
+    "timestamp": "2025-06-10T16:57:12.989325",
+    "violations": []
+  },
+  "https://dei.gov/": {
+    "timestamp": "2025-06-10T16:57:21.229512",
+    "violations": []
+  },
+  "https://deregulation.gov/": {
+    "timestamp": "2025-06-10T16:57:30.346941",
+    "violations": []
+  },
+  "https://doge.gov/": {
+    "timestamp": "2025-06-10T16:57:42.236199",
+    "violations": []
+  },
+  "https://earmarks.gov/": {
+    "timestamp": "2025-06-10T16:57:50.773220",
+    "violations": []
+  },
+  "https://eop.gov/": {
+    "timestamp": "2025-06-10T16:58:00.455621",
+    "violations": []
+  },
+  "https://maha.gov/": {
+    "timestamp": "2025-06-10T16:58:18.707178",
+    "violations": []
+  },
+  "https://max.gov/": {
+    "timestamp": "2025-06-10T16:58:27.732387",
+    "violations": []
+  },
+  "https://nano.gov/": {
+    "timestamp": "2025-06-10T16:58:38.653109",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodes": [
+          {
+            "html": "<a class=\"button\" href=\"https://www.jhuapl.edu/news/news-releases/250521-apl-thermoelectrics-enable-compressor-free-cooling\" target=\"_blank\">View Details</a>",
+            "target": [
+              "#layer-227499180 > .tp-caption__buttons-container > .button[target=\"_blank\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.59 (foreground color: #c4ccdb, background color: #697ca2, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "impact": "serious"
+      }
+    ]
+  },
+  "https://nepa.gov/": {
+    "timestamp": "2025-06-10T16:58:49.181966",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodes": [
+          {
+            "html": "<u>WhiteHouse.gov/CEQ</u>",
+            "target": [
+              "a[href$=\"ceq\"] > u"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.41 (foreground color: #6b798f, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<u>CEQ NEPA Regulations</u>",
+            "target": [
+              "p:nth-child(3) > a > u"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.41 (foreground color: #6b798f, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "impact": "serious"
+      }
+    ]
+  },
+  "https://omb.gov/": {
+    "timestamp": "2025-06-10T16:59:02.679592",
+    "violations": []
+  },
+  "https://ondcp.gov/": {
+    "timestamp": "2025-06-10T16:59:15.888777",
+    "violations": []
+  },
+  "https://ostp.gov/": {
+    "timestamp": "2025-06-10T16:59:25.988110",
+    "violations": []
+  },
+  "https://quantum.gov/": {
+    "timestamp": "2025-06-10T17:00:04.587380",
+    "violations": []
+  },
+  "https://trumpcard.gov/": {
+    "timestamp": "2025-06-10T17:00:12.396056",
+    "violations": [
+      {
+        "id": "meta-viewport",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "nodes": [
+          {
+            "html": "<meta name=\"viewport\" content=\"initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width\">",
+            "target": [
+              "meta[name=\"viewport\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  user-scalable=no on <meta> tag disables zooming on mobile devices"
+          }
+        ],
+        "impact": "critical"
+      }
+    ]
+  },
+  "https://usdigitalservice.gov/": {
+    "timestamp": "2025-06-10T17:00:20.338979",
+    "violations": []
+  },
+  "https://usds.gov/": {
+    "timestamp": "2025-06-10T17:00:31.427474",
+    "violations": []
+  },
+  "https://ustr.gov/": {
+    "timestamp": "2025-06-10T17:00:39.931298",
+    "violations": []
+  },
+  "https://waste.gov/": {
+    "timestamp": "2025-06-10T17:00:50.954192",
+    "violations": []
+  },
+  "https://wh.gov/": {
+    "timestamp": "2025-06-10T17:01:26.985995",
+    "violations": []
+  },
+  "https://whitehouse.gov/": {
+    "timestamp": "2025-06-10T17:01:40.359071",
+    "violations": []
+  },
+  "https://exim.gov/": {
+    "timestamp": "2025-06-10T17:02:02.954435",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "nodes": [
+          {
+            "html": "<p class=\"page-link__title page-link__title--promo\">Nonpayment Protection</p>",
+            "target": [
+              ".layout__region--first.layout__region > .page-link--promo.paragraph--type--page-link.page-link > .page-link__inner > .page-link__title--promo.page-link__title"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.1 (foreground color: #0098d8, background color: #fafafa, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<p class=\"page-link__title page-link__title--promo\">Increase Working Capital</p>",
+            "target": [
+              ".page-link__inner[href$=\"working-capital\"] > .page-link__title--promo.page-link__title"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.1 (foreground color: #0098d8, background color: #fafafa, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<p class=\"page-link__title page-link__title--promo\">Explore Products</p>",
+            "target": [
+              "a[href$=\"solutions#solutions\"] > .page-link__title--promo.page-link__title"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.1 (foreground color: #0098d8, background color: #fafafa, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a class=\"u-text-tertiary link--chevron-right\" href=\"/about\">Learn more about us</a>",
+            "target": [
+              ".u-text-tertiary"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.1 (foreground color: #0098d8, background color: #fafafa, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<time datetime=\"2025-05-28T12:00:00Z\" class=\"datetime\">May 28</time>",
+            "target": [
+              "time[datetime=\"2025-05-28T12:00:00Z\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.84 (foreground color: #0098d8, background color: #e8f4de, font size: 15.0pt (20px), font weight: bold). Expected contrast ratio of 3:1"
+          },
+          {
+            "html": "<a href=\"/news/heads-g7-export-credit-agencies-meeting-statement-0\" hreflang=\"en\">Heads of G7 Export Credit Agencies \u2013 Meeting Statement</a>",
+            "target": [
+              "li:nth-child(1) > .views-field-title.views-field > .field-content > a[hreflang=\"en\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #007aac, background color: #e8f4de, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<time datetime=\"2025-04-30T12:00:00Z\" class=\"datetime\">April 30</time>",
+            "target": [
+              "li:nth-child(2) > .views-field-field-release-date.views-field > .field-content > time[datetime=\"2025-04-30T12:00:00Z\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.84 (foreground color: #0098d8, background color: #e8f4de, font size: 15.0pt (20px), font weight: bold). Expected contrast ratio of 3:1"
+          },
+          {
+            "html": "<a href=\"/news/kansas-department-commerce-recognized-repp-member-year-export-import-bank-united-states-2025\" hreflang=\"en\">Kansas Department of Commerce Recognized as REPP Member of the Year at Export-Import Bank of the United States\u2019 2025 Annual Conference</a>",
+            "target": [
+              "li:nth-child(2) > .views-field-title.views-field > .field-content > a[hreflang=\"en\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #007aac, background color: #e8f4de, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<time datetime=\"2025-04-30T12:00:00Z\" class=\"datetime\">April 30</time>",
+            "target": [
+              "li:nth-child(3) > .views-field-field-release-date.views-field > .field-content > time[datetime=\"2025-04-30T12:00:00Z\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.84 (foreground color: #0098d8, background color: #e8f4de, font size: 15.0pt (20px), font weight: bold). Expected contrast ratio of 3:1"
+          },
+          {
+            "html": "<a href=\"/news/maxime-roy-inc-awarded-2025-broker-year-export-import-bank-united-states-annual-conference\" hreflang=\"en\">Maxime Roy, Inc. Awarded 2025 Broker of the Year at Export-Import Bank of the United States Annual Conference\u202f</a>",
+            "target": [
+              "li:nth-child(3) > .views-field-title.views-field > .field-content > a[hreflang=\"en\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #007aac, background color: #e8f4de, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "html": "<a href=\"/news\">Read More News</a>",
+            "target": [
+              ".more-link > a[href$=\"news\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.1 (foreground color: #0098d8, background color: #fafafa, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "impact": "serious"
+      }
+    ]
+  },
+  "https://fcsic.gov/": {
+    "timestamp": "2025-06-10T17:02:51.227214",
+    "violations": []
+  },
+  "https://accedeainternet.gov/": {
+    "timestamp": "2025-06-10T17:02:58.564377",
+    "violations": []
+  },
+  "https://getinternet.gov/": {
+    "timestamp": "2025-06-10T17:03:26.559956",
+    "violations": []
+  },
+  "https://fdic.gov/": {
+    "timestamp": "2025-06-10T17:03:46.478414",
+    "violations": []
+  },
+  "https://fdicoig.gov/": {
+    "timestamp": "2025-06-10T17:04:05.628171",
+    "violations": [
+      {
+        "id": "meta-viewport",
+        "description": "Ensure <meta name=\"viewport\"> does not disable text scaling and zooming",
+        "nodes": [
+          {
+            "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0\">",
+            "target": [
+              "meta"
+            ],
+            "failureSummary": "Fix any of the following:\n  user-scalable on <meta> tag disables zooming on mobile devices"
+          }
+        ],
+        "impact": "critical"
+      }
+    ]
+  },
+  "https://fdicseguro.gov/": {
+    "timestamp": "2025-06-10T17:04:17.813115",
+    "violations": []
+  },
+  "https://myfdic.gov/": {
+    "timestamp": "2025-06-10T17:04:26.015202",
+    "violations": []
+  },
+  "https://ofia.gov/": {
+    "timestamp": "2025-06-10T17:04:35.251043",
+    "violations": []
+  },
+  "https://fec.gov/": {
+    "timestamp": "2025-06-10T17:04:42.660783",
+    "violations": []
+  },
+  "https://ferc.gov/": {
+    "timestamp": "2025-06-10T17:04:59.104674",
     "violations": []
   }
 }
