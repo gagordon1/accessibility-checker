@@ -33,7 +33,7 @@ class OpenAIWCAGClient:
                 "role": "system",
                 "content": (
                     "Use the uploaded WCAG rules JSON to check this page for accessibility violations. "
-                    "Focus on visual contrast, alt text, and ARIA roles."
+                    "Focus on alt text, and ARIA roles. IMPORTANT: Do not include color contrast violations in your response."
                     "In the reference field, please explain whether you used the html elements or the input image to find the violations."
                 )
             },

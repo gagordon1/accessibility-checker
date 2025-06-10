@@ -15,7 +15,7 @@ from constants import WCAG_RULES_VECTOR_STORE_ID
 from utils.scrape import extract_elements, scroll_to_bottom, normalize_url
 from wcag_client import WCAGAIClient
 from type_hints.wcag_types import Violation
-
+from axe_scan import run_axe_scan
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
@@ -71,13 +71,14 @@ def scan_url(url: str, model: str = DEFAULT_MODEL) -> List[Violation]:
         browser.close()
 
 
-
+    axe_violations = run_axe_scan(url)
+    
     client = WCAGAIClient(model=model)
     logger.info(f"Running WCAG check on {url} with {model} (provider: {client.provider})")
     violations = client.run_check(img_path, WCAG_RULES_VECTOR_STORE_ID, elements)
 
     # Save violations to file
-    filepath = save_violations(url, violations)
+    filepath = save_violations(url, violations + axe_violations)
     logger.info(f"Violations saved to: {filepath}")
 
     return violations

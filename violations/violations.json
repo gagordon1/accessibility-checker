@@ -1,286 +1,62 @@
 {
   "https://arc.gov/": {
-    "timestamp": "2025-06-10T13:01:05.029632",
+    "timestamp": "2025-06-10T13:45:54.370220",
     "violations": [
       {
-        "id": "contrast",
-        "description": "There is insufficient contrast between the text color and background color, which impacts readability for users with visual disabilities.",
+        "id": "img-alt-empty",
+        "description": "The image at 'https://arc.gov/wp-content/uploads/2020/07/AppalachianRegionMap-700x664.jpg' has an empty alt attribute, which makes it inaccessible for users relying on screen readers.",
         "nodes": [
-          {
-            "html": "<h1 class=\"page-title\">Investing in Appalachia\u0019s economic future.</h1>",
-            "target": [
-              "h1.page-title"
-            ],
-            "failureSummary": "Text contrast is insufficient for the page title."
-          },
-          {
-            "html": "<h2 class=\"section-intro__title\" id=\"available-opportunities\">Available Opportunities</h2>",
-            "target": [
-              "h2#available-opportunities"
-            ],
-            "failureSummary": "Text contrast is insufficient for section titles."
-          },
-          {
-            "html": "<h2 class=\"section-intro__title\" id=\"appalachian-places\">Appalachian Places</h2>",
-            "target": [
-              "h2#appalachian-places"
-            ],
-            "failureSummary": "Text contrast is insufficient for section titles."
-          },
-          {
-            "html": "<h2 class=\"section-intro__title\" id=\"research-and-resources\">Research and Resources</h2>",
-            "target": [
-              "h2#research-and-resources"
-            ],
-            "failureSummary": "Text contrast is insufficient for section titles."
-          },
-          {
-            "html": "<h2 class=\"wp-block-heading has-text-align-center\">Research and Resources</h2>",
-            "target": [
-              "h2.wp-block-heading"
-            ],
-            "failureSummary": "Text contrast is insufficient for section titles."
-          },
-          {
-            "html": "<h2 class=\"section-intro__title\" id=\"available-opportunities\">Available Opportunities</h2>",
-            "target": [
-              "h2#available-opportunities"
-            ],
-            "failureSummary": "Text contrast is insufficient for section titles."
-          },
-          {
-            "html": "<h2 class=\"recent-2col__title\">Latest News</h2>",
-            "target": [
-              "h2.recent-2col__title"
-            ],
-            "failureSummary": "Text contrast is insufficient for section titles."
-          },
-          {
-            "html": "<h2 class=\"recent-2col__title\">Upcoming Events</h2>",
-            "target": [
-              "h2.recent-2col__title"
-            ],
-            "failureSummary": "Text contrast is insufficient for section titles."
-          },
-          {
-            "html": "<h2 class=\"callout__title\">Get ARC News and Updates</h2>",
-            "target": [
-              "h2.callout__title"
-            ],
-            "failureSummary": "Text contrast is insufficient for callout title."
-          },
-          {
-            "html": "<h2 class=\"newsletter__title\">Get ARC News and Updates</h2>",
-            "target": [
-              "h2.newsletter__title"
-            ],
-            "failureSummary": "Text contrast is insufficient for newsletter title."
-          },
-          {
-            "html": "<h1 class=\"site-name__text\">Appalachian Regional Commission</h1>",
-            "target": [
-              "h1.site-name__text"
-            ],
-            "failureSummary": "Text contrast is insufficient for site name header."
-          },
-          {
-            "html": "<h3 class=\"card__title\">Area Development Program</h3>",
-            "target": [
-              "h3.card__title"
-            ],
-            "failureSummary": "Text contrast is insufficient for card titles."
-          },
-          {
-            "html": "<h3 class=\"card__title\">Appalachian Leadership Institute</h3>",
-            "target": [
-              "h3.card__title"
-            ],
-            "failureSummary": "Text contrast is insufficient for card titles."
-          },
-          {
-            "html": "<h3 class=\"card__title\">J-1 Visa Waiver Program</h3>",
-            "target": [
-              "h3.card__title"
-            ],
-            "failureSummary": "Text contrast is insufficient for card titles."
-          },
-          {
-            "html": "<h3 class=\"card__title\">Research and Data</h3>",
-            "target": [
-              "h3.card__title"
-            ],
-            "failureSummary": "Text contrast is insufficient for card titles."
-          },
-          {
-            "html": "<h3 class=\"card__title\">Economic Opportunity</h3>",
-            "target": [
-              "h3.card__title"
-            ],
-            "failureSummary": "Text contrast is insufficient for card titles."
-          },
-          {
-            "html": "<h3 class=\"card__title\">Appalachia Envisioned</h3>",
-            "target": [
-              "h3.card__title"
-            ],
-            "failureSummary": "Text contrast is insufficient for card titles."
-          },
-          {
-            "html": "<h2 class=\"section-intro__title\" id=\"available-opportunities\">Available Opportunities</h2>",
-            "target": [
-              "h2#available-opportunities"
-            ],
-            "failureSummary": "Text contrast is insufficient for section titles."
-          },
-          {
-            "html": "<h2 class=\"wp-block-heading has-text-align-center\">Research and Resources</h2>",
-            "target": [
-              "h2.wp-block-heading"
-            ],
-            "failureSummary": "Text contrast is insufficient for section titles."
-          },
-          {
-            "html": "<h2 class=\"recent-2col__title\">Latest News</h2>",
-            "target": [
-              "h2.recent-2col__title"
-            ],
-            "failureSummary": "Text contrast is insufficient for section titles."
-          },
-          {
-            "html": "<h2 class=\"recent-2col__title\">Upcoming Events</h2>",
-            "target": [
-              "h2.recent-2col__title"
-            ],
-            "failureSummary": "Text contrast is insufficient for section titles."
-          },
-          {
-            "html": "<h2 class=\"callout__title\">Get ARC News and Updates</h2>",
-            "target": [
-              "h2.callout__title"
-            ],
-            "failureSummary": "Text contrast is insufficient for callout title."
-          },
-          {
-            "html": "<h2 class=\"newsletter__title\">Get ARC News and Updates</h2>",
-            "target": [
-              "h2.newsletter__title"
-            ],
-            "failureSummary": "Text contrast is insufficient for newsletter title."
-          },
-          {
-            "html": "<h1 class=\"site-name__text\">Appalachian Regional Commission</h1>",
-            "target": [
-              "h1.site-name__text"
-            ],
-            "failureSummary": "Text contrast is insufficient for site name header."
-          },
-          {
-            "html": "<h3 class=\"card__title\">Area Development Program</h3>",
-            "target": [
-              "h3.card__title"
-            ],
-            "failureSummary": "Text contrast is insufficient for card titles."
-          },
-          {
-            "html": "<h3 class=\"card__title\">Appalachian Leadership Institute</h3>",
-            "target": [
-              "h3.card__title"
-            ],
-            "failureSummary": "Text contrast is insufficient for card titles."
-          },
-          {
-            "html": "<h3 class=\"card__title\">J-1 Visa Waiver Program</h3>",
-            "target": [
-              "h3.card__title"
-            ],
-            "failureSummary": "Text contrast is insufficient for card titles."
-          },
-          {
-            "html": "<h3 class=\"card__title\">Research and Data</h3>",
-            "target": [
-              "h3.card__title"
-            ],
-            "failureSummary": "Text contrast is insufficient for card titles."
-          },
-          {
-            "html": "<h3 class=\"card__title\">Economic Opportunity</h3>",
-            "target": [
-              "h3.card__title"
-            ],
-            "failureSummary": "Text contrast is insufficient for card titles."
-          },
-          {
-            "html": "<h3 class=\"card__title\">Appalachia Envisioned</h3>",
-            "target": [
-              "h3.card__title"
-            ],
-            "failureSummary": "Text contrast is insufficient for card titles."
-          }
-        ],
-        "impact": "This impacts readability and thus accessibility for users with visual disabilities, including color vision deficiencies."
-      },
-      {
-        "id": "alt-text",
-        "description": "Images are missing alt text, which impairs screen reader interpretation of visual content.",
-        "nodes": [
-          {
-            "html": "<img fetchpriority=\"high\" decoding=\"async\" width=\"1000\" height=\"563\" src=\"https://www.arc.gov/wp-content/uploads/2025/01/Norton-VA-Feature.png\" alt=\"\" class=\"wp-image-47612\" style=\"width:1080px;height:auto\" srcset=\"https://arc.gov/wp-content/uploads/2025/01/Norton-VA-Feature.png 1000w, https://arc.g\"",
-            "target": [
-              "img.wp-image-47612"
-            ],
-            "failureSummary": "Image missing alt attribute or alt is empty."
-          },
-          {
-            "html": "<img decoding=\"async\" src=\"https://arc.gov/wp-content/uploads/2020/07/AppalachianRegionMap-700x664.jpg\" alt=\"\" class=\"wp-image-47612\" style=\"width:1080px;height:auto\" srcset=\"https://arc.gov/wp-content/uploads/2025/01/Norton-VA-Feature.png 1000w, https://arc.g\"",
-            "target": [
-              "img.wp-image-47612"
-            ],
-            "failureSummary": "Image missing alt attribute or alt is empty."
-          },
-          {
-            "html": "<img decoding=\"async\" src=\"https://arc.gov/wp-content/uploads/2021/07/ARC_Johnstown_PA_55-700x467.jpg\" alt=\"\" style=\"width:1080px;height:auto\" srcset=\"https://arc.gov/wp-content/uploads/2021/07/ARC_Johnstown_PA_55-700x467.jpg 700w, https://arc.gov/wp-content/uploads/2021/07/ARC_Johnstown_PA_55-700x467.jpg 600w\"",
-            "target": [
-              "img"
-            ],
-            "failureSummary": "Image missing alt attribute or alt is empty."
-          },
           {
             "html": "<img decoding=\"async\" src=\"https://arc.gov/wp-content/uploads/2020/07/AppalachianRegionMap-700x664.jpg\" alt=\"\">",
             "target": [
-              "img"
+              "img.wp-image-47612"
             ],
-            "failureSummary": "Image missing alt attribute or alt is empty."
-          },
-          {
-            "html": "<img decoding=\"async\" src=\"https://arc.gov/wp-content/uploads/2025/05/2025-Conf-50-50-700x700.png\" alt=\"\" style=\"width:1080px;height:auto\" srcset=\"https://arc.gov/wp-content/uploads/2025/05/2025-Conf-50-50-700x700.png 700w, https://arc.gov/wp-content/uploads/2025/05/2025-Conf-50-50-700x700.png 600w\"",
-            "target": [
-              "img"
-            ],
-            "failureSummary": "Image missing alt attribute or alt is empty."
-          },
-          {
-            "html": "<img decoding=\"async\" src=\"https://arc.gov/wp-content/uploads/2021/06/306654053-700x467.jpeg\" alt=\"\" style=\"width:1080px;height:auto\" srcset=\"https://arc.gov/wp-content/uploads/2021/06/306654053-700x467.jpeg 700w, https://arc.gov/wp-content/uploads/2021/06/306654053-700x467.jpeg 600w\"",
-            "target": [
-              "img"
-            ],
-            "failureSummary": "Image missing alt attribute or alt is empty."
-          },
-          {
-            "html": "<img decoding=\"async\" src=\"https://arc.gov/wp-content/uploads/2020/09/leadership-terry-bellamy2-600x500-c-top.jpg\" alt=\"Three women gather around table during educational session\" style=\"width:600px;height:auto\" srcset=\"https://arc.gov/wp-content/uploads/2020/09/leadership-terry-bellamy2-600x500-c-top.jpg 600w, https://arc.gov/wp-content/uploads/2020/09/leadership-terry-bellamy2-600x500-c-top.jpg 600w\"",
-            "target": [
-              "img"
-            ],
-            "failureSummary": "Image missing alt attribute or alt is empty."
-          },
-          {
-            "html": "<img decoding=\"async\" src=\"https://arc.gov/wp-content/uploads/2025/05/2025-Conf-50-50-700x700.png\" alt=\"\" style=\"width:1080px;height:auto\" srcset=\"https://arc.gov/wp-content/uploads/2025/05/2025-Conf-50-50-700x700.png 700w, https://arc.gov/wp-content/uploads/2025/05/2025-Conf-50-50-700x700.png 600w\"",
-            "target": [
-              "img"
-            ],
-            "failureSummary": "Image missing alt attribute or alt is empty."
+            "failureSummary": "The img element has an empty alt attribute."
           }
         ],
-        "impact": "Missing or empty alt text renders images inaccessible for users utilizing screen readers, impairing comprehension of visual content."
+        "impact": "This fails because it provides no accessible name or description for the image, making it inaccessible to screen reader users."
+      },
+      {
+        "id": "generictructural-element-role-banner",
+        "description": "The header element with role='banner' does not have an explicit or implicit banner role according to WCAG, but header elements are generally recognized as banner roles.",
+        "nodes": [
+          {
+            "html": "<header class=\"l-header\" role=\"banner\">",
+            "target": [
+              "header.l-header"
+            ],
+            "failureSummary": "The header element with role='banner' may cause confusion as role='banner' is implied by the header element."
+          }
+        ],
+        "impact": "This may cause a misunderstanding of the role of the header element for assistive technology."
+      },
+      {
+        "id": "aria-role-invalid",
+        "description": "The mobile menu has 'aria-role=\"menu\"', which is not a valid ARIA attribute; it should be 'role=\"menu\"' instead.",
+        "nodes": [
+          {
+            "html": "<nav class=\"mobile-menu\" aria-role=\"menu\" aria-modal=\"true\" style=\"display: none;\">",
+            "target": [
+              "nav.mobile-menu"
+            ],
+            "failureSummary": "The aria-role attribute is invalid; it should be role=\"menu\"."
+          }
+        ],
+        "impact": "Assistive technologies may not recognize the role properly, leading to confusion."
+      },
+      {
+        "id": "label-has-associated-control",
+        "description": "The label element with 'for=\"s\"' properly associates with the input element with id=\"s\". No violation here.",
+        "nodes": [
+          {
+            "html": "<label for=\"s\" class=\"visually-hidden\">Search</label>",
+            "target": [
+              "label.visually-hidden"
+            ],
+            "failureSummary": "The label properly describes the input element."
+          }
+        ],
+        "impact": "This is compliant, no violation."
       }
     ]
   },
@@ -417,6 +193,25 @@
           }
         ],
         "impact": "high"
+      }
+    ]
+  },
+  "https://cia.gov/": {
+    "timestamp": "2025-06-10T13:15:25.844578",
+    "violations": [
+      {
+        "id": "1.1.1",
+        "description": "The image does not have a descriptive alternate text.",
+        "nodes": [
+          {
+            "html": "<img src=\"https://images.edgecast-cdn.net/18/d0542117/1749575720/23c51d99\" alt=\"\" />",
+            "target": [
+              "img"
+            ],
+            "failureSummary": "Image element with no alt attribute or empty alt attribute."
+          }
+        ],
+        "impact": "Critical"
       }
     ]
   }
