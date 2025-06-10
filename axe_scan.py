@@ -37,8 +37,10 @@ def run_axe_scan(url: str, output_file: Optional[str] = None) -> List[Violation]
         List[Violation]: List of accessibility violations found
     """
     # Use temp file if no output specified
+    temp_file_created = False
     if output_file is None:
         output_file = f"temp_axe_scan_{url.replace('/', '_').replace(':', '')}.json"
+        temp_file_created = True
     
     # Construct the command
     cmd = [
@@ -112,10 +114,6 @@ def run_axe_scan(url: str, output_file: Optional[str] = None) -> List[Violation]
                     for v_type, count in sorted(violation_types.items(), key=lambda x: x[1], reverse=True)[:5]:
                         logger.info(f"  • {v_type}: {count} instances")
                 
-                # Clean up temp file if we created one
-                if output_file.startswith("temp_axe_scan_"):
-                    os.remove(output_file)
-                
                 return violations
             else:
                 raise RuntimeError(f"Output file {output_file} was not created")
@@ -129,6 +127,14 @@ def run_axe_scan(url: str, output_file: Optional[str] = None) -> List[Violation]
         raise RuntimeError("Command not found. Make sure Node.js and npm are installed.")
     except Exception as e:
         raise RuntimeError(f"Error running scan: {e}")
+    finally:
+        # Always clean up temp file if we created one, regardless of success or failure
+        if temp_file_created and os.path.exists(output_file):
+            try:
+                os.remove(output_file)
+                logger.debug(f"Cleaned up temporary file: {output_file}")
+            except Exception as e:
+                logger.warning(f"Failed to clean up temporary file {output_file}: {e}")
 
 
 def scan_url_with_axe(url: str, output_file: Optional[str] = None) -> List[Violation]:

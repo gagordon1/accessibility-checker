@@ -143,36 +143,6 @@ def save_results(results: Dict[str, int], output_file: str, failed_urls: List[Di
         json.dump(output_data, f, indent=2)
 
 
-def get_low_hanging_fruit(results_file: str, max_violations: int = 10) -> List[str]:
-    """
-    Extract URLs with low violation counts (low hanging fruit).
-    
-    Args:
-        results_file: Path to the results JSON file
-        max_violations: Maximum violations to consider "low hanging fruit"
-        
-    Returns:
-        List of URLs with <= max_violations
-    """
-    try:
-        with open(results_file, 'r') as f:
-            data = json.load(f)
-        
-        violation_counts = data.get('violation_counts', {})
-        low_hanging_fruit = [
-            url for url, count in violation_counts.items()
-            if 0 <= count <= max_violations
-        ]
-        
-        logger.info(f"Found {len(low_hanging_fruit)} URLs with <= {max_violations} violations")
-        
-        return sorted(low_hanging_fruit, key=lambda url: violation_counts[url])
-        
-    except Exception as e:
-        logger.error(f"Failed to extract low hanging fruit: {e}")
-        return []
-
-
 def main():
     """Main function to run the batch scanner."""
     
@@ -201,14 +171,6 @@ def main():
         
         # Run batch scan
         results = batch_scan_urls(urls, output_file, delay_seconds)
-        
-        # Show low hanging fruit
-        low_hanging_fruit = get_low_hanging_fruit(output_file, max_violations=5)
-        if low_hanging_fruit:
-            logger.info(f"\n🍎 Top 10 Low Hanging Fruit (≤5 violations):")
-            for i, url in enumerate(low_hanging_fruit[:10], 1):
-                violation_count = results[url]
-                logger.info(f"{i}. {url} ({violation_count} violations)")
         
     except KeyboardInterrupt:
         logger.info("Scan interrupted by user")
